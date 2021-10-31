@@ -49,6 +49,10 @@
 # 5. SURFACE
 ### Colors
 ### Typography
+
+font-family: 'Montez', cursive;
+font-family: 'Montserrat Alternates', sans-serif;
+
 ### Icons/Images
 ### Information Architecture
 
