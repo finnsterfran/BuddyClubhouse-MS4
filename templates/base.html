@@ -23,9 +23,17 @@
       crossorigin="anonymous"></script>
     {% endblock corejs %}
 
-    <title>Buddy Clubhouse</title>
+    <title>Buddy Clubhouse{% block extra_title%}{% endblock %}</title>
   </head>
   <body>
+      
+    {% block page_header %}
+    {% endblock page_header %}
 
+    {% block content %}
+    {% endblock content %}
+
+    {% block postloadjs %}
+    {% endblock postloadjs %}
   </body>
 </html>
