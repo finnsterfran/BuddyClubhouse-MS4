@@ -26,7 +26,90 @@
     <title>Buddy Clubhouse{% block extra_title%}{% endblock %}</title>
   </head>
   <body>
-      
+      <div class="container-fluid">
+        <div class="wrapper">
+          <nav class="sidenav">
+            <div class="sidenav-header">
+              <a href="{% url 'home' %}" class="navbar-brand"><i class="fas fa-paw fa-3x"></i></a>
+              <h1>Buddy<br><span class="small-logo"> clubhouse</span></h1>
+            </div>
+            <form action="" method="GET">
+              <div class="input-group">
+                <input type="text" name="q" placeholder="Search our site" class="form-control rounded-2">
+                <div class="input-group-append">
+                  <button class="form-control border btn search-button" type="submit" aria-label="search-button">
+                    <span><i class="fas fa-search"></i></span>
+                  </button>
+                </div>
+              </div>
+            </form>
+            <ul class="nav">
+              <li class="nav-item">
+                <a href="" aria-current="page" class="nav-link active">home</a>
+              </li>
+              <li class="nav-item">
+                <a href="" class="nav-link">our story</a>
+              </li>
+              <li class="nav-item">
+                <a href="" class="nav-link">the buddies</a>
+              </li>
+              <li class="nav-item">
+                <a href="" class="nav-link">how to help</a>
+              </li>
+              <li class="nav-item">
+                <a href="" class="nav-link">Membership</a>
+              </li>
+              <li class="nav-item">
+                <a href="" class="nav-link">contact us</a>
+              </li>
+
+              {% if request.user.is_authenticated %}
+                <li class="nav-item">
+                  <a href="" class="nav-link">profile</a>
+                </li>
+
+                  {% if request.user.is_member %}
+                    <li class="nav-item">
+                      <a href="" class="nav-link">book a playdate</a>
+                    </li>
+                  {% endif %}
+
+                <li class="nav-item">
+                  <a href="{% url 'account_logout' %}" class="nav-link">logout</a>
+                </li>
+                
+                  {% if request.user.is_superuser %}
+                    <li class="nav-item">
+                      <a href="" class="nav-link">manage website</a>
+                    </li>
+                  {% endif %}
+
+              {% else %}
+                <li class="nav-item">
+                  <a href="{% url 'account_signup' %}" class="nav-link">register</a>
+                </li>
+                <li class="nav-item">
+                  <a href="{% url 'account_login' %}" class="nav-link">login</a>
+                </li>
+              {% endif %}
+
+            </ul>
+          </nav>
+          <div id="content">
+            <button type="button" id="sidenavClose" aria-label="sidenavtoggle-button" class="navbar-btn">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+
+            {% if message %}
+              <div class="message-container">
+
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
     {% block page_header %}
     {% endblock page_header %}
 
@@ -34,6 +117,14 @@
     {% endblock content %}
 
     {% block postloadjs %}
+    <script>
+      $(document).ready(function () {
+        $('#sidenavClose').on('click', function() {
+          $('#sidenav').toggleClass('active');
+          $(this).toggleClass('active');
+        });
+      });
+    </script>
     {% endblock postloadjs %}
   </body>
 </html>
