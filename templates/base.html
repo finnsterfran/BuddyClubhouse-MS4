@@ -1,132 +1,173 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  {% block meta %}
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  {% endblock meta %} 
+    {% block meta %}
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% endblock %}
 
-  {% block corecss %}
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-            integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-      <link rel="preconnect" href="https://fonts.googleapis.com">
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link href="https://fonts.googleapis.com/css2?family=Montez&family=Montserrat+Alternates:wght@300;400;500;700&display=swap" rel="stylesheet">
-      <link rel="stylesheet" href="{% static 'css/base.css' %}">
-  {% endblock corecss %} 
-  
-  {% block corejs %}
-      <script src="https://kit.fontawesome.com/64cc6f8564.js" crossorigin="anonymous"></script>
-      <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-      crossorigin="anonymous"></script>
-      <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-  {% endblock corejs %}
-  <title>Buddy Clubhouse{% block extra_title%}{% endblock %}</title>
+    {% block extra_meta %}
+    {% endblock %}
+
+    {% block corecss %}
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montez&family=Montserrat+Alternates:wght@300;400;500;700&display=swap" rel="stylesheet">
+        <link rel="shortcut icon" href="{% static 'images/favicon.png' type='image/x-icon' %}">
+        <link rel="stylesheet" href="{% static 'css/base.css' %}">
+        <link rel="stylesheet" href="{% static 'css/media_queries.css' %}">
+
+    {% endblock %}
+
+    {% block extra_css %}
+    {% endblock %}
+
+    {% block corejs %}
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/64cc6f8564.js" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="{% static 'js/base.js' %}"></script>
+        <script src="https://js.stripe.com/v3/"></script>
+    {% endblock %}
+
+    {% block extra_js %}
+    {% endblock %}
+
+    <title>The Buddy Clubhouse{% block extra_title%}{% endblock %}</title>
 </head>
 <body>
-  <div class="container-fluid">
-    <div class="wrapper">
-      <nav id="sidenav">
-        <div class="sidenav-header">
-          <a href="{% url 'home' %}" class="navbar-brand" aria-label="home-link"><i class="fas fa-paw fa-3x"></i></a>
-          <h1>Buddy<br><span class="small-logo"> clubhouse</span></h1>
+    <header class="container-fluid fixed-top">
+        <div class="row row-box">
+            <nav class="navbar navbar-light">
+                <a class="navbar-brand" href="{% url 'home' %}" aria-label="home-link"><i class="fas fa-paw fa-3x"></i></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header">
+                      <h4 class="offcanvas-title logo-title" id="offcanvasNavbarLabel">The BuddyClubhouse</span></h4>
+                      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <form class="d-flex search-form" action="{% url 'dogs' %}" method="GET">
+                          <input class="search-input form-control me-2" name="search_query" type="text" value="{{ search_query }}" placeholder="Search: Buddy's name" aria-label="Search">
+                          <button class="btn btn-outline-success" type="submit">Submit Search</button>
+                        </form>
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                            <li class="nav-item">
+                              <a class="nav-link active" aria-current="page" href="#">home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                              <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                our story
+                              </a>
+                              <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
+                                <li><a class="dropdown-item" href="#">how you can help</a></li>
+                                <li><a class="dropdown-item" href="#"></a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="{% url 'contribute' %}">contribute</a></li>
+                              </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                  the buddies
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
+                                  <li><a class="dropdown-item" href="{% url 'dogs' %}">the residents</a></li>
+                                  <li><hr class="dropdown-divider"></li>
+                                  <li><a class="dropdown-item" href="#">activities</a></li>
+                                  <li><hr class="dropdown-divider"></li>
+                                  <li><a class="dropdown-item" href="{% url 'blogs' %}">blogs</a></li>
+
+                                  {% if request.user.is_authenticated %}   
+                                  <li><hr class="dropdown-divider"></li>
+                                  <li><a class="dropdown-item" href="{% url 'write_blog' %}">write a blog</a></li>
+                                  {% endif %}
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                  my account
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
+                                  {% if request.user.is_authenticated %}
+                                  <li><a class="dropdown-item" href="{% url 'account' %}">my account</a></li>
+                                  <li><hr class="dropdown-divider"></li>
+                                  <li><a class="dropdown-item" href="#">book a playdate</a></li>
+                                  <li><hr class="dropdown-divider"></li>
+                                  <li><a class="dropdown-item" href="{% url 'logout' %}">logout</a></li>
+                                  {% else %}
+                                  <li><a class="dropdown-item" href="{% url 'register' %}">register</a></li>
+                                  <li><hr class="dropdown-divider"></li>
+                                  <li><a class="dropdown-item" href="{% url 'login' %}">login</a></li>
+                                  {% endif %}
+                                </ul>
+                            </li>
+                            {% if request.user.is_authenticated %}
+                                {% if request.user.is_superuser %}
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbar" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                administration
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
+                                    <li><a class="dropdown-item" href="#">appointments</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="#">manage dogs</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="{% url 'profiles' %}">user profiles</a></li>
+                                </ul>
+                            </li>
+                                {% endif %}
+                            {% endif %}    
+                        </ul>
+                        <div class="footer-box">
+                            <ul class="footer-items">
+                              <li><i class="fab fa-facebook" aria-label="link-to-facebook"></i></li>
+                              <li><i class="fab fa-instagram" aria-label="link-to-instagram"></i></li>
+                              <li><i class="fab fa-youtube" aria-label="link-to-youtube"></i></li>
+                              <li><i class="fab fa-twitter" aria-label="link-to-twitter"></i></li>
+                              <li><i class="fab fa-pinterest" aria-label="link-to-pinterest"></i></li>
+                              <li><i class="fas fa-at" aria-label="contact-us"></i></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
         </div>
-        <form action="" method="GET">
-          <div class="input-group">
-            <input type="text" name="q" class="form-control border rounded-2" placeholder="Search our site">
-            <div class="input-group-append">
-              <button class="form-control btn button border rounded-2" type="submit">
-                <span><i class="fas fa-search"></i></span>
-              </button>
-            </div>
-          </div>
-        </form>
-        <ul class="nav">
-          <li class="nav-item">
-            <a href="" aria-current="page" class="nav-link active">home</a>
-          </li>
-          <li class="nav-item">
-            <a href="" class="nav-link">our story</a>
-          </li>
-          <li class="nav-item">
-            <a href="" class="nav-link">the buddies</a>
-          </li>
-          <li class="nav-item">
-            <a href="" class="nav-link">how to help</a>
-          </li>
-          <li class="nav-item">
-            <a href="" class="nav-link">Membership</a>
-          </li>
-          <li class="nav-item">
-            <a href="" class="nav-link">contact us</a>
-          </li>
+    </header>
+    {% if messages %}
 
-          {% if request.user.is_authenticated %}
-            <li class="nav-item">
-              <a href="" class="nav-link">profile</a>
-            </li>
-
-              {% if request.user.is_member %}
-                <li class="nav-item">
-                  <a href="" class="nav-link">book a playdate</a>
+            <ul class="messages">
+                {% for message in messages %}
+                <li{% if message.tags %} class="alert--{{ message.tags }}"{% endif %}>
+                
+                    {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}Important: {% endif %}
+                    {{ message }}
                 </li>
-              {% endif %}
+                {% endfor %}
+                
+            </ul>
 
-            <li class="nav-item">
-              <a href="{% url 'account_logout' %}" class="nav-link">logout</a>
-            </li>
-            
-              {% if request.user.is_superuser %}
-                <li class="nav-item">
-                  <a href="" class="nav-link">manage website</a>
-                </li>
-              {% endif %}
+    {% endif %}
 
-          {% else %}
-            <li class="nav-item">
-              <a href="{% url 'account_signup' %}" class="nav-link">register</a>
-            </li>
-            <li class="nav-item">
-              <a href="{% url 'account_login' %}" class="nav-link">login</a>
-            </li>
-          {% endif %}
-        </ul>
-      </nav>
-      <div id="content">
-        <button type="button" id="sidenavClose" aria-label="sidenavtoggle-button" class="navbar-btn">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+    {% block page_header %}
+    {% endblock page_header %}
 
-        {% if message %}
-          <div class="message-container">
+    {% block content %}
+    {% endblock content %}
 
-          </div>
-        {% endif %}
-        {% block page_header %}
-        {% endblock page_header %}
-
-        {% block content %}
-        {% endblock content %}
-
-        {% block postloadjs %}
-        <script>
-          $(document).ready(function() {
-            $('#sidenavClose').on('click', function() {
-              $('#sidenav').toggleClass('active');
-              $(this).toggleClass('active');
-            });
-          });
-        </script>
-        {% endblock postloadjs %}
-      </div>
-    </div>
-  </div>
+    {% block extra_body %}
+    {% endblock %}
+    
+    {% block postloadjs %}
+    {% endblock postloadjs %}
 </body>
 </html>
