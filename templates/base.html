@@ -57,7 +57,7 @@
                       <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body">
-                        <form class="d-flex search-form" action="{% url 'dogs' %}" method="GET">
+                        <form class="d-flex search-form" action="#" method="GET">
                           <input class="search-input form-control me-2" name="search_query" type="text" value="{{ search_query }}" placeholder="Search: Buddy's name" aria-label="Search">
                           <button class="btn btn-outline-success" type="submit">Submit Search</button>
                         </form>
@@ -73,7 +73,7 @@
                                 <li><a class="dropdown-item" href="#">how you can help</a></li>
                                 <li><a class="dropdown-item" href="#"></a></li>
                                 <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="{% url 'contribute' %}">contribute</a></li>
+                                <li><a class="dropdown-item" href="#">contribute</a></li>
                               </ul>
                             </li>
                             <li class="nav-item dropdown">
@@ -81,15 +81,15 @@
                                   the buddies
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
-                                  <li><a class="dropdown-item" href="{% url 'dogs' %}">the residents</a></li>
+                                  <li><a class="dropdown-item" href="#">the residents</a></li>
                                   <li><hr class="dropdown-divider"></li>
                                   <li><a class="dropdown-item" href="#">activities</a></li>
                                   <li><hr class="dropdown-divider"></li>
-                                  <li><a class="dropdown-item" href="{% url 'blogs' %}">blogs</a></li>
+                                  <li><a class="dropdown-item" href="#">blogs</a></li>
 
                                   {% if request.user.is_authenticated %}   
                                   <li><hr class="dropdown-divider"></li>
-                                  <li><a class="dropdown-item" href="{% url 'write_blog' %}">write a blog</a></li>
+                                  <li><a class="dropdown-item" href="#">write a blog</a></li>
                                   {% endif %}
                                 </ul>
                             </li>
@@ -99,15 +99,15 @@
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
                                   {% if request.user.is_authenticated %}
-                                  <li><a class="dropdown-item" href="{% url 'account' %}">my account</a></li>
+                                  <li><a class="dropdown-item" href="#">my account</a></li>
                                   <li><hr class="dropdown-divider"></li>
                                   <li><a class="dropdown-item" href="#">book a playdate</a></li>
                                   <li><hr class="dropdown-divider"></li>
-                                  <li><a class="dropdown-item" href="{% url 'logout' %}">logout</a></li>
+                                  <li><a class="dropdown-item" href="#">logout</a></li>
                                   {% else %}
-                                  <li><a class="dropdown-item" href="{% url 'register' %}">register</a></li>
+                                  <li><a class="dropdown-item" href="#">register</a></li>
                                   <li><hr class="dropdown-divider"></li>
-                                  <li><a class="dropdown-item" href="{% url 'login' %}">login</a></li>
+                                  <li><a class="dropdown-item" href="#">login</a></li>
                                   {% endif %}
                                 </ul>
                             </li>
@@ -122,7 +122,7 @@
                                     <li><hr class="dropdown-divider"></li>
                                     <li><a class="dropdown-item" href="#">manage dogs</a></li>
                                     <li><hr class="dropdown-divider"></li>
-                                    <li><a class="dropdown-item" href="{% url 'profiles' %}">user profiles</a></li>
+                                    <li><a class="dropdown-item" href="#">user profiles</a></li>
                                 </ul>
                             </li>
                                 {% endif %}

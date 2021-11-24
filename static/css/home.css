@@ -1,0 +1,55 @@
+:root {
+    --navbar-color: #E2D5D5;
+    --logo-color: #865858;
+    --icon-color: #C56BB2;
+    --navlink-color: #483434;
+    --navhover-color: #81B214;
+    --active-color: #595B83;
+    --button-color: #6C4A4A;
+    --light: #EDEDED;
+    --dark: #2D2424;
+    --black: #090910;
+    --light-pink: #DDBEBE;
+}
+
+body {
+    background: url('/media/homepage-bg.jpg')no-repeat center center fixed;
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
+}
+
+.summary-keyword {
+    color: var(--logo-color);
+    font-family: 'Montez', cursive;
+    font-size: 1.7rem;
+    padding-right: 1rem;
+}
+
+.index-box {
+    padding-left: 1rem;
+    text-shadow: var(--light-pink) 2px 1px 1px;
+}
+
+.index-title{
+    font-size: 2rem;
+}
+
+/* media queries */
+@media (min-width: 320px) {
+    .header-container {
+        margin-top: 90px;
+    }
+
+    .index-box {
+        padding: 1rem;
+    }
+
+    .index-title {
+        font-size: 1.6rem;
+    }
+
+    .button {
+        width: 100%;
+    }
+}

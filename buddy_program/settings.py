@@ -97,6 +97,7 @@ ACCOUNT_USERNAME_MIN_LENGTH = 5
 LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = '/'
 
+
 WSGI_APPLICATION = 'buddy_program.wsgi.application'
 
 
