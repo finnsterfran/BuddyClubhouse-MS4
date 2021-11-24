@@ -171,6 +171,14 @@
     {% endblock %}
 <!-- JavaScript that loads last -->
     {% block postloadjs %}
+<!-- Script to control how long before alert messages disappear -->
+    <script>
+      setTimeout(function() {
+        if ($('.messages').length > 0) {
+            $('.messages').remove();
+        }
+      }, 3000)
+    </script>
     {% endblock postloadjs %}
 </body>
 </html>
