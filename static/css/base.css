@@ -13,25 +13,26 @@
 }
 
 body {
-font-family: 'Montserrat Alternates', sans-serif;
-background-color: var(--light);
-height: 100vh;
+    font-family: 'Montserrat Alternates', sans-serif;
+    background-color: var(--light);
+    height: 100vh;
 }
 
 .header-container {
-margin-top: 112px;
+    margin-top: 112px;
+    text-align: center;
 }
 
 .row-box {
-padding-bottom: 4rem;
+    padding-bottom: 4rem;
 }
 
 .offcanvas {
-padding: 1rem;
+    padding: 1rem;
 }
 
 a:hover {
-color: var(--navhover-color);
+    color: var(--navhover-color);
 }
 
 button.navbar-toggler {
@@ -39,113 +40,116 @@ button.navbar-toggler {
 }
 
 .button {
-background-color: var(--button-color);
-color: var(--light);
-letter-spacing: 0.2rem;
-border: none;
-padding: 0.5rem 1rem;
-text-transform: uppercase;
+    background-color: var(--button-color);
+    color: var(--light);
+    letter-spacing: 0.2rem;
+    border: none;
+    padding: 0.5rem 1rem;
+    text-transform: uppercase;
 }
 
 .button:hover {
-background-color: var(--navhover-color);
-border: 1px solid var(--button-color);
-color: var(--button-color);
+    background-color: var(--navhover-color);
+    border: 1px solid var(--button-color);
+    color: var(--button-color);
 }
 
 .button-two {
-background-color: var(--active-color);
-color: var(--light);
-letter-spacing: 0.2rem;
-border: none;
-padding: 0.5rem 1rem;
-text-transform: uppercase;
+    background-color: var(--active-color);
+    color: var(--light);
+    letter-spacing: 0.2rem;
+    border: none;
+    padding: 0.5rem 1rem;
+    text-transform: uppercase;
 }
 
 .button-two:hover {
-background-color: var(--light-pink);
-color: var(--dark);
+    background-color: var(--light-pink);
+    color: var(--dark);
 }
 
 .icon {
-align-items: center;
-display: inline-flex;
-justify-content: center;
-height: 1.5rem;
-width: 1.5rem;
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    height: 1.5rem;
+    width: 1.5rem;
 }
 
 /* Navigation */
 
 .navbar {
-background: var(--navbar-color);
-color: var(--black);
+    background: var(--navbar-color);
+    color: var(--black);
 }
 
 .fa-paw {
-color: var(--logo-color);
-padding-left: 1rem;
+    color: var(--logo-color);
+    padding-left: 1rem;
 }
 
 .navbar-toggler {
-color: rgba(0,0,0,.55);
-border-color: var(--dark);
-margin-right: 2rem;
+    color: rgba(0,0,0,.55);
+    border-color: var(--dark);
+    margin-right: 2rem;
 }
 
 .logo-title {
-font-size: 2rem;
-font-family: 'Montez', cursive;
-color: var(--logo-color);
-padding-left: 1rem;
+    font-size: 2rem;
+    font-family: 'Montez', cursive;
+    color: var(--logo-color);
+    padding-left: 1rem;
 }
 
 ul.navbar-nav {
-padding-left: 1rem;
-padding-top: 3rem;
+    padding-left: 1rem;
+    padding-top: 3rem;
 }
 
 .nav-link {
-color: var(--button-color);
-font-size: 1.5rem;
-padding-left: 1rem;
+    color: var(--button-color);
+    font-size: 1.5rem;
+    padding-left: 1rem;
 }
 
 .navbar-light .navbar-nav .nav-link.active {
-color: var(--icon-color);
+    color: var(--icon-color);
 }
+
 .navbar-light .navbar-nav .nav-link {
-color: var(--logo-color);
+    color: var(--logo-color);
 }
 
 #offcanvasNavbarDropdown:hover,
 .dropdown-item:hover {
-color: var(--navhover-color);
+    color: var(--navhover-color);
 }
 
 .footer-box {
-position: absolute;
-bottom: 0;
-left: 0;
-width: 100%;
-justify-content: space-evenly;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    justify-content: space-evenly;
 }
 
 .footer-items {
-display: flex;
-justify-content: space-evenly;
-list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
 }
 
 .footer-items li i {
-color: var(--icon-color);
-text-shadow: var(--black);
-font-size: 2rem;
+    color: var(--icon-color);
+    text-shadow: var(--black);
+    font-size: 2rem;
 }
 
 .footer-items li i:hover {
-color: var(--navhover-color);
+    color: var(--navhover-color);
 }
+
+
 
 /* about page */
 .story-img {
@@ -153,4 +157,40 @@ color: var(--navhover-color);
     width: 20rem;
     border: 1px solid var(--dark);
     border-radius: 0.5rem;
+}
+
+/* alert messages */
+ul.messages {
+    text-align: center;
+    list-style: none;
+    margin-right: 1.2rem;
+    margin: 97px 4px 0 4px;
+}
+
+ul.messages > li {
+    border-radius: 1rem;
+    padding: 1rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    border: 3px dotted;
+}
+
+ul.messages > li:hover {
+    background-color: var(--icon-color);
+}
+
+.alert--error {
+    background-color: var(--light-pink);
+}
+
+.alert--success {
+    background-color: var(--navhover-color);
+}
+
+.alert--warning {
+    background-color: rgb(243, 54, 101);
+}
+
+.alert--info {
+    background-color: var(--active-color);
 }

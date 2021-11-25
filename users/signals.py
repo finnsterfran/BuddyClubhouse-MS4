@@ -37,7 +37,7 @@ def update_user(sender, instance, created, **kwargs):
     if created == False:
         user.first_name = profile.first_name
         user.last_name = profile.last_name
-        user.username = profile.username
+        user.username = profile.user.username
         user.email = profile.email
         user.save()
 
