@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css%}
+    <link rel="stylesheet" href="{% static 'css/users.css' %}">
+{% endblock extra_css %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="text-center">The Friends/Users</span> </h1>
+        </div>
+    </div>
+</div>
+{% endblock page_header %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        {% for profile in profiles %}
+        <div class="col-sm-6 col-lg-3 g-3 d-flex">
+            <div class="card flex-fill">
+                <img src="{{ profile.profile_image.url }}" class="card-img-top img-fluid w-100 h-50" alt="{{ profile.user.username }}">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold text-center">{{ profile.user.username }}</h5>
+                    <p class="card-text text-center">{{ profile.first_name|title }} {{ profile.last_name|title }}</p>
+                    <hr>
+                    <h6 class="fw-bold">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate consequuntur aperiam blanditiis repudiandae nostrum soluta amet, dolorum beatae asperiores dolor in ipsa unde commodi iste quaerat minus voluptatum quod autem a molestias quos officia. In suscipit nihil natus, dolor velit, unde culpa neque cum excepturi impedit at sint dolorem voluptas.</h6>
+                    <div class="card-link"><a href="{% url 'profile' profile.id %}"><i class="fas fa-user-tag"></i></a></div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}
