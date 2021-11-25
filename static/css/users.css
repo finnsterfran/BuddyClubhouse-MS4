@@ -31,11 +31,8 @@ input {
 }
 
 .button {
-    width: fit-content;
-}
-
-.help-text {
-    padding-left: 0.5rem;
+    width: 100%;
+    margin-bottom: 0.5rem;
 }
 
 .form-error {
@@ -45,4 +42,37 @@ input {
 .form-anchor {
     padding-left: 0.5rem;
 }
+ 
+ul {
+    padding-left: 1rem;
+    padding-top: 1rem;
+}
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--logo-color);
+}
+
+a:hover {
+    color: var(--navhover-color);
+}
+
+/* media queries */
+/* // Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) { ... }
+
+
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) { ... }
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) { ... }
+
+// X-Large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... }
+
+// XX-Large devices (larger desktops, 1400px and up)
+@media (min-width: 1400px) { ... } */
 
