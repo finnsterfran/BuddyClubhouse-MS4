@@ -5,8 +5,9 @@
     <link rel="stylesheet" href="{% static 'css/users.css' %}">
 {% endblock extra_css %}
 
-{% if messages %}
-{% endif %}
+{% block extra_title %}
+    Login/Register
+{% endblock extra_title%}
 
 {% block page_header %}
 <div class="container header-container">
