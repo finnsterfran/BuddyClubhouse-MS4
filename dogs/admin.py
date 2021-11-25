@@ -13,7 +13,7 @@ class DogAdmin(admin.ModelAdmin):
         'image',
         'story',
     )
-    ordering = ('name')
+    ordering = ('name',)
 
 
 class BreedAdmin(admin.ModelAdmin):
