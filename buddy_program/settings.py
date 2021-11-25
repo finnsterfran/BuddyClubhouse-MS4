@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'home.apps.HomeConfig',
     'users.apps.UsersConfig',
+    'dogs.apps.DogsConfig',
     'crispy_forms',
 ]
 
