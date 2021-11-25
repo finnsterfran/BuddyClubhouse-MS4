@@ -15,10 +15,10 @@ def userLogin(request):
     """
     page = 'login'
     if request.user.is_authenticated:
-        return redirect('home')
+        return redirect('account')
 
     if request.method == 'POST':
-        username = request.POST['username']
+        username = request.POST['username'].lower()
         password = request.POST['password']
 
         try:
@@ -32,7 +32,7 @@ def userLogin(request):
         if user is not None:
             login(request, user)
             messages.success(request, f'Welcome back {user}!')
-            return redirect('account')
+            return redirect(request,GET['next'] if 'next' in request.GET else 'account')
 
         else:
             messages.error(request,
@@ -130,7 +130,7 @@ def edit_account(request):
         if form.is_valid():
             form.save()
             messages.success(request, 'Profile update successful!')
-        return redirect('account')
+            return redirect('account')
 
     context = {
         'form': form,
