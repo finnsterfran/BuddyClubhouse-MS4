@@ -12,6 +12,10 @@
     --light-pink: #DDBEBE;
 }
 
+.user-name {
+    color: var(--active-color);
+}
+
 input {
     display: block;
     width: 100%;

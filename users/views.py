@@ -18,8 +18,8 @@ def userLogin(request):
         return redirect('home')
 
     if request.method == 'POST':
-        username = request.post['username']
-        password = request.post['password']
+        username = request.POST['username']
+        password = request.POST['password']
 
         try:
             user = User.objects.get(username=username)
@@ -126,7 +126,10 @@ def edit_account(request):
     form = ProfileForm(instance=profile)
 
     if request.method == 'POST':
-        form = ProfileForm(request, 'Profile update successful!')
+        form = ProfileForm(request.POST, request.FILES, instance=profile)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Profile update successful!')
         return redirect('account')
 
     context = {
