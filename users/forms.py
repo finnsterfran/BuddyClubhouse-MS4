@@ -14,7 +14,7 @@ class CustomUserCreationForm(UserCreationForm):
             'last_name': 'Last Name',
         }
 
-        def __init__(self, *args, *kwargs):
+        def __init__(self, *args, **kwargs):
             super(CustomUserCreationForm, self).__init__(*args, **kwargs)
 
 
@@ -23,5 +23,5 @@ class ProfileForm(ModelForm):
         model = Profile
         fields = ['first_name', 'last_name', 'email', 'address', 'postal_code', 'contact_number', 'profile_image']
 
-    def __init__(self, *args, *kwargs):
+    def __init__(self, *args, **kwargs):
         super(ProfileForm, self).__init__(*args, *kwargs)

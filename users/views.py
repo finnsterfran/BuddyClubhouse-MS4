@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth import login, authenticate, login
+from django.core.exceptions import ObjectDoesNotExist
+from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.contrib.auth.models import User
@@ -9,11 +10,10 @@ from .forms import CustomUserCreationForm, ProfileForm
 
 def userLogin(request):
     """
-    For user login, redirecting user to 
+    For user login, redirecting user to
     make an account if user doesn't exist in the database
     """
     page = 'login'
-
     if request.user.is_authenticated:
         return redirect('home')
 
@@ -23,9 +23,10 @@ def userLogin(request):
 
         try:
             user = User.objects.get(username=username)
-        except:
-            messages.error(request, 'Username does not seem to exist in our database')
-        
+        except ObjectDoesNotExist:
+            messages.error(request,
+                           'Username does not seem to exist in our database')
+
         user = authenticate(request, username=username, password=password)
 
         if user is not None:
@@ -33,14 +34,15 @@ def userLogin(request):
             messages.success(request, f'Welcome back {user}!')
             return redirect('account')
 
-        else: 
-            messages.error(request, 'Uhm... username or/and password seems to be incorrect!')
+        else:
+            messages.error(request,
+                           'Uhm... username or/and password is incorrect!')
     return render(request, 'users/login_register.html')
 
 
 def userLogout(request):
     """
-    Log the use out
+    Log the user out
     """
     logout(request)
     messages.info(request, 'User is no longer logged in')
@@ -62,9 +64,10 @@ def userRegister(request):
             user.username = user.username.lower()
             user.save()
 
-            messages.success(request, 'You have successfully created a new user account')
+            messages.success(request, 'You have created a new user account')
 
-            login(request, user, backend='django.contrib.auth.backends.ModelBackend')
+            login(request, user,
+                  backend='django.contrib.auth.backends.ModelBackend')
             return redirect('edit_account')
         else:
             messages.error(
@@ -73,7 +76,7 @@ def userRegister(request):
         'page': page,
         'form': form,
     }
-    return redirect(request, 'user/login_registration.html', context)
+    return render(request, 'users/login_register.html', context)
 
 
 def profiles(request):
@@ -85,7 +88,7 @@ def profiles(request):
     context = {
         'profiles': profiles
     }
-    return render(request, 'users/profiles.html')
+    return render(request, 'users/profiles.html', context)
 
 
 def profile(request, pk):
@@ -106,7 +109,7 @@ def userAccount(request):
     User's ACCOUNT view
     """
     profile = request.user.profile
-    
+
     context = {
         'profile': profile
     }
@@ -116,7 +119,7 @@ def userAccount(request):
 @login_required(login_url='login')
 def edit_account(request):
     """
-    User's ACCOUNT edit view, user can change profile 
+    User's ACCOUNT edit view, user can change profile
     and see all account related information
     """
     profile = request.user.profile

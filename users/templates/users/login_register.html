@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css%}
+    <link rel="stylesheet" href="{% static 'css/users.css' %}">
+{% endblock extra_css %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col-12">
+            <h1></h1>
+        </div>
+    </div>
+</div>
+{% endblock page_header %}
+
+{% block content %}
+<div class="container">
+    <div class="row py-sm-1 py-md-3">
+        <div class="col-sm-12 col-md-8 offset-md-2">
+
+            {% if page == 'register' %}
+            <h2>Register A New User Account</h2>
+            <form action="{% url 'register' %}" method="POST">
+                {% csrf_token %}
+
+                {% for field in form %}
+                <div class="mb-3">
+                    <label for="form-input" class="form-label">{{ field.label }}</label>
+                    {{ field }}
+
+                    {% if field.help_text %}
+                    <small class="help-text">{{ field.help_text }}</small>
+                    {% endif %}
+
+                    {% for error in field.errors %}
+                    <p class="form-error">{{error}}</p>
+                    {% endfor %}
+                </div> 
+                {% endfor %}
+                <input type="submit" class="btn button" value="Register User">
+            </form>
+            <p class="text-center">Already have an account? <a href="{% url 'login' %}">LOGIN</a> </p>
+            {% else %}
+
+            <h2>Sign Into Your User Account</h2>
+            <form action="{% url 'login' %}" method="POST">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="form-input-username" class="form-label">Username</label>
+                    <input type="text" name="username" placeholder="Your username..." id="form-input-username">
+                </div>
+                <div class="mb-3">
+                    <label for="form-input-password" class="form-label">Password</label>
+                    <input type="password" name="password" placeholder="Your password..." id="form-input-password">
+                </div>
+                <a class="form-anchor" href="{% url 'account_reset_password' %}">Can't remember your password?</a>
+                <input type="submit" class="btn button" value="Login">
+                <p class="text-center">Don't have an account yet? <a href="{% url 'register' %}">SIGN UP</a> for one!</p>
+                
+            </form>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock content %}

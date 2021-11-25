@@ -91,9 +91,8 @@
                                   <li><hr class="dropdown-divider"></li>
                                   <li><a class="dropdown-item" href="#">activities</a></li>
                                   <li><hr class="dropdown-divider"></li>
-                                  <li><a class="dropdown-item" href="#">blogs</a></li>
-
                                   {% if request.user.is_authenticated %}   
+                                  <li><a class="dropdown-item" href="#">blogs</a></li>
                                   <li><hr class="dropdown-divider"></li>
                                   <li><a class="dropdown-item" href="#">write a blog</a></li>
                                   {% endif %}
@@ -109,11 +108,11 @@
                                   <li><hr class="dropdown-divider"></li>
                                   <li><a class="dropdown-item" href="#">book a playdate</a></li>
                                   <li><hr class="dropdown-divider"></li>
-                                  <li><a class="dropdown-item" href="#">logout</a></li>
+                                  <li><a class="dropdown-item" href="{% url 'logout' %}">logout</a></li>
                                   {% else %}
-                                  <li><a class="dropdown-item" href="#">register</a></li>
+                                  <li><a class="dropdown-item" href="{% url 'register' %}">register</a></li>
                                   <li><hr class="dropdown-divider"></li>
-                                  <li><a class="dropdown-item" href="#">login</a></li>
+                                  <li><a class="dropdown-item" href="{% url 'login' %}">login</a></li>
                                   {% endif %}
                                 </ul>
                             </li>
