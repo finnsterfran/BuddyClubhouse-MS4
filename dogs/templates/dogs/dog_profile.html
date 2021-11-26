@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css%}
+  
+{% endblock extra_css %}
+
+{% block extra_title %}
+    Buddy Profile
+{% endblock extra_title%}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="text-center">This is the profile of {{ dog_profile.name }}</h1>
+        </div>
+    </div>
+</div>
+{% endblock page_header %}
+
+{% block content %}
+<div class="container">
+    <div class="row row-box">
+        <div class="col-4 me-auto">
+            <div class="card">
+                <img src="{{ dog_profile.image.url }}" alt="{{ dog.name }}" class="card-img-top img-fluid">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold">{{ dog_profile.name }}</h5>
+                    <p class="card-text">Breed: {{ dog_profile.breed}}</p>
+                    <p class="card-text">Age: {{ dog_profile.age }} years old</p>  
+                    <p class='card-text'>Gender: {{ dog_profile.gender }}</p>
+                    <p class="card-text">Resident since: {{ dog.resided_since }}</p>
+                    <p class="card-text">Working Title: {{ dog_profile.job }}</p>
+                    <br>
+                    <p class="card-text">{{ dog-profile.story }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-8">
+            
+        </div>
+    </div>  
+</div>
+{% endblock content %}
