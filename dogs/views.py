@@ -1,14 +1,23 @@
 from django.shortcuts import render
+from .models import Dog
 
-# Create your views here.
+
 def dogs(request):
     """
-    display all dogs in the database
+    Display all dogs in the database
     """
-    dogs = Dog.objects.all()
+
+    search_query = ''
+    if request.GET.get('search_query'):
+        search_query = request.GET.get('search_query')
+        print('SEARCH:', search_query)
+
+    
+    dogs = Dog.objects.filter(name__icontains=search_query)
 
     context = {
         'dogs': dogs,
+        'search_query': search_query
     }
     return render(request, 'dogs/dogs.html', context)
 

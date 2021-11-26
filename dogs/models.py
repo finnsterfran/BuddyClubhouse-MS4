@@ -22,6 +22,17 @@ class Dog(models.Model):
 
     def __str__(self):
         return str(self.name)
+    
+    class Meta: 
+        ordering = ['resided_since']
+    
+    @property 
+    def imageURL(self):
+        try:
+            url = self.image.url
+        except AttributeError:
+            url = ''
+        return url
 
 
 class Breed(models.Model):
