@@ -22,9 +22,25 @@
 {% block content %}
 <div class="container">
     <div class="row row-box">
+        {% for dog in dogs %}
         <div class="col-sm-6 col-md-6 col-lg-3 g-3 d-flex">
-            <h2>Here are the buddies</h2>
+            <div class="card flex-fil">
+                <img src="{{ dog.image.url }}" alt="{{ dog.name }}" class="card-img-top img-fluid">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold">{{ dog.name }}</h5>
+                    <p class="card-text">{{ dog.breed}} | {{ dog.age }} | {{ dog.gender }}
+                        <br>Since: {{ dog.resided_since }}
+                    </p>
+                    <hr>
+                    <h6 class="fw-bold">Working Title: </h6>
+                    {% for job in dog.job.all %}
+                        <p>{{ job}}</p>
+                    {% endfor %}
+                    <div class="card-link"><a href="{% url 'dog_profile' dog.id %}"><i class="fas fa-dog"></i></a></div>
+                </div>
+            </div>
         </div>
+        {% endfor %}
     </div>  
 </div>
 {% endblock content %}
