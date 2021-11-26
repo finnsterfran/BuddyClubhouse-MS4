@@ -13,7 +13,7 @@
 <div class="container header-container">
     <div class="row">
         <div class="col-12">
-            <h1 class="text-center">This is the profile of {{ dog_profile.name }}</h1>
+            <h1 class="text-center">This is {{ dog_profile.name }}'s profile </h1>
         </div>
     </div>
 </div>
@@ -22,22 +22,21 @@
 {% block content %}
 <div class="container">
     <div class="row row-box">
-        <div class="col-4 me-auto">
+        <div class="col-sm-12 col-xl-5 py-4 me-auto">
             <div class="card">
                 <img src="{{ dog_profile.image.url }}" alt="{{ dog.name }}" class="card-img-top img-fluid">
                 <div class="card-body">
-                    <h5 class="card-title fw-bold">{{ dog_profile.name }}</h5>
-                    <p class="card-text">Breed: {{ dog_profile.breed}}</p>
-                    <p class="card-text">Age: {{ dog_profile.age }} years old</p>  
-                    <p class='card-text'>Gender: {{ dog_profile.gender }}</p>
-                    <p class="card-text">Resident since: {{ dog.resided_since }}</p>
-                    <p class="card-text">Working Title: {{ dog_profile.job }}</p>
-                    <br>
-                    <p class="card-text">{{ dog-profile.story }}</p>
+                    <p><strong class="pe-4">Breed:</strong> {{ dog_profile.breed}}</p>
+                    <p><strong class="pe-4">Age: </strong>{{ dog_profile.age }} years old</p>  
+                    <p><strong class="pe-4">Gender:</strong> {{ dog_profile.gender }}</p>
+                    <p><strong class="pe-4">Resident since:</strong> {{ dog_profile.resided_since }}</p>
+                    <p><strong class="pe-4">Working Title:</strong>{% for job in dog_profile.job.all %} <br>{{ job }} {% endfor %}</p>
+                    <hr>
+                    <p class="card-text lh-lg">{{ dog_profile.story }}</p>
                 </div>
             </div>
         </div>
-        <div class="col-8">
+        <div class="col-7">
             
         </div>
     </div>  

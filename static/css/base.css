@@ -194,3 +194,13 @@ ul.messages > li:hover {
 .alert--info {
     background-color: var(--active-color);
 }
+
+/* dogs */
+
+i.fas.fa-dog {
+    font-size: 3rem;
+    right: 2rem;
+    bottom: 2rem;
+    position: absolute;
+    color: var(--logo-color);
+}
