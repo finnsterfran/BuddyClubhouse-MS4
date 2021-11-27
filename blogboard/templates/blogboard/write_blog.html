@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/users.css' %}">
+{% endblock extra_css %}
+
+{% block extra_title %}
+    Write a Blog
+{% endblock extra_title%}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="text-center">Write a Blog Entry</h1>
+        </div>
+    </div>
+</div>
+{% endblock page_header %}
+
+{% block content %}
+<div class="container">
+    <div class="row row-box">
+        <div class="col-sm-12 col-md-8 offset-md-2">
+            <h2 class="text-center">Start Writing...</h2>
+            <form action="{% url 'write_blog' %}" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="username" class="form-label">Author: </label>
+                    <input type="text" id="username" name="{{ request.user }}" value="{{ request.user }}" disabled>
+                </div>
+                {% for field in form %}
+                <div class="mb-3">
+                    <label for="form-input" class="form-label">{{ field.label }}</label>
+                    <br>
+                    {{ field }}
+                </div>
+                {% endfor %}
+                <input type="submit" class="btn button" value="Submit">
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock content %}

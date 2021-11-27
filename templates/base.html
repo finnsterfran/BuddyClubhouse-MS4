@@ -94,7 +94,7 @@
                                   {% if request.user.is_authenticated %}   
                                   <li><a class="dropdown-item" href="{% url 'blogs' %}">the blogboard</a></li>
                                   <li><hr class="dropdown-divider"></li>
-                                  <li><a class="dropdown-item" href="#">write a blog</a></li>
+                                  <li><a class="dropdown-item" href="{% url 'write_blog' %}">write a blog</a></li>
                                   {% endif %}
                                 </ul>
                             </li>
