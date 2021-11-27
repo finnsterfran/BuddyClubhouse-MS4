@@ -28,7 +28,6 @@
             <h2 class="text-center pb-lg-5">Register A New User Account</h2>
             <form action="{% url 'register' %}" method="POST">
                 {% csrf_token %}
-
                 {% for field in form %}
                 <div class="mb-3">
                     <label for="form-input" class="form-label">{{ field.label }}</label>

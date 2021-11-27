@@ -32,8 +32,7 @@ def userLogin(request):
         if user is not None:
             login(request, user)
             messages.success(request, f'Welcome back {user}!')
-            return redirect(request,GET['next'] if 'next' in request.GET else 'account')
-
+            return redirect('account')
         else:
             messages.error(request,
                            'Uhm... username or/and password is incorrect!')
