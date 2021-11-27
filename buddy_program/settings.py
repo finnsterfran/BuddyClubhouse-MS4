@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'home.apps.HomeConfig',
     'users.apps.UsersConfig',
     'dogs.apps.DogsConfig',
+    'blogboard.apps.BlogboardConfig',
     'crispy_forms',
 ]
 

@@ -92,7 +92,7 @@
                                   <li><a class="dropdown-item" href="#">activities</a></li>
                                   <li><hr class="dropdown-divider"></li>
                                   {% if request.user.is_authenticated %}   
-                                  <li><a class="dropdown-item" href="#">blogs</a></li>
+                                  <li><a class="dropdown-item" href="{% url 'blogs' %}">the blogboard</a></li>
                                   <li><hr class="dropdown-divider"></li>
                                   <li><a class="dropdown-item" href="#">write a blog</a></li>
                                   {% endif %}
