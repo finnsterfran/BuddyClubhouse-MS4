@@ -21,9 +21,9 @@
 
 {% block content %}
 <div class="container">
-    <div class="row py-sm-1 py-md-3">
-        <div class="col-sm-12 col-md-6 col-lg-3 g-3 d-flex">
-            <div class="card flex-fill">
+    <div class="row row-box py-md-3">
+        <div class="col-sm-12 col-md-4 col-lg-4">
+            <div class="card">
                 <a href="{% url 'edit_account' %}" class="btn button">
                     <i class="fas fa-user-edit"></i> Edit
                 </a>
@@ -39,37 +39,33 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-6 col-lg-9 g-3 d-flex">
-            <div class="card flex-fill">
-                <div class="account-header card-header">
+        <div class="col-sm-12 col-md-8 col-lg-8 d-flex">
+            <div class="card mb-3 flex-fill">
+                <div class="account-header card-header text-center">
                     <h2 class="card-title text-center py-lg-2 ">Blogs by <strong>{{ profile.user.username }}</strong></h2>
-                    <a href="{% url 'write_blog' %}" class="btn button-two">
-                        <i class="fas fa-feather-alt"></i> write a blog</a>
+                    <a href="{% url 'write_blog' %}" class="text-center btn button-two">
+                    <i class="fas fa-feather-alt"></i> write a blog</a>
                 </div>
-                    <table class="account-table">
-                    {% for blog in profile.blog_set.all %}
-                    <tr>
-                        <td class="account-thumbnail">
-                            <a href="{%  url 'blog_post' blog.id %}"><img src="{{ blog.featured_image.url }}" alt="Blog Image Thumbnail"></a>
-                        </td>
-                        <td class="account-table-info">
-                            <a href="{%  url 'blog_post' blog.id %}">{{ blog.title }}</a>
-                            <p>{{ blog.blog_entry|slice:"130"}}</p>
-                        </td>
-                        <td class="account-table-action"> 
-                            <a class="btn button-two" href="{% url 'edit_blog' blog.id %}">
-                                <i class="fas fa-edit"></i>Edit
-                            </a>
-                            <a class="btn button-two" href="{% url 'delete_blog' blog.id %}">
-                                <i class="far fa-trash-alt"></i>Delete
-                            </a>
-                        </td> 
-                    </tr>
-                    {% endfor %}
-                </table>
+                <br>
+                {% for blog in profile.blog_set.all %}
+                <div class="col-12 shadow-lg bg-body px-2 rounded-5">
+                    <div class="card-body">
+                        <h5 class="card-title"><a href="{%  url 'blog_post' blog.id %}">{{ blog.title }}</a></h5>
+                        <h6 class='text-light text-muted'>written on {{ blog.date_of_entry }} about {{ blog.name_of_buddy}} </h6>
+                        <p class="card-text">{{ blog.blog_entry|slice:"200"}}...</p>
+                        <a class="btn button-two" href="{% url 'edit_blog' blog.id %}">
+                            Edit
+                        </a>
+                        <a class="btn button-two" href="{% url 'delete_blog' blog.id %}">
+                            Delete
+                        </a>
+                    </div>
                 </div>
+                <br>
+                {% endfor %} 
             </div>
         </div>
     </div>
 </div>
 {% endblock content %}
+

@@ -20,6 +20,7 @@ def blog_post(request, pk):
     """
     View to see individual blogpost entry on the blogboard
     """
+    
     blogObj = Blog.objects.get(id=pk)
     context = {
         'blog_post': blogObj,

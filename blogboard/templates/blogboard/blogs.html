@@ -1,6 +1,5 @@
 {% extends 'base.html' %}
 {% load static %}
-
 {% block extra_css%}
   
 {% endblock extra_css %}
@@ -25,7 +24,7 @@
         {% for blog in all_blogs %}
         <div class="col-sm-6 col-md-6 col-lg-4 g-3 d-flex">
             <div class="card flex-fill">
-                <img src="{{ blog.featured_image.url }}" alt="" class="card-img-top img-fluid">
+                <img src="{{ blog.featured_image.url }}" alt="" class="blog-img card-img-top img-fluid">
                 <div class="card-body">
                     {{blog.title}}
                     <div class="card-link"><a href="{% url 'blog_post' blog.id %}"><i class="fas fa-blog"></i></a></div>

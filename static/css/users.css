@@ -68,28 +68,12 @@ a:hover {
 }
 
 /* setting for account */
-
-.account-header {
-    text-align: center;
-}
-
-.account-table {
-   margin-top: 3rem;
-   margin-bottom: 5rem;
-   padding: 0 3rem;
-   background: var(--navbar-color);
-}
-
-.account-thumbnail {
-    width: 20%;
-    min-width: 8rem;
-}
-
-.account-thumbnail img {
-    padding-right: 3rem;
-    height: 13rem;
-    object-fit: contain;
-}
+.blog-img {
+    height: 500px;
+    width: 500px;
+    border: 5px solid black;
+    border-radius: 5px;
+} 
 
 /* media queries */
 
@@ -102,13 +86,17 @@ a:hover {
     }
 }
      
+/* // Medium devices (tablets, 768px and up) */
+
+@media (min-width: 768px) {
+
+}
 /* // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) { ... }
 
 
 
-// Medium devices (tablets, 768px and up)
-@media (min-width: 768px) { ... }
+
 
 
 
