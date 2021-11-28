@@ -5,6 +5,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.contrib.auth.models import User
 from .models import Profile
+from blogboard.models import Blog
 from .forms import CustomUserCreationForm, ProfileForm
 
 
@@ -108,9 +109,11 @@ def userAccount(request):
     User's ACCOUNT view
     """
     profile = request.user.profile
+    theBlogs = profile.blog_set.all()
 
     context = {
-        'profile': profile
+        'profile': profile,
+        'blogs': theBlogs,
     }
     return render(request, 'users/account.html', context)
 

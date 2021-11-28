@@ -22,7 +22,17 @@
 {% block content %}
 <div class="container">
     <div class="row row-box">
-       
+        {% for blog in all_blogs %}
+        <div class="col-sm-6 col-md-6 col-lg-4 g-3 d-flex">
+            <div class="card flex-fill">
+                <img src="{{ blog.featured_image.url }}" alt="" class="card-img-top img-fluid">
+                <div class="card-body">
+                    {{blog.title}}
+                    <div class="card-link"><a href="{% url 'blog_post' blog.id %}"><i class="fas fa-blog"></i></a></div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
     </div>  
 </div>
 {% endblock content %}

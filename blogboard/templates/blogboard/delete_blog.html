@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/users.css' %}">
+{% endblock extra_css %}
+
+{% block extra_title %}
+    Delete a Blog
+{% endblock extra_title%}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="text-center">Delete a Blog Entry</h1>
+        </div>
+    </div>
+</div>
+{% endblock page_header %}
+
+{% block content %}
+<div class="container">
+    <div class="row row-box">
+        <div class="col-sm-12 col-md-8 offset-md-2">
+            <h2 class="text-center">About to delete a blog post...</h2>
+            <form action="{% url 'delete_blog' %}" method="POST">
+                {% csrf_token %}
+                <p>Are you sure you want to delete "{{ object }}"?</p>
+                <a class="btn button" href="{{ request.GET.next }}">Go Back</a>
+                <input type="submit" class="btn button" value="Confirm">
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock content %}

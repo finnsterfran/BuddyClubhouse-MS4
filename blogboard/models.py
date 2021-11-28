@@ -1,7 +1,7 @@
+import uuid
 from django.db import models
 from users.models import Profile
-from dogs.models import Dog 
-import uuid
+from dogs.models import Dog
 
 
 class Blog(models.Model):
@@ -13,9 +13,9 @@ class Blog(models.Model):
     date_of_entry = models.DateTimeField(auto_now_add=True)
     featured_image = models.ImageField(upload_to='blogs/',
                                        null=True, blank=True)
-    blog_entry = models.TextField(max_length=3000, null=True, blank=True)
+    blog_entry = models.TextField(max_length=3000)
     id = models.UUIDField(default=uuid.uuid4, unique=True,
                           primary_key=True, editable=False)
-    
+
     def __str__(self):
         return str(self.title)

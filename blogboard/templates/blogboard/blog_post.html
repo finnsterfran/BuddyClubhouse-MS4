@@ -13,7 +13,7 @@
 <div class="container header-container">
     <div class="row">
         <div class="col-12">
-            <h1 class="text-center">A Blog By: </h1>
+            <h1 class="text-center">Blog Post</h1>
         </div>
     </div>
 </div>
@@ -22,7 +22,17 @@
 {% block content %}
 <div class="container">
     <div class="row row-box">
-       
+        <div class="col-sm-12 col-xl-5 py-4 me-auto">
+            <div class="card">
+                <img src="{{ blog_post.featured_image.url }}" alt="{{ blog_post.title }}" class="card-img-top img-fluid">
+                <div class="card-body">
+                    <p><strong class="pe-4">Title:</strong> {{ blog_post.title }}</p>
+                    <p><strong class="pe-4">Author: </strong>{{ blog_post.user.username }} years old</p>  
+                    <p><strong class="pe-4">Date:</strong> {{ blog_post.date_of_entry }}</p>
+                    <p><strong class="pe-4">Blog:</strong> {{ blog_post.blog_entry }}</p>
+                </div>
+            </div>
+        </div>
     </div>  
 </div>
 {% endblock content %}

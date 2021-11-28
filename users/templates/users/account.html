@@ -29,13 +29,44 @@
                 </a>
                 <img src="{{ profile.profile_image.url }}"}} class="card-img-top img-fluid w-100 h-50" alt="{{ profile.user.username }}">
                 <div class="card-body">
-                    <h5 class="card-title fw-bold text-center">{{ profile.user.username }}</h5>
+                    <h2 class="card-title fw-bold text-center">{{ profile.user.username }}</h2>
                     <p class="card-text text-center">{{ profile.first_name|title}} {{ profile.last_name }}</p>
                     <hr>
-                    <h6>somethingsomethingsomething</h6>
+                    <h3>somethingsomethingsomething</h3>
                     <div class="card-link"><a href="{% url 'profile' profile.id %}">
                         <i class="fas fa-user-tag"></i>
                     </a></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-9 g-3 d-flex">
+            <div class="card flex-fill">
+                <div class="account-header card-header">
+                    <h2 class="card-title text-center py-lg-2 ">Blogs by <strong>{{ profile.user.username }}</strong></h2>
+                    <a href="{% url 'write_blog' %}" class="btn button-two">
+                        <i class="fas fa-feather-alt"></i> write a blog</a>
+                </div>
+                    <table class="account-table">
+                    {% for blog in profile.blog_set.all %}
+                    <tr>
+                        <td class="account-thumbnail">
+                            <a href="{%  url 'blog_post' blog.id %}"><img src="{{ blog.featured_image.url }}" alt="Blog Image Thumbnail"></a>
+                        </td>
+                        <td class="account-table-info">
+                            <a href="{%  url 'blog_post' blog.id %}">{{ blog.title }}</a>
+                            <p>{{ blog.blog_entry|slice:"130"}}</p>
+                        </td>
+                        <td class="account-table-action"> 
+                            <a class="btn button-two" href="{% url 'edit_blog' blog.id %}">
+                                <i class="fas fa-edit"></i>Edit
+                            </a>
+                            <a class="btn button-two" href="{% url 'delete_blog' blog.id %}">
+                                <i class="far fa-trash-alt"></i>Delete
+                            </a>
+                        </td> 
+                    </tr>
+                    {% endfor %}
+                </table>
                 </div>
             </div>
         </div>

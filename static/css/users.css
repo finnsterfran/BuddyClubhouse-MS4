@@ -67,7 +67,41 @@ a:hover {
     color: var(--navhover-color);
 }
 
+/* setting for account */
+
+.account-header {
+    text-align: center;
+}
+
+.account-table {
+   margin-top: 3rem;
+   margin-bottom: 5rem;
+   padding: 0 3rem;
+   background: var(--navbar-color);
+}
+
+.account-thumbnail {
+    width: 20%;
+    min-width: 8rem;
+}
+
+.account-thumbnail img {
+    padding-right: 3rem;
+    height: 13rem;
+    object-fit: contain;
+}
+
 /* media queries */
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .account-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+     
 /* // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) { ... }
 
@@ -76,8 +110,7 @@ a:hover {
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) { ... }
 
-// Large devices (desktops, 992px and up)
-@media (min-width: 992px) { ... }
+
 
 // X-Large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) { ... }
