@@ -24,8 +24,10 @@
     <div class="row row-box">
         <div class="container py-md-5">
             <div class="clearfix">
+                {% if blog_post.featured_image %}
                 <img src="{{ blog_post.featured_image.url }}" alt="{{ blog_post.title }}"
                  class="img-fluid col-md-6 float-md-end mb-3 ms-md-3">
+                 {% endif %}
                  <p><strong class="pe-4">Title:</strong><br> {{ blog_post.title }}</p>
                  <p><strong class="pe-4">Author: </strong><br>{{ blog_post.username }}</p>  
                  <p><strong class="pe-4">Date:</strong><br> {{ blog_post.date_of_entry }}</p>
