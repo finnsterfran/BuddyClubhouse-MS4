@@ -25,4 +25,5 @@ urlpatterns = [
     path('users/', include('users.urls')),
     path('dogs/', include('dogs.urls')),
     path('blogboard/', include('blogboard.urls')),
+    path('events/,' include('events.urls')),
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
