@@ -12,7 +12,6 @@ def dogs(request):
         search_query = request.GET.get('search_query')
         print('SEARCH:', search_query)
 
-    
     dogs = Dog.objects.filter(name__icontains=search_query)
 
     context = {

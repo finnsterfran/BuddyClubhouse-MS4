@@ -28,13 +28,13 @@
                 <img src="{{ dog.image.url }}" alt="" class="card-img-top img-fluid">
                 <div class="card-body">
                     <h5 class="card-title fw-bold">{{ dog.name }}</h5>
-                    <p class="card-text">{{ dog.breed}} | {{ dog.age }} years old | {{ dog.gender }}
+                    <p class="card-text">{{ dog.breed}} | <strong>{{ dog.age }}</strong> years old | {{ dog.gender }}
                         <br>Since: {{ dog.resided_since }}
                     </p>
                     <hr>
                     <h6 class="fw-bold">Working Title: </h6>
                     {% for job in dog.job.all %}
-                        <p>{{ job}}</p>
+                        <p>{{ job }}</p>
                     {% endfor %}
                     <div class="card-link"><a href="{% url 'dog_profile' dog.id %}"><i class="fas fa-dog"></i></a></div>
                 </div>
