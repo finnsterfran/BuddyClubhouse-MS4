@@ -24,10 +24,10 @@
     <div class="row row-box">
         <div class="col-sm-12 col-md-8 offset-md-2">
             <h2 class="text-center">About to delete a blog post...</h2>
-            <form action="{% url 'delete_blog' %}" method="POST">
+            <form action="{% url 'delete_blog' blogpost.id %}" method="POST">
                 {% csrf_token %}
                 <p>Are you sure you want to delete "{{ object }}"?</p>
-                <a class="btn button" href="{{ request.GET.next }}">Go Back</a>
+                <a class="btn button" href="{% url 'blogs' %}">Go Back</a>
                 <input type="submit" class="btn button" value="Confirm">
             </form>
         </div>

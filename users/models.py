@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-# Create your models here.
+
 
 class Profile(models.Model):
     """
@@ -13,7 +13,8 @@ class Profile(models.Model):
     email = models.EmailField(max_length=200)
     address = models.CharField(max_length=300)
     postal_code = models.CharField(max_length=20)
-    profile_image = models.ImageField(upload_to='profiles/', default='profiles/user-default.png')
+    profile_image = models.ImageField(upload_to='profiles/',
+                                      default='profiles/user-default.png')
     created = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

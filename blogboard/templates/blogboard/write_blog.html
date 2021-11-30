@@ -26,10 +26,7 @@
             <h2 class="text-center">Start Writing...</h2>
             <form action="{% url 'write_blog' %}" method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
-                <div class="mb-3">
-                    <label for="username" class="form-label">Author: </label>
-                    <input type="text" id="username" name="{{ request.user }}" value="{{ request.user }}" disabled>
-                </div>
+                
                 {% for field in form %}
                 <div class="mb-3">
                     <label for="form-input" class="form-label">{{ field.label }}</label>

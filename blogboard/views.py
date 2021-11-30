@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .models import Blog
@@ -16,7 +16,7 @@ def blogs(request):
     return render(request, 'blogboard/blogs.html', context)
 
 
-def blog_post(request, pk):
+def blog_entry(request, pk):
     """
     View to see individual blogpost entry on the blogboard
     """
@@ -25,10 +25,10 @@ def blog_post(request, pk):
     context = {
         'blogpost': blogpost,
     }
-    return render(request, 'blogboard/blog_post.html', context)
+    return render(request, 'blogboard/blog_entry.html', context)
 
 
-@login_required(login_url='login')
+@login_required()
 def write_blog(request):
     """
     View to create and submit a new blog post entry
@@ -39,9 +39,9 @@ def write_blog(request):
     if request.method == 'POST':
         form = BlogForm(request.POST, request.FILES)
         if form.is_valid():
-            blog = form.save(commit=False)
-            blog.username = profile
-            blog.save()
+            blogpost = form.save(commit=False)
+            blogpost.username = profile
+            blogpost.save()
 
             messages.success(request, 'You have submitted a new blog entry!')
             return redirect('blogs')
@@ -52,39 +52,34 @@ def write_blog(request):
     return render(request, 'blogboard/write_blog.html', context)
 
 
-@login_required(login_url='login')
+@login_required
 def edit_blog(request, pk):
-    """
-    View for user to edit their own existing blog post
-    """
     profile = request.user.profile
-    blog = profile.blog_set.get(id=pk)
-    form = BlogForm(instance=blog)
+    blogpost = profile.blog_set.get(id=pk)
+    form = BlogForm(instance=blogpost)
 
     if request.method == 'POST':
-        form = BlogForm(request.POST, request.FILES, instance=blog)
+        form = BlogForm(request.POST, request.FILES, instance=blogpost)
         if form.is_valid():
-            form.save()
+            blogpost = form.save()
+            messages.success(request, 'Blog updated')
             return redirect('blogs')
-
     context = {
-        'blog': blog,
         'form': form,
+        'blogpost': blogpost,
     }
     return render(request, 'blogboard/write_blog.html', context)
 
 
-@login_required(login_url='login')
+@login_required
 def delete_blog(request, pk):
-    """
-    View to delete user's existing blog post
-    """
     profile = request.user.profile
-    blog = profile.blog_set.get(id=pk)
+    blogpost = profile.blog_set.get(id=pk)
     if request.method == 'POST':
-        blog.delete()
+        blogpost.delete()
+        messages.success(request, 'Blog post deleted')
         return redirect('blogs')
     context = {
-        'object': blog
+        'blogpost': blogpost
     }
     return render(request, 'blogboard/delete_blog.html', context)

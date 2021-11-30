@@ -29,7 +29,8 @@
                 {% endif %}
                 <div class="card-body">
                     {{blog.title}}
-                    <div class="card-link"><a href="{% url 'blog_post' blog.id %}"><i class="fas fa-blog"></i></a></div>
+                    <div class="card-link"><a href="{% url 'blog_entry' blog.id %}"><i class="fas fa-blog"></i></a></div>
+                    {{ blog.id }}
                 </div>
             </div>
         </div>
