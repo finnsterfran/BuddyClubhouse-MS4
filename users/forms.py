@@ -5,6 +5,8 @@ from .models import Profile
 
 
 class CustomUserCreationForm(UserCreationForm):
+    """ Form to create a new user """
+
     class Meta:
         model = User
         fields = ['first_name', 'last_name',
@@ -21,10 +23,12 @@ class CustomUserCreationForm(UserCreationForm):
 
 
 class ProfileForm(ModelForm):
+    """ form to create profile or update profile """
+
     class Meta:
         model = Profile
         fields = ['first_name', 'last_name', 'email',
-                  'address', 'postal_code', 'contact_number',
+                  'address', 'postal_code',
                   'profile_image']
 
     def __init__(self, *args, **kwargs):

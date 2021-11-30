@@ -1,4 +1,3 @@
-import uuid
 from django.db import models
 
 
@@ -17,11 +16,10 @@ class Dog(models.Model):
     job = models.ManyToManyField('Job', blank=True)
     image = models.ImageField(upload_to='dogs/', null=True, blank=True)
     story = models.TextField(max_length=2000, blank=True)
-    id = models.UUIDField(default=uuid.uuid4, unique=True,
-                          primary_key=True, editable=False)
+
 
     def __str__(self):
-        return str(self.name)
+        return self.name
     
     class Meta: 
         ordering = ['resided_since']
@@ -38,8 +36,6 @@ class Dog(models.Model):
 class Breed(models.Model):
 
     breed_name = models.CharField(max_length=20)
-    id = models.UUIDField(default=uuid.uuid4, unique=True,
-                          primary_key=True, editable=False)
 
     def __str__(self):
         return str(self.breed_name)
@@ -48,8 +44,6 @@ class Breed(models.Model):
 class Job(models.Model):
 
     title = models.CharField(max_length=200)
-    id = models.UUIDField(default=uuid.uuid4, unique=True,
-                          primary_key=True, editable=False)
-
+    
     def __str__(self):
         return str(self.title)

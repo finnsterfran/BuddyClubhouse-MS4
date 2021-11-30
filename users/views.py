@@ -19,7 +19,7 @@ def userLogin(request):
         return redirect('account')
 
     if request.method == 'POST':
-        username = request.POST['username'].lower()
+        username = request.POST['username']
         password = request.POST['password']
 
         try:

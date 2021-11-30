@@ -6,7 +6,7 @@ class BlogForm(ModelForm):
         model = Blog
         fields = [
             'title',
-            'name_of_buddy',
+            'buddy_name',
             'featured_image',
             'blog_entry',
         ]

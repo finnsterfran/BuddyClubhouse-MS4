@@ -21,9 +21,9 @@ def blog_post(request, pk):
     View to see individual blogpost entry on the blogboard
     """
     
-    blogObj = Blog.objects.get(id=pk)
+    blogpost = Blog.objects.get(id=pk)
     context = {
-        'blog_post': blogObj,
+        'blogpost': blogpost,
     }
     return render(request, 'blogboard/blog_post.html', context)
 
@@ -64,11 +64,11 @@ def edit_blog(request, pk):
     if request.method == 'POST':
         form = BlogForm(request.POST, request.FILES, instance=blog)
         if form.is_valid():
-            blog = form.save()
+            form.save()
             return redirect('blogs')
 
     context = {
-        'blog': 'blog',
+        'blog': blog,
         'form': form,
     }
     return render(request, 'blogboard/write_blog.html', context)
