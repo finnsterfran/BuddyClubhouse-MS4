@@ -68,7 +68,7 @@ def edit_blog(request, pk):
         'form': form,
         'blogpost': blogpost,
     }
-    return render(request, 'blogboard/write_blog.html', context)
+    return render(request, 'blogboard/edit_blog.html', context)
 
 
 @login_required
