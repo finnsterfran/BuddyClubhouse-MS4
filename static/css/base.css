@@ -206,6 +206,27 @@ i.fas.fa-dog {
 }
 
 /* contribution & cart */
+a i.cart-icon {
+    font-size: 3rem;
+    padding-right: 0.5rem;
+}
+
 a.cart-link {
     font-size: 2rem;
+    color: var(--logo-color);
+    text-decoration: none;
 } 
+
+.update-form {
+    padding-top: 0;
+}
+
+.update-link,
+.remove-item {
+    cursor: pointer;
+}
+
+input.btn.button {
+    margin: 1rem 0;
+    width: 100%;
+}

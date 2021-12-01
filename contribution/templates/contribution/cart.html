@@ -62,7 +62,8 @@
                                         <form class="update-form" action="{% url 'adjust_cart' item.item_id %}" method="POST">
                                             {% csrf_token %}
                                             <div>
-                                                <input type="number" name="quantity" value="{{ item.quantity }}" min="1" max="99" 
+                                                <label hidden for="quantity-input">Quantity</label>
+                                                <input type="number" name="quantity" value="{{ item.quantity }}" min="1" max="99" id="quantity-input"
                                                 data-item_id="{{ item.item_id }}" class="id_qty_{{ item.item_id }} form-control form-control-sm qty-input">            
                                             </div>
                                         </form>
@@ -86,7 +87,7 @@
                                         </span>
                                         <span class="text-uppercase">Keep Shopping</span>
                                     </a>
-                                    <a href="{% url 'checkout' %}" class="btn button-two">
+                                    <a href="#" class="btn button-two">
                                         <span class="text-uppercase">Secure Checkout</span>
                                         <span class="icon">
                                             <i class="fa fa-lock"></i>

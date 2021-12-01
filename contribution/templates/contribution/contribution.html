@@ -33,9 +33,9 @@
                       {% csrf_token %}
                       <div class="form-row">
                             <div class="col-6">
-                                <p class="mt-3"><strong>Quantity:</strong></p>
                                 <div class="w-50">
-                                    <input type="number" name="quantity" value="1" min="1" max="99" 
+                                    <label for="quantity-input">Quantity</label>
+                                    <input type="number" name="quantity" value="1" min="1" max="99" id="quantity-input"
                                     data-item_id="{{ product.id }}" class="id_qty_{{ product.id }} form-control qty-input">   
                                 </div>
                             </div>
