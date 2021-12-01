@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css%}
+  
+{% endblock extra_css %}
+
+{% block extra_title %}
+    The Buddies
+{% endblock extra_title%}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="text-center">Make A Contribution</h1>
+        </div>
+    </div>
+</div>
+{% endblock page_header %}
+
+{% block content %}
+<div class="container">
+    <div class="row row-box">
+        <a href="#" class="cart-link"><i class="cart-icon fas fa-shopping-cart"></i>View Cart</a>
+        {% for product in products %}
+        <div class="col-sm-6 col-md-6 col-lg-4 g-3 d-flex">
+            <div class="card flex-fill">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold"><i class="fas fa-hand-holding-heart"></i>{{ product.name }}</h5>
+                    <hr>
+                    <p class="card-text">{{ product.description }}</p>
+                    <br>
+                    <h5 class=fw-bold>€{{ product.price }}</h5>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>  
+</div>
+{% endblock content %}
