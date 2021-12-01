@@ -204,3 +204,8 @@ i.fas.fa-dog {
     position: absolute;
     color: var(--logo-color);
 }
+
+/* contribution & cart */
+a.cart-link {
+    font-size: 2rem;
+} 

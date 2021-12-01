@@ -1,12 +1,14 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404, reverse
 from django.conf import settings
 from django.contrib import messages
 from .models import Donation
 
 
 def contribution(request):
-    """ A view to show donation plans available """
+    """a view to show donation plans for purchasing"""
+
     products = Donation.objects.all().order_by('price')
+
     context = {
         'products': products
     }
@@ -14,12 +16,12 @@ def contribution(request):
 
 
 def cart(request):
-    """ A view to show shopping cart """
+    """ a view to show cart"""
     return render(request, 'contribution/cart.html')
 
 
 def add_to_cart(request, item_id):
-    """ Add quantity of selection to the cart """
+    """ Add quantity of selection to the cart"""
     product = get_object_or_404(Donation, pk=item_id)
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
@@ -29,6 +31,26 @@ def add_to_cart(request, item_id):
         cart[item_id] += quantity
     else:
         cart[item_id] = quantity
-    
+
     request.session['cart'] = cart
     return redirect(redirect_url)
+
+
+def adjust_cart(request, item_id):
+    """Add or Remove items from the cart"""
+
+    product = get_object_or_404(Donation, pk=item_id)
+    quantity = int(request.POST.get('quantity'))
+    cart = request.session.get('cart', {})
+
+    if quantity > 0:
+        cart[item_id] = quantity
+        messages.success(request,
+                         (f'Updated {product.name} quantity to {cart[item_id]}'))
+
+    else:
+        cart.pop(item_id)
+        messages.success(request, (f'Removed {product.name} from your cart'))
+
+    request.session['cart'] = cart
+    return redirect(reverse('cart'))

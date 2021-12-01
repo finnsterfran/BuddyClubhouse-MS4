@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load cart_tool %}
 
 {% block extra_title %}
     Cart
@@ -17,82 +18,97 @@
 {% endblock page_header %}
 
 {% block content %}
-<div class="container mb-2">
-    <div class="row row-box">
-        <div class="col">
-            <hr><h2 class="logo-font text-center mb-4">Itemization: </h2><hr>
-        </div>
-    </div>
-    <div class="row row-box">
-        <div class="col-sm-12 col-md-10 offset-md-1">
-            {% if cart_items %}
-            <div class="table-responsive rounded">
-                <table class="table table-sm table-borderless">
-                    <thead class="fw-bold">
-                        <tr>
-                            <th scope="col">Product</th>
-                            <th class="d-none d-md-block d-sm-none" scope="col"><i class="fas fa-info"></i></th>
-                            <th class="text-center" scope="col"><i class="fas euro-sign"></i></th>
-                            <th class="text-center" scope="col">Qty</th>
-                            <th class="text-center" scope="col">Subtotal</th>
-                        </tr>
-                    </thead>
-                    {% for item in cart_items %}
-                    <tr>
-                        <td class="py-3">
-                            <p class="my-0">{{ item.product.name }}</p>
-                        </td>
-                        <td class="py-3 d-none d-md-block d-sm-none">
-                            <p class="my-0">{{ item.product.short_info }}</p>
-                        </td>
-                        <td class="py-3 text-center">
-                            <p class="my-0">{{ item.product.price }}</p>
-                        </td>
-                        <td class="py-3 fw-bold">
-                            <form method="POST" action="{% url 'adjust_cart' item.item_id %}" class="update-form">
-                                {% csrf_token %}
-                                <div>
-                                    <input type="number" name="quantity" value="{{ item.quantity }}" min="1" max="99"
-                                    data-item_id="{{ item.item_id }}" class="id_qty_{{ item.item_id }} form-control form-control-sm qty-input">
-                                </div>
-                            </form>
-                            <a class="update-link float-end text-alert"><small><i class="fas fa-sync-alt"></i></small></a>
-                        </td>
-                        <td class="py-3 text-center">
-                            <p class="my-0">{{ item.product.price| cal_subtotal:item.quantity }}</p>
-                        </td>
-                    </tr>
-                    {% endfor %}
-                    <tr>
-                        <td colspan="5">
-                            <a href="{% url 'contribute' %}" class="btn button gap-2">
-                                <span class="icon">
-                                    <i class="fas fa-chevron-left"></i>
-                                </span>
-                                <span class="text-uppercase">keep shopping</span>
-                            </a>
-                            <a href="{% url 'checkout' %}" class="button-two btn">
-                                <span class="text-uppercase">secure checkout</span>
-                                <span class="icon">
-                                    <i class="fa fa-lock"></i>
-                                </span>
-                            </a>
-                        </td>
-                    </tr>
-                </table>
+    <div class="container mb-2">
+        <div class="row row-box">
+            <div class="col">
+                <hr>
+                <h2 class="logo-font text-center mb-4">Itemization: </h2>
+                <hr>
             </div>
-            {% else %}
-                <p class="lead mb-5">Your cart is empty</p>
-                <a href="{% url 'contribute' %}" class="button btn">
-                    <span>
-                        <i class="fas fa-chevron-left"></i>
-                    </span>
-                    <span class="text-uppercase">keep shopping</span>
-                </a>
-            {% endif %}
+        </div>
+        <div class="row row-box">
+            <div class="col-sm-12 col-md-10 offset-md-1">
+                {% if cart_items %}
+                    <div class="table-responsive rounded">
+                        <table class="table table-sm table-borderless">
+                            <thead class="fw-bold">
+                                <tr>
+                                    <th scope="col">Product</th>
+                                    <th class="d-none d-md-block d-sm-none" scope="col"><i class="fas fa-info"></i></th>
+                                  
+                                    <th class="text-center" scope="col"><i class="fas fa-euro-sign"></i></th>
+                                    
+                                    <th class="text-center" scope="col">Qty</th>
+
+                                    <th class="text-center" scope="col">Subtotal</th>
+                                </tr>
+                            </thead>
+
+                            {% for item in cart_items %}
+                                <tr>
+                                    <td class="py-3">
+                                        <p class="my-0">{{ item.product.name }}</p>
+                                    </td> 
+                                   
+                                    <td class="py-3 d-none d-md-block d-sm-none">
+                                        <p class="my-0">{{ item.product.short_info }}</p> 
+                                    </td> 
+                                     
+                                    <td class="py-3 text-center">
+                                        <p class="my-0">€{{ item.product.price }}</p>
+                                    </td> 
+                                    
+                                    <td class="py-3 fw-bold">
+                                        <form class="update-form" action="{% url 'adjust_cart' item.item_id %}" method="POST">
+                                            {% csrf_token %}
+                                            <div>
+                                                <input type="number" name="quantity" value="{{ item.quantity }}" min="1" max="99" 
+                                                data-item_id="{{ item.item_id }}" class="id_qty_{{ item.item_id }} form-control form-control-sm qty-input">            
+                                            </div>
+                                        </form>
+                                        <a class="update-link float-end text-alert"><small><i class="fas fa-sync-alt"></i></small></a>
+                                    </td> 
+                                    <td class="py-3 text-center">
+                                        <p class="my-0">€{{ item.product.price| calc_subtotal:item.quantity }}</p>
+                                    </td> 
+                                </tr>
+                            {% endfor %}
+                            <tr>
+                                <td colspan="5" class="pt-5">
+                                    <h4 class="mt-4"><strong>Grand Total: €{{grand_total|floatformat:2}}</strong></h4>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="5">
+                                    <a href="{% url 'contribution' %}" class="btn button gap-2">
+                                        <span class="icon">
+                                            <i class="fas fa-chevron-left"></i>
+                                        </span>
+                                        <span class="text-uppercase">Keep Shopping</span>
+                                    </a>
+                                    <a href="{% url 'checkout' %}" class="btn button-two">
+                                        <span class="text-uppercase">Secure Checkout</span>
+                                        <span class="icon">
+                                            <i class="fa fa-lock"></i>
+                                        </span>
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                {% else%}
+                    <p class="lead mb-5">Your Cart is empty</p>
+                    <a href="{% url 'contribution' %}" class="button btn">
+                        <span>
+                            <i class="fas fa-chevron-left"></i>
+                        </span>
+                        <span class="text-uppercase">Keep Shopping</span>
+                    </a>
+                {% endif %}
+                
+            </div>
         </div>
     </div>
-</div>
 {% endblock content %}
 
 {% block postloadjs %}
@@ -102,4 +118,4 @@
         form.submit();
     })
 </script>
-{% endblock postloadjs %}
+{% endblock postloadjs%}
