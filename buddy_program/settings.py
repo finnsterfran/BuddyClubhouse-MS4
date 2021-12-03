@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'blogboard.apps.BlogboardConfig',
     'events.apps.EventsConfig',
     'contribution.apps.ContributionConfig',
+    'checkout.apps.CheckoutConfig',
     'crispy_forms',
 ]
 

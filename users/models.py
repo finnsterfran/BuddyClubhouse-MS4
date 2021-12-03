@@ -11,7 +11,8 @@ class Profile(models.Model):
     last_name = models.CharField(max_length=200)
     username = models.CharField(max_length=200, blank=True, null=True)
     email = models.EmailField(max_length=200)
-    address = models.CharField(max_length=300)
+    address_line_1 = models.CharField(max_length=300)
+    address_line_2 = models.CharField(max_length=300, null=True, blank=True)
     postal_code = models.CharField(max_length=20)
     profile_image = models.ImageField(upload_to='profiles/',
                                       default='profiles/user-default.png')

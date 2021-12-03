@@ -28,7 +28,7 @@ class ProfileForm(ModelForm):
     class Meta:
         model = Profile
         fields = ['first_name', 'last_name', 'email',
-                  'address', 'postal_code',
+                  'address_line_1', 'address_line_2', 'postal_code',
                   'profile_image']
 
     def __init__(self, *args, **kwargs):
