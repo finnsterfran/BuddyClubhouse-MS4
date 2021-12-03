@@ -1,0 +1,93 @@
+Checkout
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+{% endblock extra_css %}
+
+{% block extra_title %}
+    Checkout
+{% endblock extra_title%}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="text-center">Checkout</h1>
+        </div>
+    </div>
+</div>
+{% endblock page_header %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-md-10 col-lg-8 offset-lg-2">
+            <p class="text-center text-muted">Please fill out the form below to complete your order</p>
+            <hr>
+            <form action="{% url 'checkout' %}" method="POST" id="payment-form">
+                {% csrf_token %}
+                <fieldset class="px-3 rounded">
+                    <legend class="fieldset-label w-auto px-1">Details</legend>
+                    {{ order_form.first_name | as_crispy_field }}
+                    {{ order_form.last_name | as_crispy_field }}
+                    {{ order_form.email | as_crispy_field }}
+                    {{ order_form.address_line_1 | as_crispy_field }}
+                    {{ order_form.address_line_2 | as_crispy_field }}
+                    {{ order_form.postal_code | as_crispy_field }}
+                    <br>
+                    <div class="form-check form-check-inline float-end mr-2">
+                        {% if user.is_authenticated %}
+                        <label for="id-save-info" class="text-muted form-check-label">
+                            Save this to your profile
+                        </label>
+                        <input type="checkbox" id="id-save-info" name="safe-info" checked class="form-check-input">
+                        {% else %}
+                        <label for="id-save-info" class="form-check-label">
+                            <a href="{% url 'register' %}" class="text-info">Create An Account</a>
+                            <a href="{% url 'login' %}" class="text-alert">login</a> to save
+                        </label>
+                        {% endif %}
+                    </div>
+                </fieldset>
+                <fieldset class="rounded px-3 mb-5">
+                    <legend class="fieldset-label small px-2 w-auto">Payment</legend>
+                    <!-- Stripe Card Element will go here -->
+                    <div class="mb-3" id="card-element"></div>
+                    <!-- Form Errors will go here -->
+                    <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
+                    <input type="hidden" value="{{ client_secret }}" name="client_secret">
+                </fieldset>
+                <div class="submit-button text-right mt-5 ms-4">
+                    <a href="{% url 'cart' %}" class="btn button rounded-0">
+                        <span>
+                            <i class="fas fa-chevron-left"></i>
+                        </span>
+                        <span>Adjust Bag</span>
+                    </a> 
+                    <button id="submit-button" class="btn button-two rounded-0">
+                        <span>Complete Order</span>
+                        <span>
+                            <i class="fas fa-lock"></i>
+                        </span>
+                    </button>
+                    <p class="small text-danger py-3">
+                        <span>
+                            <i class="fas fa-exclamation-circle me-2"></i>
+                        </span>
+                        <span>Your card will be charged <strong class="me-2">€{{ grand_total|floatformat:2 }}</strong></span>
+                    </p>
+                </div>
+            </form> 
+        </div>
+    </div>
+</div>
+<div id="loading-overlay">
+    <h1 class="text light logo-font loading-spinner">
+        <span class="icon">
+            <i class="fas fa-sync-alt fa-spin fa-3x"></i>
+        </span>
+    </h1>
+</div>
+{% endblock content %}
