@@ -67,7 +67,7 @@
                                                 data-item_id="{{ item.item_id }}" class="id_qty_{{ item.item_id }} form-control form-control-sm qty-input">            
                                             </div>
                                         </form>
-                                        <a class="update-link float-end text-alert"><small><i class="fas fa-sync-alt"></i></small></a>
+                                        <a class="update-link float-end text-alert">update<small> <i class="fas fa-sync-alt"></i></small></a>
                                     </td> 
                                     <td class="py-3 text-center">
                                         <p class="my-0">€{{ item.product.price| calc_subtotal:item.quantity }}</p>
@@ -87,7 +87,7 @@
                                         </span>
                                         <span class="text-uppercase">Keep Shopping</span>
                                     </a>
-                                    <a href="#" class="btn button-two">
+                                    <a href="{% url 'checkout' %}" class="btn button-two">
                                         <span class="text-uppercase">Secure Checkout</span>
                                         <span class="icon">
                                             <i class="fa fa-lock"></i>

@@ -43,7 +43,7 @@ def checkout(request):
             'email': request.POST['email'],
             'address_line_1': request.POST['address_line_1'],
             'address_line_2': request.POST['address_line_2'],
-            'postcode': request.POST['postcode'],
+            'postal_code': request.POST['postal_code'],
         }
         
         order_form = OrderForm(form_data)
@@ -56,17 +56,16 @@ def checkout(request):
             order.save()
             for item_id, item_data in cart.items():
                 product = Donation.objects.get(id=item_id)
-                if isinstance(item_data, int):
-                    order_line_item = OrderLineItem(
-                        order=order,
-                        product=product,
-                        quantity=item_data,
-                    )
-                    order_line_item.save()
+                
+                order_line_item = OrderLineItem(
+                    order=order,
+                    product=product,
+                    quantity=item_data,
+                )
+                order_line_item.save()
 
             request.session['save-info'] = 'save-info' in request.POST
-            return redirect(reverse('checkout_success',
-                            args=[order.order_number]))
+            return redirect(reverse('checkout_success', args=[order.order_number]))
         else:
             messages.error(request, 'There was something wrong with your form. \
                 Please double check your information.')
@@ -96,7 +95,7 @@ def checkout(request):
                     'email': profile.email,
                     'address_line_1': profile.address_line_1,
                     'address_line_2': profile.address_line_2,
-                    'postcode': profile.postcode,
+                    'postal_code': profile.postal_code,
                 })
             except Profile.DoesNotExist():
                 order_form = OrderForm()

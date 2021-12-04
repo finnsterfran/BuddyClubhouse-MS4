@@ -87,7 +87,7 @@ class OrderLineItem(models.Model):
                                          blank=False,
                                          editable=False)
 
-    def save(*args, **kwargs):
+    def save(self, *args, **kwargs):
         """ Override the original save method to get the lineitem total
             and update the order total """
         self.lineitem_total = self.product.price * self.quantity
