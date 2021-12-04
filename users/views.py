@@ -7,6 +7,7 @@ from django.contrib.auth.models import User
 from .models import Profile
 from blogboard.models import Blog
 from .forms import CustomUserCreationForm, ProfileForm
+from checkout.models import Order
 
 
 def userLogin(request):
@@ -110,10 +111,12 @@ def userAccount(request):
     """
     profile = request.user.profile
     theBlogs = profile.blog_set.all()
+    orders = profile.orders.all()
 
     context = {
         'profile': profile,
         'blogs': theBlogs,
+        'orders': orders,
     }
     return render(request, 'users/account.html', context)
 
@@ -138,3 +141,19 @@ def edit_account(request):
         'form': form,
     }
     return render(request, 'users/profile_form.html', context)
+
+
+def order_history(request, order_number):
+    order = get_object_or_404(Order, order_number=order_number)
+
+    messages.info(request, (
+        f'This is a past confirmation for order number {order_number}.'
+        'A confirmation email was sent on the order date.'
+    ))
+
+    template = 'checkout/checkout_success.html'
+    context = {
+        'order': order,
+        'from_account': True,
+    }
+    return render(request, template, context)

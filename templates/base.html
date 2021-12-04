@@ -68,7 +68,7 @@
                         </form>
                         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                             <li class="nav-item">
-                              <a class="nav-link active" aria-current="page" href="#">home</a>
+                              <a class="nav-link active" aria-current="page" href="{% url 'home' %}">home</a>
                             </li>
                             <li class="nav-item dropdown">
                               <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -87,9 +87,10 @@
                                 <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
                                   <li><a class="dropdown-item" href="{% url 'dogs' %}">the residents</a></li>
                                   <li><hr class="dropdown-divider"></li>
-                                  <li><a class="dropdown-item" href="#">activities</a></li>
-                                  <li><hr class="dropdown-divider"></li>
+                                  <li><a class="dropdown-item" href="{% url 'events' %}">activities</a></li>
+                                  
                                   {% if request.user.is_authenticated %}   
+                                  <li><hr class="dropdown-divider"></li>
                                   <li><a class="dropdown-item" href="{% url 'blogs' %}">the blogboard</a></li>
                                   <li><hr class="dropdown-divider"></li>
                                   <li><a class="dropdown-item" href="{% url 'write_blog' %}">write a blog</a></li>
@@ -103,8 +104,6 @@
                                 <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
                                   {% if request.user.is_authenticated %}
                                   <li><a class="dropdown-item" href="{% url 'account' %}">my account</a></li>
-                                  <li><hr class="dropdown-divider"></li>
-                                  <li><a class="dropdown-item" href="#">book a playdate</a></li>
                                   <li><hr class="dropdown-divider"></li>
                                   <li><a class="dropdown-item" href="{% url 'logout' %}">logout</a></li>
                                   {% else %}
@@ -121,10 +120,6 @@
                                 administration
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
-                                    <li><a class="dropdown-item" href="#">appointments</a></li>
-                                    <li><hr class="dropdown-divider"></li>
-                                    <li><a class="dropdown-item" href="#">manage dogs</a></li>
-                                    <li><hr class="dropdown-divider"></li>
                                     <li><a class="dropdown-item" href="{% url 'profiles' %}">user profiles</a></li>
                                 </ul>
                             </li>

@@ -32,17 +32,19 @@
                     <h2 class="card-title fw-bold text-center">{{ profile.user.username }}</h2>
                     <p class="card-text text-center">{{ profile.first_name|title}} {{ profile.last_name }}</p>
                     <hr>
-                    <h3>somethingsomethingsomething</h3>
-                    <div class="card-link"><a href="{% url 'profile' profile.id %}">
-                        <i class="fas fa-user-tag"></i>
-                    </a></div>
+                    <p class="card-text ps-3"><strong>Email: </strong><br>{{ profile.email }}</p>
+                    <p class="card-text ps-3"><strong>Address:</strong><br>{{ profile.address_line_1 }}<br>{% if profile.address_line_2 %}
+                        {{ profile.address_line_2 }}
+                        {% endif %}</p>
+                    <p class="card-text ps-3"><strong>Postal Code: </strong><br>{{ profile.postal_code }}</p>
+
                 </div>
             </div>
         </div>
         <div class="col-sm-12 col-md-8 col-lg-8 d-flex">
             <div class="card mb-3 flex-fill">
                 <div class="account-header card-header text-center">
-                    <h2 class="card-title text-center py-lg-2 ">Blogs by <strong>{{ profile.user.username }}</strong></h2>
+                    <h2 class="card-title text-center py-lg-2 ">Blogs</h2>
                     <a href="{% url 'write_blog' %}" class="text-center btn button-two">
                     <i class="fas fa-feather-alt"></i> write a blog</a>
                 </div>
@@ -63,6 +65,46 @@
                 </div>
                 <br>
                 {% endfor %} 
+                <div class="card mb-3 flex-fill">
+                    <div class="account-header card-header text-center">
+                        <h2 class="card-title text-center py-lg-2 ">Contributions</h2>
+                    </div>
+                    <div class="order-history table-responsive py-5 mx-4">
+                        <table class="table table-sm table-borderless">
+                            <thead>
+                                <tr>
+                                    <th>Order Number</th>
+                                    <th>Date</th>
+                                    <th>Items</th>
+                                    <th>Order Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for order in orders %}
+                                    <tr>
+                                        <td>
+                                            <a href="{% url 'order_history' order.order_number %}"
+                                                title="{{ order.order_number }}">
+                                                {{ order.order_number|truncatechars:6 }}
+                                            </a>
+                                        </td>
+                                        <td>{{ order.date }}</td>
+                                        <td>
+                                            <ul class="list-unstyled">
+                                                {% for item in order.lineitems.all %}
+                                                <li class="small">
+                                                    {{ item.product.name }} x {{ item.quantity }}
+                                                </li>
+                                                {% endfor %}
+                                            </ul>
+                                        </td>
+                                        <td>€ {{ order.grand_total }}</td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
