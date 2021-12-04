@@ -42,7 +42,7 @@ class Order(models.Model):
                                       decimal_places=2,
                                       null=False,
                                       default=0)
-    original_bag = models.TextField(null=False,
+    original_cart = models.TextField(null=False,
                                     blank=False,
                                     default='')
     stripe_pid = models.CharField(max_length=254,

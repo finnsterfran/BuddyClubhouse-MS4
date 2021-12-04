@@ -47,7 +47,7 @@ class StripeWH_Handler:
                     first_name__iexact=shipping_details.name.split()[0],
                     last_name__iexact=shipping_details.name.split()[1],
                     email__iexact=billing_details.email,
-                    postcode__iexact=shipping_details.address.postal_code,
+                    postal_code__iexact=shipping_details.address.postal_code,
                     address_line_1__iexact=shipping_details.address.line1,
                     address_line_2__iexact=shipping_details.address.line2,
                     grand_total=grand_total,
