@@ -105,7 +105,7 @@ SITE_ID = 1
 
 if 'DEVELOPMENT' in os.environ:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-    DEFAULT_FROM_EMAIL = 'thebuddyclubhouse@example.com'
+    DEFAULT_FROM_EMAIL = 'info@thebuddyclubhouse.com'
 else:
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
     DEFAULT_FROM_EMAIL = config('EMAIL_HU')

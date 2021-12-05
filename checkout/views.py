@@ -32,6 +32,7 @@ def cache_checkout_data(request):
 
 
 def checkout(request):
+    
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
@@ -99,7 +100,6 @@ def checkout(request):
                 })
             except Profile.DoesNotExist():
                 order_form = OrderForm()
-        
         else:
             order_form = OrderForm()
 
@@ -125,6 +125,22 @@ def checkout_success(request, order_number):
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
 
+    if request.user.is_authenticated:
+        # Attach the user's profile to the order
+        profile = Profile.objects.get(user=request.user)
+        order.username = profile
+        order.save()
+
+    # Save request.user's information
+    if save_info:
+        profile_data = {
+            'address_line_1': order.address_line_1,
+            'address_line_2': order.address_line_2,
+            'postal_code': order.postal_code,
+        }
+        username_form = ProfileForm(profile_data, instance=profile)
+        if username_form.is_valid:
+            username_form.save()
 
     messages.success(request, f'Order successfully processed! \
         Your order number is {order_number}. A confirmation \

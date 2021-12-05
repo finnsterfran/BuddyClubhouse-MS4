@@ -1,0 +1,24 @@
+Hi {{ order.first_name}} {{ order.last_name }}!
+
+From all of us at The Buddy Clubhouse, we would like to extend our sincerest thanks for your helping hand.
+
+
+🐾 Here is a confirmation of the donation you have made:
+
+Order Number : {{ order.order_number }} made on {{ order.date }}
+
+You donated towards:
+{% for item in order.lineitems.all %}
+{{item.product.name}}
+{{item.product.short_info}}
+{{item.quantity}} @ €{{ item.product.price }}
+{% endfor %}
+
+Your total contribution here is €{{ order.grand_total}}.
+
+Please feel free to get in touch with us at {{ contact_email }} should you have any questions. 
+
+
+Warmest regards,
+
+The Buddy Clubhouse
