@@ -1,48 +1,61 @@
 ### Code Institute Milestone Four Project
 > Full Stack Frameworks with Django
 
+
 <p>&nbsp;</p>
 
-# BUDDY CLUBHOUSE
-### This project features a website for a sanctuary for large dogs, where the dogs are permanent residents and are not up for adoption. 
-### The aim of the website is to promote a program to combine: 
-* people who love large breed dogs but might not have the space or time to have one as a regular pet, but would still love to have some activities and bonding time with one
-* dogs that are ready for some activities with and interaction with people
-### Visitors can choose from three tier of membership, each tier opening up more options for interaction with the dogs. 
-### Members will be able to post a blog of their day with the dog.
+# THE BUDDY CLUBHOUSE
+### This project features a website for a forever-home for large dogs that have, at some point in their lives, lost their previous homes. To provide the dogs with a balanced life, they are sent on training for particular skills they show an aptitude for. 
+
+### The aim of the website is to:
+* give people who love large breed dogs, but might not have the space or time to have one as a regular pet, the opportunity to spend quality time with them
+* give the dogs the social interaction with people they need 
+* generate some donation from users to help with the upkeep of the dogs
+
+### User registration is required to be able to post a blog and to access the events calendar.
 
 <p>&nbsp;</p>
 
 ### **View this project live:**[Buddy Clubhouse]
 <p>&nbsp;</p>
 
-### **The Repositor can be found here:**[Buddy Clubhouse Source Code](https://github.com/finnsterfran/BuddyClubhouse-MS4)
+### **The Repository can be found here:**[Buddy Clubhouse Source Code](https://github.com/finnsterfran/BuddyClubhouse-MS4)
 <p>&nbsp;</p>
 
 # USER STORY
 ## Visitor to the website:
     * I want to have a rough idea what this website is about from just glancing at information on the landing page.
+    * I want easy navigation through the website.
     * I want to be able to get further information about this website and its purpose.
     * I want to be able to look at pictures and read a little about the dogs.
-    * I want to know how the membership subscription works and what each membership tier entails.
+    * I want spend time with the dogs. 
+    * I want to help, what can I do?
 <p>&nbsp;</p>
 
 ## These goals are accomplished via: 
     * Brief information on the homepage will give an immediate idea of what this website is about.
-    * Button in information box will lead to further literature about the website.
-    * An image and limited information of the individual dogs will be viewable on their profile page.
-    * A membership information page will detail the different perks that comes with the different tier memberships and how to sign up for it.
+    * Collapsible navigation block to the right side of the page provides navigation to every page that is available to non-registered users.
+    * User will be directed to further information (story and mission) via a button on the landing page. 
+    * An image and information of the individual dogs will be viewable on their profile page.
+    * Information about visitations (activities). 
+    * User can make a monetary contribution towards the upkeep of the dogs.
+    * User will be informed that registration is required for certain parts of the website.
 
-## Visitors with membership subscription:
-    * I want more information about the dogs and what activities they can take part in.
-    * I want to be able to book time with the dogs. 
+## Registered users:
+    * I want to spend time with the dogs, when can I? What can I do with the dogs?
+    * The profile photo is terrible, and I made a typo in my name in the registration form, how can I change this?
     * I want to be able to blog about my day with the dog I had a playdate with.
+    * I want to keep track of any donations I have made.
 
 ## These goals are accomplished via: 
-    * Subscribed members will get access to full information about the dog, including what activities are open to these dogs.
-    * Subscribed members will get access to appointments to book quality time with the dogs.
+    * Registered users will get access to the events page which will show what activities will be happening. 
+    * Registered users will be able partake in activities that are open to users. 
+    * Registered users will be able to edit their profiles via their account page.
+    * Registered users will be able to contribute blog post about their interaction with the dog/dogs.
+    * Registered users will be able to see the history of any orders they have made via their account page.
 
 # 1. STRATEGY
+
 # 2. SCOPE
 # 3. STRUCTURE
 # 4. SKELETON
