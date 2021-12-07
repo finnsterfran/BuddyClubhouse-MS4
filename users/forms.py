@@ -1,4 +1,6 @@
+from django import forms
 from django.forms import ModelForm
+from .widgets import CustomClearableFileInput
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from .models import Profile
@@ -30,6 +32,8 @@ class ProfileForm(ModelForm):
         fields = ['first_name', 'last_name', 'email',
                   'address_line_1', 'address_line_2', 'postal_code',
                   'profile_image']
+    
+    profile_image = forms.ImageField(label='Image', required=False, widget=CustomClearableFileInput) 
 
     def __init__(self, *args, **kwargs):
         super(ProfileForm, self).__init__(*args, **kwargs)

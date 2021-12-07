@@ -37,7 +37,6 @@
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
         <script src="https://kit.fontawesome.com/64cc6f8564.js" crossorigin="anonymous"></script>
-        <script type="text/javascript" src="{% static 'js/base.js' %}"></script>
         <script src="https://js.stripe.com/v3/"></script>
     {% endblock %}
 
@@ -131,12 +130,12 @@
                         </ul>
                         <div class="footer-box">
                             <ul class="footer-items">
-                              <li><i class="fab fa-facebook" aria-label="link-to-facebook"></i></li>
-                              <li><i class="fab fa-instagram" aria-label="link-to-instagram"></i></li>
-                              <li><i class="fab fa-youtube" aria-label="link-to-youtube"></i></li>
-                              <li><i class="fab fa-twitter" aria-label="link-to-twitter"></i></li>
-                              <li><i class="fab fa-pinterest" aria-label="link-to-pinterest"></i></li>
-                              <li><i class="fas fa-at" aria-label="contact-us"></i></li>
+                              <li><a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook" aria-label="link-to-facebook"></i></a></li>
+                              <li><a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram" aria-label="link-to-instagram"></i></a></li>
+                              <li><a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube" aria-label="link-to-youtube"></i></a></li>
+                              <li><a href="https://www.twiter.com" target="_blank"><i class="fab fa-twitter" aria-label="link-to-twitter"></i></a></li>
+                              <li><a href="https://www.pinterest.com" target="_blank"></a><i class="fab fa-pinterest" aria-label="link-to-pinterest"></i></li>
+                              <li><a href="{% url 'contact_us' %}"><i class="fas fa-at" aria-label="contact-us"></i></a></li>
                             </ul>
                         </div>
                     </div>

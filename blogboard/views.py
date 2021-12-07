@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, reverse
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .models import Blog
@@ -20,9 +20,11 @@ def blog_entry(request, pk):
     """
     View to see individual blogpost entry on the blogboard
     """
+    profile = request.user.profile
     blogpost = Blog.objects.get(id=pk)
     context = {
         'blogpost': blogpost,
+        'profile': profile,
     }
     return render(request, 'blogboard/blog_entry.html', context)
 
@@ -65,7 +67,8 @@ def edit_blog(request, pk):
         if form.is_valid():
             blogpost = form.save()
             messages.success(request, 'Blog updated')
-            return redirect('blogs')
+            return redirect(reverse('blog_entry', args=[blogpost.id]))
+
     context = {
         'form': form,
         'blogpost': blogpost,

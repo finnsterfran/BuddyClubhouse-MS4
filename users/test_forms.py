@@ -11,4 +11,4 @@ class TestProfileForm(TestCase):
 
     def test_fields_are_explicit_in_form_metaclass(self):
         form = ProfileForm()
-        self.assertEqual(form.Meta.fields, ['first_name', 'last_name', 'email', 'address', 'postal_code', 'contact_number', 'profile_image'])
+        self.assertEqual(form.Meta.fields, ['first_name', 'last_name', 'email', 'address_line_1', 'address_line_2', 'postal_code', 'profile_image'])

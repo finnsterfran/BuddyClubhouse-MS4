@@ -36,17 +36,15 @@
                  <hr>
                  <p><strong class="pe-4">Blog:</strong><br> {{ blogpost.blog_entry }}</p>
             </div>
-                {% if request.user.is_authenticated %}
-                <a class="btn button-two" href="{% url 'edit_blog' blogpost.id %}">
-                    Edit
-                </a>
-                <a class="btn button-two" href="{% url 'delete_blog' blogpost.id %}">
-                    Delete
-                </a>
+                {% if user.is_authenticated %}  
+                    <a href="{% url 'account' %}" class="btn button">Account</a>
                 {% endif %}
                 <a href="{% url 'blogs' %}" class="btn button">Return to Blogs</a>
-                <a href="{% url 'register' %}" class="btn button">Become a Member</a>  
+                <a href="{% url 'register' %}" class="btn button">Become a Member</a> 
+                
         </div>
     </div>
 </div>
 {% endblock content %}
+
+

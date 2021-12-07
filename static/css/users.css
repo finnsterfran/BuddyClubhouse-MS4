@@ -35,6 +35,48 @@ textarea {
     transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
+input[type="checkbox" i] {
+    background-color: initial;
+    cursor: default;
+    appearance: auto;
+    box-sizing: border-box;
+    margin: 3px 3px 3px 4px;
+    padding: initial;
+    border: initial;
+    width: 4rem;
+}
+
+/* Profile Image Custom Widget */
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-file input[type="file"] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+.custom-control-label {
+    color: var(--icon-color);
+}
+
+.custom-checkbox .custom-control-label::before {
+    border-radius: 0;
+    border-color: var(--navhover-color);
+}
+
+.custom-checkbox .custom-control-input:checked~.custom-control-label:before {
+    background-color: var(--navhover-color);
+    border-color: var(--navhover-color);
+    border-radius: 0;
+}
+
 #id_name_of_buddy {
     background-color: var(--navbar-color);
 }
