@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css%}
+  l
+{% endblock extra_css %}
+
+{% block extra_title %}
+    Blog Post
+{% endblock extra_title%}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="text-center">Event</h1>
+        </div>
+    </div>
+</div>
+{% endblock page_header %}
+
+{% block content %}
+<div class="container container-sm">
+    <div class="row row-box">
+        <div class="container py-md-5">
+            <div class="clearfix">
+                 <p>{{ event.id }}</p>
+                 <p><strong class="pe-4">Title:</strong><br> {{ event.title }}</p>
+                 <p><strong class="pe-4">Author: </strong><br>{{ event.name_of_buddy }}</p>  
+                 <p><strong class="pe-4">Date:</strong><br> {{ event.event_date }}</p>
+                 <p><strong class="pe-4">Buddy:</strong><br> {{ event.time_block }}</p>
+                 <p><strong class="pe-4">Blog:</strong><br> {{ event.description }}</p>
+
+            </div>
+                <a class="btn button-two" href="{% url 'edit_event' event.id %}">
+                    Edit
+                </a>
+                <a class="btn button-two" href="#">
+                    Delete
+                </a>  
+        </div>
+    </div>
+</div>
+{% endblock content %}

@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .models import Blog
@@ -20,7 +20,6 @@ def blog_entry(request, pk):
     """
     View to see individual blogpost entry on the blogboard
     """
-    
     blogpost = Blog.objects.get(id=pk)
     context = {
         'blogpost': blogpost,
@@ -54,6 +53,9 @@ def write_blog(request):
 
 @login_required
 def edit_blog(request, pk):
+    """
+    View to edit existing blog by user/blog author
+    """
     profile = request.user.profile
     blogpost = profile.blog_set.get(id=pk)
     form = BlogForm(instance=blogpost)
@@ -73,6 +75,9 @@ def edit_blog(request, pk):
 
 @login_required
 def delete_blog(request, pk):
+    """
+    View to delete blog by user/blog author
+    """
     profile = request.user.profile
     blogpost = profile.blog_set.get(id=pk)
     if request.method == 'POST':

@@ -1,9 +1,14 @@
-from django.shortcuts import render
+from django.shortcuts import (render, redirect,
+                              reverse, get_object_or_404)
+from django.contrib import messages
 from .models import Event
 from .forms import EventForm
 
 
 def events(request):
+    """
+    Display all existing events
+    """
     all_events = Event.objects.all()
     context = {
         'all_events': all_events,
@@ -11,19 +16,59 @@ def events(request):
     return render(request, 'events/events.html', context)
 
 
-def single_event(request, pk):
-
-    per_event = Event.objects.get(id=pk)
+def single_event(request, event_id):
+    """
+    Display single existing events
+    """
+    event = Event.objects.get(pk=event_id)
     context = {
-        'per_event': per_event
+        'event': event
     }
-    return render(request, 'events/events.html', context)
+    return render(request, 'events/single_event.html', context)
 
 
 def add_event(request):
-    form = EventForm()
-    template = 'events/add_event.html'
+    """
+    Add a new event
+    """
+    if request.method == 'POST':
+        form = EventForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'New event has been added!')
+            return redirect(reverse('add_event'))
+        else:
+            messages.error(request, 'Could not add event.'
+                           'Please double check the details.')
+    else:
+        form = EventForm()
+
     context = {
         'form': form,
     }
-    return render(request, template, context)
+    return render(request, 'events/add_event.html', context)
+
+
+def edit_event(request, event_id):
+    """
+    Edit an existing event
+    """
+    event = get_object_or_404(Event, pk=event_id)
+    if request.method == "POST":
+        form = EventForm(request.POST, instance=event)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Event has been updated!')
+            return redirect(reverse('single_event', args=[event.id]))
+        else:
+            messages.error(request, 'Cannot update this event.' 
+                           'Check the form for mistakes.')
+    else:
+        form = EventForm(instance=event)
+        messages.info(request, f'You are editing {event.title}')
+    
+    context = {
+        'form': form,
+        'event': event,
+    }
+    return render(request, 'events/edit_event.html', context)
