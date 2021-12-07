@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Event
+from .forms import EventForm
 
 
 def events(request):
@@ -16,4 +17,13 @@ def single_event(request, pk):
     context = {
         'per_event': per_event
     }
-    return render(request, 'event/events.html', context)
+    return render(request, 'events/events.html', context)
+
+
+def add_event(request):
+    form = EventForm()
+    template = 'events/add_event.html'
+    context = {
+        'form': form,
+    }
+    return render(request, template, context)
