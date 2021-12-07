@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .forms import ContactUsForm
+from django.contrib import messages
 
 
 def index(request):
@@ -25,7 +26,7 @@ def contact_us(request):
         if form.is_valid():
             form.save()
             messages.success(request, 'Thank you for your message.'
-                             'We will get back to you as soon as we are able to.')
+                             'We will get in touch soon.')
             return redirect('home')
     form = ContactUsForm()
     context = {'form': form}
