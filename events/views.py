@@ -33,6 +33,10 @@ def add_event(request):
     """
     Add a new event
     """
+    if not request.user.is_superuser:
+        messages.error(request, 'You have no authority on this page.')
+        return redirect(reverse('home'))
+
     if request.method == 'POST':
         form = EventForm(request.POST)
         if form.is_valid():
@@ -56,6 +60,10 @@ def edit_event(request, event_id):
     """
     Edit an existing event
     """
+    if not request.user.is_superuser:
+        messages.error(request, 'You are not authorized to access this page.')
+        return redirect(reverse('home'))
+
     event = get_object_or_404(Event, pk=event_id)
     if request.method == "POST":
         form = EventForm(request.POST, instance=event)
@@ -82,6 +90,10 @@ def delete_event(request, event_id):
     """
     Delete an event
     """
+    if not request.user.is_superuser:
+        messages.error(request, 'Authority required to access this page.')
+        return redirect(reverse('home'))
+
     event = get_object_or_404(Event, pk=event_id)
     if request.method == 'POST':
         event.delete()
