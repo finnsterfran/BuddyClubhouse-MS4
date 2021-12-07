@@ -28,7 +28,20 @@
                     {{event.title}}
                     <div class="card-link"><a href="{% url 'single_event' event.id %}"><i class="fas fa-blog"></i></a></div>
                     {{ event.id }}
+
                 </div>
+                <hr>
+                {% if request.user.is_superuser %}
+                <div class="text-center d-flex pb-2 px-2">
+                    <a class="btn button w-50" href="{% url 'edit_event' event.id %}">
+                        Edit
+                    </a>
+                    <br>
+                    <a class="btn button-two w-50" href="{% url 'delete_event' event.id %}">
+                        Delete
+                    </a>
+                </div>
+                {% endif %}
             </div>
         </div>
         {% endfor %}

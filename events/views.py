@@ -22,7 +22,7 @@ def single_event(request, event_id):
     """
     event = Event.objects.get(pk=event_id)
     context = {
-        'event': event
+        'object': event
     }
     return render(request, 'events/single_event.html', context)
 
@@ -34,9 +34,9 @@ def add_event(request):
     if request.method == 'POST':
         form = EventForm(request.POST)
         if form.is_valid():
-            form.save()
+            event = form.save()
             messages.success(request, 'New event has been added!')
-            return redirect(reverse('add_event'))
+            return redirect(reverse('single_event', args=[event.id]))
         else:
             messages.error(request, 'Could not add event.'
                            'Please double check the details.')
@@ -61,14 +61,29 @@ def edit_event(request, event_id):
             messages.success(request, 'Event has been updated!')
             return redirect(reverse('single_event', args=[event.id]))
         else:
-            messages.error(request, 'Cannot update this event.' 
+            messages.error(request, 'Cannot update this event.'
                            'Check the form for mistakes.')
     else:
         form = EventForm(instance=event)
         messages.info(request, f'You are editing {event.title}')
-    
+
     context = {
         'form': form,
         'event': event,
     }
     return render(request, 'events/edit_event.html', context)
+
+
+def delete_event(request, event_id):
+    """
+    Delete an event
+    """
+    event = get_object_or_404(Event, pk=event_id)
+    if request.method == 'POST':
+        event.delete()
+        messages.success(request, 'Event deleted')
+        return redirect('events')
+    context = {
+        'event': event,
+    }
+    return render(request, 'events/delete_event.html', context)

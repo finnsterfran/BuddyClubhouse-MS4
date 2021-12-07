@@ -32,12 +32,14 @@
                  <p><strong class="pe-4">Blog:</strong><br> {{ event.description }}</p>
 
             </div>
+                {% if request.user.is_superuser %}
                 <a class="btn button-two" href="{% url 'edit_event' event.id %}">
                     Edit
                 </a>
-                <a class="btn button-two" href="#">
+                <a class="btn button-two" href="{% url 'delete_event' event.id %}">
                     Delete
                 </a>  
+                {% endif %}
         </div>
     </div>
 </div>

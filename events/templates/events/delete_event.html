@@ -6,7 +6,7 @@
 {% endblock extra_css %}
 
 {% block extra_title %}
-    Delete Blog
+    Delete Event
 {% endblock extra_title%}
 
 {% block page_header %}
@@ -23,11 +23,11 @@
 <div class="container">
     <div class="row row-box">
         <div class="text-center col-sm-12 col-md-8 offset-md-2">
-            <h2>About to delete a blog post...</h2>
-            <form action="{% url 'delete_blog' blogpost.id %}" method="POST">
+            <h2>About to delete an event...</h2>
+            <form action="{% url 'delete_event' event.id %}" method="POST">
                 {% csrf_token %}
-                <p class="py-5">Are you sure you want to delete blogpost <br> <strong>"{{blogpost}}"</strong>?</p>
-                <a class="btn button-two w-50" href="{% url 'blogs' %}">Go Back</a>
+                <p class="py-5">Are you sure you want to delete event <br> <strong>"{{event}}"</strong>?</p>
+                <a class="btn button-two w-50" href="{% url 'events' %}">Go Back</a>
                 <input type="submit" class="btn button w-50" value="Confirm">
             </form>
         </div>

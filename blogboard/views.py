@@ -85,6 +85,6 @@ def delete_blog(request, pk):
         messages.success(request, 'Blog post deleted')
         return redirect('blogs')
     context = {
-        'blogpost': blogpost
+        'blogpost': blogpost,
     }
     return render(request, 'blogboard/delete_blog.html', context)
