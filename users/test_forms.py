@@ -58,7 +58,7 @@ class TestCustomUserCreationForm(TestCase):
             'password2': 'yo!4password'})
 
     
-        self.assertEqual(other_form.errors['email '][0], 'Email already exist')
+        self.assertEqual(other_form.errors['email'][0], 'Email already exist')
 
     def test_username_is_unique_for_registration(self):
         self.assertTrue(self.registration_form.is_valid())
