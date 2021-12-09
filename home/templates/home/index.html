@@ -8,25 +8,23 @@
 {% block page_header %}
     <div class="row header-container text-center">
         <div class="col-12">
-            <h1></h1>
+            <h1 class="index-title">The Buddy Clubhouse</h1>
         </div>
     </div>
 {% endblock page_header %}
 
 {% block content %}
-    <div class="index-box row align-items-start">
-        <div class="col-md-3">
-            <h2 class="index-title">The Buddy Clubhouse</h2>
-            <p class="index-text">
+    <div class="index-box row text-center">
+        <div class="col-sm-12 col-md-8 offset-md-2"> 
+            <p class="index-text fixed-bottom d-none d-sm-block">
                 <span ></span>
                 A forever-home to many large and giant dogs that have, for various reasons, 
                 lost their previous home.
-                <br>
-                Read our story and find out how you can be part of the Buddy Program.
+                Read our story and find out how you can be part of <br>the Buddy Program.
                 <br>Click the button below for more information!
             </p>
-            <div class="text-center index-button">
-                <a class="btn button" href="{% url 'about' }">story & mission</a>
+            <div class="index-button fixed-bottom text-center">
+                <a class="btn button" href="{% url 'about' %}">story & mission</a>
             </div>
         </div>
     </div>
