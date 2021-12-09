@@ -28,8 +28,38 @@ body {
     padding-bottom: 4rem;
 }
 
+.navbar {
+    padding: 0 1rem;
+}
+
 .offcanvas {
     padding: 1rem;
+}
+
+.offcanvas-header {
+    padding: 0;
+}
+
+.offcanvas-body {
+    padding: 0;
+}
+
+ul.footer-items {
+    padding-left: 0.5rem;
+}
+
+ul.navbar-nav {
+    padding-top: 0.5rem;
+    padding-left: 1rem;
+}
+
+.nav-link{
+    font-size: 1rem;
+}
+
+.search-form > input,
+.search-form > button {
+    font-size: 0.7rem;
 }
 
 a:hover {
@@ -88,15 +118,18 @@ button.navbar-toggler {
     color: var(--black);
 }
 
-.fa-paw {
+.brand_logo {
     color: var(--logo-color);
     padding-left: 1rem;
 }
 
 .navbar-toggler {
-    color: rgba(0,0,0,.55);
+    color: black;
     border-color: var(--dark);
     margin-right: 2rem;
+}
+.nav-togger > span {
+    color: var(--black);
 }
 
 .logo-title {
@@ -106,15 +139,24 @@ button.navbar-toggler {
     padding-left: 1rem;
 }
 
-ul.navbar-nav {
+/* media query*/ 
+/* ul.navbar-nav {
     padding-left: 1rem;
     padding-top: 3rem;
-}
+} */
 
 .nav-link {
     color: var(--button-color);
     font-size: 1.5rem;
     padding-left: 1rem;
+}
+
+.nav-link i {
+    padding-right: 1rem;
+}
+.nav-link:hover {
+    color: var(--navhover-color);
+    border-bottom: 1px solid var(--black);
 }
 
 .navbar-light .navbar-nav .nav-link.active {
@@ -155,7 +197,7 @@ ul.navbar-nav {
 }
 
 ul.footer-item {
-    padding-left: 1rem;
+    padding-left: 0;
 }
 
 
@@ -238,3 +280,12 @@ input.btn.button {
     margin: 1rem 0;
     width: 100%;
 }
+
+.donation-headline {
+    font-size: 1.3rem;
+    text-align: center;
+    padding: 0.5rem;
+}
+
+
+

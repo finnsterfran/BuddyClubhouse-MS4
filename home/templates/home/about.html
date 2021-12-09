@@ -7,7 +7,7 @@ Our Story
 {% block page_header %}
     <div class="row header-container text-center">
         <div class="col-12">
-            <h1></h1>
+            <h1>Our Story and Mission</h1>
         </div>
     </div>
 {% endblock page_header %}
@@ -41,8 +41,15 @@ Our Story
                 <p>
                     To date, this estate has been home to 57 dogs. Currently, there are 15 gentle giants roaming the compound.
                 </p>
-                <p>To read more about how you can help, click the link below </p>
-                <a href="" class="btn button">Contribute</a>
+                <p>Our mission today has not diverged from the one John Williams strived towards - we give large breed dogs a good home,
+                     keep them healthy and happy.
+                    Above all that, we make sure that the dogs enjoy doing the things they are good at, 
+                    and people get to enjoy the joys of being around these wonderful gentle giants.
+                </p>
+                <p>To get involved in the Buddy Program, take action! Click one of the links below </p>
+                <a href="{% url 'contribution' %}" class="btn button">Contribute</a>
+                <a href="{% url 'register' %}" class="btn button-two">Make An Account</a>
+                <a href="{% url 'contact_us' %}" class="btn button">Contact Us</a>
                
             </div>
         </div>

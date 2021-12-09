@@ -7,7 +7,6 @@ from . import views
 class TestViews(TestCase):
     def setUp(self):
         test_user = User.objects.create_user(username='looloo', password='yo!4password')
-        test_dog = Dog.objects.get()
         test_user.save()
         
     def test_get_blogs(self):

@@ -22,8 +22,6 @@
         <link href="https://fonts.googleapis.com/css2?family=Montez&family=Montserrat+Alternates:wght@300;400;500;700&display=swap" rel="stylesheet">
         <link rel="shortcut icon" href="{% static 'images/favicon.png' type='image/x-icon' %}">
         <link rel="stylesheet" href="{% static 'css/base.css' %}">
-        <link rel="stylesheet" href="{% static 'css/media_queries.css' %}">
-
     {% endblock %}
 
     {% block extra_css %}
@@ -48,9 +46,11 @@
 </head>
 <body>
     <header class="container-fluid fixed-top">
+        
         <div class="row row-box">
             <nav class="navbar">
-                <a class="navbar-brand" href="{% url 'home' %}" aria-label="home-link"><i class="fas fa-paw fa-3x"></i></a>
+                <a class="navbar-brand" href="{% url 'home' %}" aria-label="home-link"><i class="brand_logo fas fa-paw fa-3x"></i></a>
+                <small class="text-muted">{% if request.user.is_authenticated%}user:<br><strong>{{request.user}}</strong>{% endif%}</small>
 <!-- Offcanvas navigation -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
                     <span>nav</span>
@@ -67,64 +67,44 @@
                         </form>
                         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                             <li class="nav-item">
-                              <a class="nav-link active" aria-current="page" href="{% url 'home' %}">home</a>
+                              <a class="nav-link active" aria-current="page" href="{% url 'home' %}"><i class="fas fa-home"></i> home</a>
                             </li>
-                            <li class="nav-item dropdown">
-                              <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                our story
-                              </a>
-                              <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
-                                <li><a class="dropdown-item" href="{% url 'contribution' %}">how you can help</a></li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="{% url 'about' %}">our story</a></li>
-                              </ul>
+                            <li class="nav-item">
+                              <a class="nav-link active" aria-current="page" href="{% url 'about' %}"><i class="fas fa-book-open"></i> our story </a>
                             </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                  the buddies
-                                </a>
-                                <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
-                                  <li><a class="dropdown-item" href="{% url 'dogs' %}">the residents</a></li>
-                                  <li><hr class="dropdown-divider"></li>
-                                  <li><a class="dropdown-item" href="{% url 'events' %}">activities</a></li>
-                                  
-                                  {% if request.user.is_authenticated %}   
-                                  <li><hr class="dropdown-divider"></li>
-                                  <li><a class="dropdown-item" href="{% url 'blogs' %}">the blogboard</a></li>
-                                  <li><hr class="dropdown-divider"></li>
-                                  <li><a class="dropdown-item" href="{% url 'write_blog' %}">write a blog</a></li>
-                                  {% endif %}
-                                </ul>
+                            <li class="nav-item">
+                              <a class="nav-link active" aria-current="page" href="{% url 'contribution' %}"><i class="fas fa-hands-helping"></i> donation</a>
                             </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                  my account
-                                </a>
-                                <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
-                                  {% if request.user.is_authenticated %}
-                                  <li><a class="dropdown-item" href="{% url 'account' %}">my account</a></li>
-                                  <li><hr class="dropdown-divider"></li>
-                                  <li><a class="dropdown-item" href="{% url 'logout' %}">logout</a></li>
-                                  {% else %}
-                                  <li><a class="dropdown-item" href="{% url 'register' %}">register</a></li>
-                                  <li><hr class="dropdown-divider"></li>
-                                  <li><a class="dropdown-item" href="{% url 'login' %}">login</a></li>
-                                  {% endif %}
-                                </ul>
+                            <li class="nav-item">
+                              <a class="nav-link active" aria-current="page" href="{% url 'dogs' %}"><i class="fas fa-paw"></i> the buddies</a>
                             </li>
+                            <li class="nav-item">
+                              <a class="nav-link active" aria-current="page" href="{% url 'blogs' %}"><i class="fas fa-blog"></i> blogboard </a>
+                            </li>       
+                            {% if request.user.is_authenticated %}
+                            <li class="nav-item">
+                              <a class="nav-link active" aria-current="page" href="{% url 'account' %}"><i class="far fa-user-circle"></i> my account </a>
+                            </li>  
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="{% url 'account' %}"><i class="fas fa-tasks"></i> events</a>
+                              </li>      
+                            <li class="nav-item">
+                              <a class="nav-link active" aria-current="page" href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i> logout</a>
+                            </li>       
+                            {% else %}
+                            <li class="nav-item">
+                              <a class="nav-link active" aria-current="page" href="{% url 'register' %}"><i class="fas fa-signature"></i> register</a>
+                            </li>       
+                            <li class="nav-item">
+                              <a class="nav-link active" aria-current="page" href="{% url 'login' %}"><i class="fas fa-sign-in-alt"></i> login</a>
+                            </li>       
+                            {% endif %}
                             {% if request.user.is_authenticated %}
                                 {% if request.user.is_superuser %}
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbar" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                administration
-                                </a>
-                                <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
-                                    <li><a class="dropdown-item" href="{% url 'add_event' %}">add an event</a></li>
-                                </ul>
-                                <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
-                                    <li><a class="dropdown-item" href="{% url 'profiles' %}">user profiles</a></li>
-                                </ul>
-                            </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="{% url 'add_event' %}"><i class="fas fa-user-shield"></i> add event</a>
+                                  </li>   
+    
                                 {% endif %}
                             {% endif %}    
                         </ul>
@@ -143,6 +123,7 @@
             </nav>
         </div>
     </header>
+   
 <!-- Display messages, if any -->
     {% if messages %}
             <ul class="messages">
