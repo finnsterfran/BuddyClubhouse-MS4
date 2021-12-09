@@ -7,7 +7,7 @@ Our Story
 {% block page_header %}
     <div class="row header-container text-center">
         <div class="col-12">
-            <h1>Our Story and Mission</h1>
+            <h1>Story and Mission</h1>
         </div>
     </div>
 {% endblock page_header %}
@@ -15,14 +15,24 @@ Our Story
 {% block content %}
 <div class="container container-sm">
     <div class="row row-box">
-        <div class="container py-md-5">
-            <div class="clearfix">
+        <div class="col-10 offset-1 py-md-5">
+            <div class="clearfix about-block">
                 <img src="{% static 'images/about-img.jpeg' %}" 
                 class="story-img img-fluid col-md-6 float-md-end mb-3 ms-md-3"
                 alt="picture of john williams and wife">
-            
+
+                <figure class="text-center">
+                    <blockquote>
+                        <p class="fw-bold quote">If you think dogs can't count,<br>
+                             try putting three dog biscuits in your pocket<br>
+                              and then give him only two of them.</p>
+                    </blockquote>
+                    <figcaption>— Phil Pastoret, author of <cite>Our Boarding House</cite></figcaption>
+                </figure>
+                <br>
+                <div class="about-block">
                 <p>John Williams loved dogs, mostly large dogs. Growing up on a large
-                    farm, John always had a lot of anumals to deal with, and enjoyed being 
+                    farm, John always had a lot of animals to deal with, and enjoyed being 
                     with dogs the most.
                 </p>
                 <p>Later, running the family farm on his own, he took in several large dogs that
@@ -38,19 +48,21 @@ Our Story
                 <p>In his passing, John left part of his estate to <strong>The Buddy Clubhouse</strong> which is run
                     by family and volunteers, and is partially sustained by the earnings from the farm and contributions from the public.
                 </p>
-                <p>
-                    To date, this estate has been home to 57 dogs. Currently, there are 15 gentle giants roaming the compound.
+                <p>To date, this estate has been home to 57 dogs. Currently, there are 15 gentle giants roaming the compound.</p>
+                <p>Our mission today remains true to that of John William's vision - we give large breed dogs a good home,
+                    keep them healthy and happy. We strive to give them a sense of purpose while they do the things they are good at, 
+                    and for people to get to enjoy the joys of being around these wonderful gentle giants.
                 </p>
-                <p>Our mission today has not diverged from the one John Williams strived towards - we give large breed dogs a good home,
-                     keep them healthy and happy.
-                    Above all that, we make sure that the dogs enjoy doing the things they are good at, 
-                    and people get to enjoy the joys of being around these wonderful gentle giants.
-                </p>
-                <p>To get involved in the Buddy Program, take action! Click one of the links below </p>
-                <a href="{% url 'contribution' %}" class="btn button">Contribute</a>
-                <a href="{% url 'register' %}" class="btn button-two">Make An Account</a>
-                <a href="{% url 'contact_us' %}" class="btn button">Contact Us</a>
-               
+                <br>
+            </div>
+            <div class="about-links text-center">
+
+                <p class="fw-bold">We invite you to get involved in the Buddy Program, take action! Click one of the links below </p>
+                <a href="{% url 'contribution' %}" class="btn button about-buttons">Contribute</a>
+                {% if not request.user.is_authenticated %}
+                <a href="{% url 'register' %}" class="btn button-two about-buttons">Register</a>
+                {% endif %}
+                <a href="{% url 'contact_us' %}" class="btn button about-buttons">Contact Us</a>
             </div>
         </div>
     </div>
