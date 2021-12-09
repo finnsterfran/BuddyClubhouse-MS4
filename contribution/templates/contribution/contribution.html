@@ -19,7 +19,7 @@
     <div class="container">
         <h2 class="donation-headline">Every donation is important and it is used explicitly for the purposes stated with each package.</h2>
         <div class="row row-box">
-            <a href="{% url 'cart' %}" class="cart-link"><i class="cart-icon fas fa-shopping-cart"></i>View Cart</a>
+            <a href="{% url 'cart' %}" class="cart-link text-center"><i class="cart-icon fas fa-shopping-cart"></i>View Cart</a>
             {% for product in products %}
             <div class="col-sm-6 col-md-6 g-3 d-flex">
               <div class="card flex-fill">
@@ -37,11 +37,11 @@
                                 <div class="w-50">
                                     <label for="quantity-input">Quantity</label>
                                     <input type="number" name="quantity" value="1" min="1" max="99" id="quantity-input"
-                                    data-item_id="{{ product.id }}" class="id_qty_{{ product.id }} form-control qty-input">   
+                                    data-item_id="{{ product.id }}" class="form-control qty-input">   
                                 </div>
                             </div>
                             <div class="col-12">
-                                <input type="submit" class="btn button rounded-0" value="Add to Bag">
+                                <input type="submit" class="btn button rounded-2" value="Add to Bag">
                             </div>
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
                       </div>

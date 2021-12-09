@@ -62,7 +62,7 @@ a:hover {
 }
 
 .header-container {
-    margin-top: 112px;
+    margin-top: 99px;
     text-align: center;
 }
 
@@ -91,8 +91,6 @@ a:hover {
 .brand_logo {
     color: var(--logo-color);
 }
-
-
 
 .offcanvas {
     padding: 1rem;
@@ -263,13 +261,14 @@ i.fas.fa-dog {
 
 /* contribution & cart */
 a i.cart-icon {
-    font-size: 3rem;
-    padding-right: 0.5rem;
+    font-size: 2rem;
+    padding-right: 0.7rem;
+    color: var(--logo-color);
 }
 
 a.cart-link {
-    font-size: 2rem;
-    color: var(--logo-color);
+    font-size: 1rem;
+    color: var(--navlink-color);
     text-decoration: none;
 } 
 
@@ -277,9 +276,19 @@ a.cart-link {
     padding-top: 0;
 }
 
+.update-link {
+    text-decoration: none;
+    color: var(--icon-color);
+}
+
 .update-link,
 .remove-item {
     cursor: pointer;
+}
+
+.cart-button {
+    width: 100%;
+    margin-bottom: 0.5rem;
 }
 
 input.btn.button {
@@ -288,7 +297,7 @@ input.btn.button {
 }
 
 .donation-headline {
-    font-size: 1.3rem;
+    font-size: 1rem;
     text-align: center;
     padding: 0.5rem;
 }
@@ -361,6 +370,14 @@ input.btn.button {
     .quote {
         width: 62%;
     }
+
+    a i.cart-icon {
+        font-size: 3rem;
+    }
+    
+    a.cart-link {
+        font-size: 1.7rem;
+    } 
 }
 
 @media (min-width: 1400px) {

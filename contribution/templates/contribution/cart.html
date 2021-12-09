@@ -64,7 +64,7 @@
                                             <div>
                                                 <label hidden for="quantity-input">Quantity</label>
                                                 <input type="number" name="quantity" value="{{ item.quantity }}" min="1" max="99" id="quantity-input"
-                                                data-item_id="{{ item.item_id }}" class="id_qty_{{ item.item_id }} form-control form-control-sm qty-input">            
+                                                data-item_id="{{ item.item_id }}" class="text-center form-control form-control-sm qty-input">            
                                             </div>
                                         </form>
                                         <a class="update-link float-end text-alert">update<small> <i class="fas fa-sync-alt"></i></small></a>
@@ -81,13 +81,13 @@
                             </tr>
                             <tr>
                                 <td colspan="5">
-                                    <a href="{% url 'contribution' %}" class="btn button gap-2">
+                                    <a href="{% url 'contribution' %}" class="btn button cart-button">
                                         <span class="icon">
                                             <i class="fas fa-chevron-left"></i>
                                         </span>
                                         <span class="text-uppercase">Keep Shopping</span>
                                     </a>
-                                    <a href="{% url 'checkout' %}" class="btn button-two">
+                                    <a href="{% url 'checkout' %}" class="btn button-two cart-button">
                                         <span class="text-uppercase">Secure Checkout</span>
                                         <span class="icon">
                                             <i class="fa fa-lock"></i>

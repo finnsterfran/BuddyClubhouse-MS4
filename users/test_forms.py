@@ -15,7 +15,7 @@ class TestCustomUserCreationForm(TestCase):
             'password1': 'yo!4password',
             'password2': 'yo!4password'
         })
-    
+
     def test_registration_form_incomplete(self):
         form = CustomUserCreationForm({
             'first_name': '',
@@ -27,11 +27,9 @@ class TestCustomUserCreationForm(TestCase):
         })
         self.assertFalse(form.is_valid())
 
-        
     def test_registration_can_with_complete_form(self):
         self.assertTrue(self.registration_form.is_valid)
 
-    
     def test_both_passwords_entered(self):
         form = CustomUserCreationForm({
             'first_name': 'Lola',
@@ -42,23 +40,8 @@ class TestCustomUserCreationForm(TestCase):
             'password2': 'yo!4password',
         })
         self.assertFalse(form.is_valid())
-        self.assertEqual(form.errors['password1'],[u'This field is required.'])
-
-
-    def test_email_is_unique_for_registration(self):
-        self.assertTrue(self.registration_form.is_valid())
-        self.registration_form.save()
-
-        other_form = CustomUserCreationForm({
-            'first_name': 'Lomax',
-            'last_name': 'Montez',
-            'email': 'looloo@email.com',
-            'username': 'lomaxm',
-            'password1': 'yo!4password',
-            'password2': 'yo!4password'})
-
-    
-        self.assertEqual(other_form.errors['email'][0], 'Email already exist')
+        self.assertEqual(form.errors['password1'],
+                         ['This field is required.'])
 
     def test_username_is_unique_for_registration(self):
         self.assertTrue(self.registration_form.is_valid())
@@ -74,7 +57,8 @@ class TestCustomUserCreationForm(TestCase):
         })
 
         self.assertFalse(other_form.is_valid())
-        self.assertEqual(other_form.errors['username'],[u'A user with that username already exists.'])
+        self.assertEqual(other_form.errors['username'],
+                         ['A user with that username already exists.'])
 
 
 class TestProfileForm(TestCase):
@@ -96,7 +80,9 @@ class TestProfileForm(TestCase):
         self.assertIn('email', form.errors.keys())
         self.assertEqual(form.errors['email'][0], 'This field is required.')
     
-
     def test_fields_are_explicit_in_form_metaclass(self):
         form = ProfileForm()
-        self.assertEqual(form.Meta.fields, ['first_name', 'last_name', 'email', 'address_line_1', 'address_line_2', 'postal_code', 'profile_image'])
+        self.assertEqual(form.Meta.fields,
+                         ['first_name', 'last_name',
+                          'email', 'address_line_1', 'address_line_2', 
+                          'postal_code', 'profile_image'])

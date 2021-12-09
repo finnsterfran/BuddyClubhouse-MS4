@@ -1,16 +1,16 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.core.exceptions import ObjectDoesNotExist
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.contrib.auth.models import User
-from .models import Profile
 from blogboard.models import Blog
-from .forms import CustomUserCreationForm, ProfileForm
 from checkout.models import Order
+from .models import Profile
+from .forms import CustomUserCreationForm, ProfileForm
 
 
-def userLogin(request):
+def user_login(request):
     """
     For user login, redirecting user to
     make an account if user doesn't exist in the database
@@ -41,7 +41,7 @@ def userLogin(request):
     return render(request, 'users/login_register.html')
 
 
-def userLogout(request):
+def user_logout(request):
     """
     Log the user out
     """
@@ -50,7 +50,7 @@ def userLogout(request):
     return redirect('login')
 
 
-def userRegister(request):
+def user_register(request):
     """
     For user registration page
     """
@@ -105,7 +105,7 @@ def profile(request, pk):
 
 
 @login_required(login_url='login')
-def userAccount(request):
+def user_account(request):
     """
     User's ACCOUNT view
     """
