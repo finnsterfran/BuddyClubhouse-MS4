@@ -11,13 +11,12 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 import os
-import dj_database_url
 from pathlib import Path
+import dj_database_url
 from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
-
+BASE_DIR = os.path.dirname(os.pathdirname(os.path.abspath(__file__)))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
@@ -101,21 +100,20 @@ AUTHENTICATION_BACKENDS = [
 
 SITE_ID = 1
 
-# EMAIL 
+# EMAIL
 
 if 'DEVELOPMENT' in os.environ:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
     DEFAULT_FROM_EMAIL = 'info@thebuddyclubhouse.com'
 else:
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-    DEFAULT_FROM_EMAIL = config('EMAIL_HU')
+    DEFAULT_FROM_EMAIL = config('EMAIL_HU', default='')
     EMAIL_HOST = 'smtp.aol.com'
     EMAIL_PORT = 587
     EMAIL_USE_SSL = False
     EMAIL_USE_TLS = True
-    EMAIL_HOST_USER = config('EMAIL_HU')
-    EMAIL_HOST_PASSWORD = config('E_PWD')
-
+    EMAIL_HOST_USER = config('EMAIL_HU', default='')
+    EMAIL_HOST_PASSWORD = config('E_PWD', default='')
 
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 ACCOUNT_EMAIL_REQUIRED = True
