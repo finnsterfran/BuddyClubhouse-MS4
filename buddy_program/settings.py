@@ -107,13 +107,13 @@ if 'DEVELOPMENT' in os.environ:
     DEFAULT_FROM_EMAIL = 'info@thebuddyclubhouse.com'
 else:
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-    DEFAULT_FROM_EMAIL = config('EMAIL_HU', default='')
+    DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER', '')
     EMAIL_HOST = 'smtp.aol.com'
     EMAIL_PORT = 587
     EMAIL_USE_SSL = False
     EMAIL_USE_TLS = True
-    EMAIL_HOST_USER = config('EMAIL_HU', default='')
-    EMAIL_HOST_PASSWORD = config('E_PWD', default='')
+    EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER', '')
+    EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASSWORD', '')
 
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 ACCOUNT_EMAIL_REQUIRED = True
@@ -123,10 +123,10 @@ ACCOUNT_USERNAME_MIN_LENGTH = 5
 LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = '/'
 
-STRIPE_PUBLIC_KEY = config('STRIPE_PK', default='')
-STRIPE_SECRET_KEY = config('STRIPE_SK', default='')
+STRIPE_PUBLIC_KEY = os.environ.get('STRIPE_PUBLIC_KEY', '')
+STRIPE_SECRET_KEY = os.environ.get('STRIPE_SECRET_KEY', '')
 STRIPE_CURRENCY = 'eur'
-STRIPE_WH_SECRET = config('STRIPE_WH', default='')
+STRIPE_WH_SECRET = os.environ.get('STRIPE_WH_SECRET', '')
 
 WSGI_APPLICATION = 'buddy_program.wsgi.application'
 
