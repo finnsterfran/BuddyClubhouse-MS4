@@ -47,7 +47,6 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'dogs.apps.DogsConfig',
     'blogboard.apps.BlogboardConfig',
-    'events.apps.EventsConfig',
     'contribution.apps.ContributionConfig',
     'checkout.apps.CheckoutConfig',
     'crispy_forms',
@@ -125,10 +124,10 @@ ACCOUNT_USERNAME_MIN_LENGTH = 5
 LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = '/'
 
-STRIPE_PUBLIC_KEY = config('STRIPE_PK')
-STRIPE_SECRET_KEY = config('STRIPE_SK')
+STRIPE_PUBLIC_KEY = config('STRIPE_PK', default='')
+STRIPE_SECRET_KEY = config('STRIPE_SK', default='')
 STRIPE_CURRENCY = 'eur'
-STRIPE_WH_SECRET = config('STRIPE_WH')
+STRIPE_WH_SECRET = config('STRIPE_WH', default='')
 
 WSGI_APPLICATION = 'buddy_program.wsgi.application'
 
