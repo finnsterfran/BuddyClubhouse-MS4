@@ -47,7 +47,6 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'dogs.apps.DogsConfig',
     'blogboard.apps.BlogboardConfig',
-    'events.apps.EventsConfig',
     'contribution.apps.ContributionConfig',
     'checkout.apps.CheckoutConfig',
     'crispy_forms',
