@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 import os
 import dj_database_url
 from pathlib import Path
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -22,10 +23,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY_MS4', '')
+SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = 'DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = ['the-buddy-clubhouse-ms4.herokuapp.com', 'localhost']
 
@@ -107,13 +108,13 @@ if 'DEVELOPMENT' in os.environ:
     DEFAULT_FROM_EMAIL = 'info@thebuddyclubhouse.com'
 else:
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-    DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HU', '')
+    DEFAULT_FROM_EMAIL = config('EMAIL_HU')
     EMAIL_HOST = 'smtp.aol.com'
     EMAIL_PORT = 587
     EMAIL_USE_SSL = False
     EMAIL_USE_TLS = True
-    EMAIL_HOST_USER = os.environ.get('EMAIL_HU', '')
-    EMAIL_HOST_PASSWORD = os.environ.get('E_PWD', '')
+    EMAIL_HOST_USER = config('EMAIL_HU')
+    EMAIL_HOST_PASSWORD = config('E_PWD')
 
 
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
@@ -124,10 +125,10 @@ ACCOUNT_USERNAME_MIN_LENGTH = 5
 LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = '/'
 
-STRIPE_PUBLIC_KEY = os.environ.get('STRIPE_PUBLIC_KEY')
-STRIPE_SECRET_KEY = os.environ.get('STRIPE_SECRET_KEY')
+STRIPE_PUBLIC_KEY = config('STRIPE_PK')
+STRIPE_SECRET_KEY = config('STRIPE_SK')
 STRIPE_CURRENCY = 'eur'
-STRIPE_WH_SECRET = os.environ.get('STRIPE_WH_SECRET')
+STRIPE_WH_SECRET = config('STRIPE_WH')
 
 WSGI_APPLICATION = 'buddy_program.wsgi.application'
 
