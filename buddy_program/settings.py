@@ -11,9 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 import os
-from pathlib import Path
 import dj_database_url
-from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -136,14 +134,16 @@ WSGI_APPLICATION = 'buddy_program.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 if 'DATABASE_URL' in os.environ:
+    print('using Postgres')
     DATABASES = {
         'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
 else:
+    print('unable to find database_url, using sqlite DB')
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': BASE_DIR / 'db.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.db.sqlite3'),
         }
     }
 
@@ -201,14 +201,13 @@ if 'USE_AWS' in os.environ:
     # STATIC AND MEDIA FILES STORAGE
     STATICFILES_STORAGE = 'custom_storages.StaticStorage'
     STATICFILES_LOCATION = 'static'
+
     DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
     MEDIAFILES_LOCATION = 'media'
 
     # OVERRIDE STATIC AND MEDIA URLS IN PRODUCTION
     STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
     MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
-
-
 
 
 # Default primary key field type
