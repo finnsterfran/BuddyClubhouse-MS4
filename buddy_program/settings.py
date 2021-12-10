@@ -123,10 +123,10 @@ ACCOUNT_USERNAME_MIN_LENGTH = 5
 LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = '/'
 
-STRIPE_PUBLIC_KEY = config('STRIPE_PK')
-STRIPE_SECRET_KEY = config('STRIPE_SK')
+STRIPE_PUBLIC_KEY = config('STRIPE_PK', default='')
+STRIPE_SECRET_KEY = config('STRIPE_SK', default='')
 STRIPE_CURRENCY = 'eur'
-STRIPE_WH_SECRET = config('STRIPE_WH')
+STRIPE_WH_SECRET = config('STRIPE_WH', default='')
 
 WSGI_APPLICATION = 'buddy_program.wsgi.application'
 
