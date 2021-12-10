@@ -2,6 +2,7 @@ asgiref==3.4.1
 boto3==1.20.23
 botocore==1.23.23
 dj-database-url==0.5.0
+dj-stripe==2.5.1
 Django==3.2.8
 django-allauth==0.45.0
 django-crispy-forms==1.13.0
