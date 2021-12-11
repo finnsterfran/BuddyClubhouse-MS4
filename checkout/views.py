@@ -32,7 +32,7 @@ def cache_checkout_data(request):
 
 
 def checkout(request):
-    
+
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
@@ -46,7 +46,7 @@ def checkout(request):
             'address_line_2': request.POST['address_line_2'],
             'postal_code': request.POST['postal_code'],
         }
-        
+
         order_form = OrderForm(form_data)
         if order_form.is_valid():
             # prevent multiple save being made, commit=False
@@ -57,7 +57,7 @@ def checkout(request):
             order.save()
             for item_id, item_data in cart.items():
                 product = Donation.objects.get(id=item_id)
-                
+
                 order_line_item = OrderLineItem(
                     order=order,
                     product=product,
@@ -66,7 +66,8 @@ def checkout(request):
                 order_line_item.save()
 
             request.session['save-info'] = 'save-info' in request.POST
-            return redirect(reverse('checkout_success', args=[order.order_number]))
+            return redirect(reverse('checkout_success',
+                                    args=[order.order_number]))
         else:
             messages.error(request, 'There was something wrong with your form. \
                 Please double check your information.')
@@ -139,7 +140,7 @@ def checkout_success(request, order_number):
             'postal_code': order.postal_code,
         }
         username_form = ProfileForm(profile_data, instance=profile)
-        if username_form.is_valid:
+        if username_form.is_valid():
             username_form.save()
 
     messages.success(request, f'Order successfully processed! \
