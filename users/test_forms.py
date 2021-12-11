@@ -79,10 +79,10 @@ class TestProfileForm(TestCase):
         self.assertFalse(form.is_valid())
         self.assertIn('email', form.errors.keys())
         self.assertEqual(form.errors['email'][0], 'This field is required.')
-    
+
     def test_fields_are_explicit_in_form_metaclass(self):
         form = ProfileForm()
         self.assertEqual(form.Meta.fields,
                          ['first_name', 'last_name',
-                          'email', 'address_line_1', 'address_line_2', 
+                          'email', 'address_line_1', 'address_line_2',
                           'postal_code', 'profile_image'])
