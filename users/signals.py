@@ -21,6 +21,8 @@ def create_profile(sender, instance, created, **kwargs):
             'Thank you for joining us in making \
             a difference in the lives of our canine friends.')
 
+        print("EMAIL_HOST_USER FROM SETTINGS IN USERS/SIGNALS.PY: ", settings.EMAIL_HOST_USER)
+        print("PROFILE EMAIL", profile.email)
         send_mail(
             subject,
             message,
