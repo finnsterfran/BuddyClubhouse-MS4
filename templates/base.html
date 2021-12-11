@@ -95,14 +95,6 @@
                               <a class="nav-link active" aria-current="page" href="{% url 'login' %}"><i class="fas fa-sign-in-alt"></i> login</a>
                             </li>       
                             {% endif %}
-                            {% if request.user.is_authenticated %}
-                                {% if request.user.is_superuser %}
-                                <li class="nav-item">
-                                    <a class="nav-link active" aria-current="page" href="{% url 'add_event' %}"><i class="fas fa-user-shield"></i> add event</a>
-                                  </li>   
-    
-                                {% endif %}
-                            {% endif %}    
                         </ul>
                         <div class="footer-box">
                             <ul class="footer-items">
