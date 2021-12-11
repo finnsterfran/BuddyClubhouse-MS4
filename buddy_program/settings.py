@@ -125,7 +125,6 @@ STRIPE_WH_SECRET = os.environ.get('STRIPE_WH_SECRET', '')
 
 WSGI_APPLICATION = 'buddy_program.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
