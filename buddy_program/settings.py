@@ -111,7 +111,7 @@ else:
     EMAIL_USE_SSL = False
     EMAIL_USE_TLS = True
     EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER', '')
-    EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASSWORD', '')
+    EMAIL_PASSWORD = os.environ.get('EMAIL_PASSWORD', '')
 
 # ACCOUNT HANDLING SETTING
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
