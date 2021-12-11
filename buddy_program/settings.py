@@ -192,6 +192,11 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 if 'USE_AWS' in os.environ:
+    # CACHE CONTROL - to improve performance of the browser
+    AWS_S3_OBJECT_PARAMETERS = {
+        'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+        'CacheControl': 'max-age=94698000'
+    }
     # Bucket Configuration
     AWS_STORAGE_BUCKET_NAME = 'the-buddy-clubhouse-ms4'
     AWS_S3_REGION_NAME = 'eu-central-1'
