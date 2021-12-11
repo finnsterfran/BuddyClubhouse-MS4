@@ -13,6 +13,10 @@
 }
 
 /* Utilities */
+html {
+    height: 100vh;
+    width: 100vw;
+}
 body {
     font-family: 'Montserrat Alternates', sans-serif;
     background-color: var(--light);
@@ -300,6 +304,11 @@ input.btn.button {
     font-size: 1rem;
     text-align: center;
     padding: 0.5rem;
+}
+
+/* Blog */
+.blog-text {
+    letter-spacing: 1px;
 }
 
 /* MEDIA QUERIES */
