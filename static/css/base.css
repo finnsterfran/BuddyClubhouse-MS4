@@ -317,7 +317,8 @@ input.btn.button {
 
 /* Events */
 .event-icon > i {
-    font-size: 2rem;
+    font-size: 4rem;
+    color: var(--navhover-color);
 }
 
 /* MEDIA QUERIES */
