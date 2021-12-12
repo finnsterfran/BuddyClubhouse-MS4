@@ -28,11 +28,11 @@
                 <div class="card-body">
                     <h2 class="event-icon text-center">
                         {% if event.event_type == 'watersport' %}<i class="fas fa-water"></i>
-                        {% elif event.event.type == 'agilitysport' %}
-                        {% elif event.event.type == 'hike' %}<i class="fas fa-walking"></i>
-                        {% elif event.event.type == 'grooming' %}<i class="fas fa-cut"></i>
-                        {% elif event.event.type == 'swim' %}<i class="fas fa-swimmer"></i>
-                        {% elif event.event.type == 'playdate' %}<i class="far fa-futbol"></i>
+                        {% elif event.event_type == 'agilitysport' %}
+                        {% elif event.event_type == 'hike' %}<i class="fas fa-walking"></i>
+                        {% elif event.event_type == 'grooming' %}<i class="fas fa-cut"></i>
+                        {% elif event.event_type == 'swim' %}<i class="fas fa-swimmer"></i>
+                        {% elif event.event_type == 'playdate' %}<i class="far fa-futbol"></i>
                         {% else %}<i class="fas fa-apple-alt"></i>
                         {% endif %}
                     </h2>
