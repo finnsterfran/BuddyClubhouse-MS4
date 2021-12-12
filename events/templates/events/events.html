@@ -19,17 +19,17 @@
 <div class="container">
     <div class="row row-box">
         {% for event in all_events %}
-        <div class="col-sm-6 col-md-4">
-            <div class="card mb-3 rounded-2">
+        <div class="col-sm-6 col-md-4 d-flex">
+            <div class="card mb-3 rounded-2 flex-fill">
                 <div class="card-header"><i class="fas fa-broadcast-tower"></i> {{event.title}}<br>
                     <small>{{ event.event_type }}</small>
                 </div>
                 
                 <div class="card-body">
                     <h2 class="event-icon text-center">
-                        {% if event.event_type == 'sport - water' %}<i class="fas fa-water"></i>
-                        {% elif event.event.type =='sport - agility %}
-                        {% elif event.event.type == 'hike %}<i class="fas fa-walking"></i>
+                        {% if event.event_type == 'watersport' %}<i class="fas fa-water"></i>
+                        {% elif event.event.type == 'agilitysport' %}
+                        {% elif event.event.type == 'hike' %}<i class="fas fa-walking"></i>
                         {% elif event.event.type == 'grooming' %}<i class="fas fa-cut"></i>
                         {% elif event.event.type == 'swim' %}<i class="fas fa-swimmer"></i>
                         {% elif event.event.type == 'playdate' %}<i class="far fa-futbol"></i>
