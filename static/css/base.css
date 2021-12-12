@@ -263,6 +263,10 @@ i.fas.fa-dog {
     color: var(--logo-color);
 }
 
+.header-set {
+    margin-bottom: 1rem;
+}
+
 /* contribution & cart */
 a i.cart-icon {
     font-size: 2rem;

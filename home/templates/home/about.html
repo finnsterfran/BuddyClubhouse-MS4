@@ -63,6 +63,9 @@ Our Story
                 {% if not request.user.is_authenticated %}
                 <a href="{% url 'register' %}" class="btn button-two about-buttons">Register</a>
                 {% endif %}
+                {% if request.user.is_authenticated %}
+                <a href="{% url 'events' %}" class="btn button-two about-buttons">Events</a>
+                {% endif %}
             </div>
         </div>
     </div>

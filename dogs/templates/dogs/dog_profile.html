@@ -1,10 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block extra_css%}
-  
-{% endblock extra_css %}
-
 {% block extra_title %}
     Buddy Profile
 {% endblock extra_title%}
@@ -12,8 +8,9 @@
 {% block page_header %}
 <div class="container header-container">
     <div class="row">
-        <div class="col-12">
-            <h1 class="text-center">This is {{ dog_profile.name }}'s profile </h1>
+        <div class="col-sm-12 text-center header-set">
+            <h1><strong>{{ dog_profile.name }}'s </strong>Profile</h1>
+            <a href="{% url 'dogs' %}" class="btn button-two"><i class="fas fa-chevron-left"></i> back</a>
         </div>
     </div>
 </div>
@@ -21,10 +18,10 @@
 
 {% block content %}
 <div class="container">
-    <div class="row row-box">
-        <div class="col-sm-12 col-xl-5 py-4 me-auto">
-            <div class="card">
-                <img src="{{ dog_profile.image.url }}" alt="{{ dog.name }}" class="card-img-top img-fluid">
+    <div class="row g-0">
+        <div class="col-sm-12 col-md-8 offset-md-2 me-auto py-md-1">
+            <div class="card mb-3">
+                <img src="{{ dog_profile.image.url }}" alt="{{ dog.name }}" class="rounded-start img-fluid">
                 <div class="card-body">
                     <p><strong class="pe-4">Breed:</strong> {{ dog_profile.breed}}</p>
                     <p><strong class="pe-4">Age: </strong>{{ dog_profile.age }} years old</p>  
@@ -33,11 +30,8 @@
                     <p><strong class="pe-4">Working Title:</strong>{% for job in dog_profile.job.all %} <br>{{ job }} {% endfor %}</p>
                     <hr>
                     <p class="card-text lh-lg">{{ dog_profile.story }}</p>
-                </div>
+                </div>  
             </div>
-        </div>
-        <div class="col-7">
-            
         </div>
     </div>  
 </div>
