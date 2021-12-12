@@ -19,18 +19,32 @@
 <div class="container">
     <div class="row row-box">
         {% for event in all_events %}
-        <div class="col-sm-6 col-md-3">
-            <div class="card mb-3">
-                <div class="card-header"><i class="fas fa-broadcast-tower"></i> {{event.title}}</div>
-                <small>{{ event.event_type }}</small>
+        <div class="col-sm-6 col-md-4">
+            <div class="card mb-3 rounded-2">
+                <div class="card-header"><i class="fas fa-broadcast-tower"></i> {{event.title}}<br>
+                    <small>{{ event.event_type }}</small>
+                </div>
+                
                 <div class="card-body">
+                    <h2 class="event-icon text-center">
+                        {% if event.event_type == 'sport - water' %}<i class="fas fa-water"></i>
+                        {% elif event.event.type =='sport - agility %}
+                        {% elif event.event.type == 'hike %}<i class="fas fa-walking"></i>
+                        {% elif event.event.type == 'grooming' %}<i class="fas fa-cut"></i>
+                        {% elif event.event.type == 'swim' %}<i class="fas fa-swimmer"></i>
+                        {% elif event.event.type == 'playdate' %}<i class="far fa-futbol"></i>
+                        {% else %}<i class="fas fa-apple-alt"></i>
+                        {% endif %}
+                    </h2>
                     {% for name in event.buddy_name.all %}
-                    <p class="card-text">{{ name }}</p>
+                    <p class="card-text"><strong>Playmates: </strong>
+                        {{ name }}
+                    </p>
                     {% endfor %}
                     <p class=card-text">
                         <strong>Date: </strong>{{event.date_of_event}}<br>
-                        from: {{event.start_time}}<br> 
-                        till: {{event.end_time}}
+                        <strong>From:</strong> {{event.start_time}}<br> 
+                        <strong>Till:</strong> {{event.end_time}}
                     </p>
                 </div>
             </div>

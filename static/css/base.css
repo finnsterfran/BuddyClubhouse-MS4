@@ -315,6 +315,11 @@ input.btn.button {
     letter-spacing: 1px;
 }
 
+/* Events */
+.event-icon > i {
+    font-size: 2rem;
+}
+
 /* MEDIA QUERIES */
 
 @media (min-width: 375px) {
