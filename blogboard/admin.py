@@ -6,4 +6,5 @@ class BlogAdmin(admin.ModelAdmin):
 
     readonly_fields = ('username', 'date_of_entry')
 
+
 admin.site.register(Blog, BlogAdmin)
