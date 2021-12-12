@@ -26,6 +26,8 @@ def blog_entry(request, pk):
         'blogpost': blogpost,
         'profile': profile,
     }
+    print(request.user)
+    print(blogpost.username)
     return render(request, 'blogboard/blog_entry.html', context)
 
 

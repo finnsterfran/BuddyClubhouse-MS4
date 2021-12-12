@@ -1,6 +1,7 @@
 ### Code Institute Milestone Four Project
 > Full Stack Frameworks with Django
 
+![Responsiveness](README_images/responsive.png)
 
 <p>&nbsp;</p>
 
@@ -9,17 +10,24 @@
 
 ### The aim of the website is to:
 * give people who love large breed dogs, but might not have the space or time to have one as a regular pet, the opportunity to spend quality time with them
-* give the dogs the social interaction with people they need 
+* give the dogs the social interaction with people they need
 * generate some donation from users to help with the upkeep of the dogs
+
+# TABLE OF CONTENT
+1. [USER STORY](#user_story)
+2. [STRATEGY](#strategy)
+
+
+
 
 ### User registration is required to be able to post a blog and to access the events calendar.
 
 <p>&nbsp;</p>
 
-### **View this project live:**[Buddy Clubhouse]
+### **View this project live:** [The Buddy Clubhouse](https://the-buddy-clubhouse-ms4.herokuapp.com/)
 <p>&nbsp;</p>
 
-### **The Repository can be found here:**[Buddy Clubhouse Source Code](https://github.com/finnsterfran/BuddyClubhouse-MS4)
+### **The Repository can be found here:** [The Buddy Clubhouse Source Code](https://github.com/finnsterfran/BuddyClubhouse-MS4)
 <p>&nbsp;</p>
 
 # USER STORY
@@ -54,12 +62,12 @@
     * Registered users will be able to contribute blog post about their interaction with the dog/dogs.
     * Registered users will be able to see the history of any orders they have made via their account page.
 
-# 1. STRATEGY
+# STRATEGY
 
-# 2. SCOPE
-# 3. STRUCTURE
-# 4. SKELETON
-# 5. SURFACE
+# SCOPE
+# STRUCTURE
+# SKELETON
+# SURFACE
 ### Colors
 ### Typography
 

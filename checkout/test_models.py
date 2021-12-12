@@ -12,14 +12,15 @@ class TestOrderCheckoutModel(TestCase):
             address_line_1='South Beach Street 99',
             address_line_2='',
             postal_code='23459RR')
-        
+
         self.assertEqual(billing_address.first_name, 'Lola')
         self.assertEqual(billing_address.last_name, 'Montez')
         self.assertEqual(billing_address.email, 'looloo@email.com')
-        self.assertEqual(billing_address.address_line_1, 'South Beach Street 99')
+        self.assertEqual(billing_address.address_line_1,
+                         'South Beach Street 99')
         self.assertEqual(billing_address.address_line_2, '')
         self.assertEqual(billing_address.postal_code, '23459RR')
-    
+
     def test_put_in_an_order(self):
         order = Order(order_total=85.00)
         order.save()

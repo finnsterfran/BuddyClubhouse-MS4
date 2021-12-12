@@ -26,3 +26,4 @@ class TestViews(TestCase):
         self.assertTrue(login_okay)
         response = self.client.post('/blogboard/write_blog/', {'title': 'Test add a blog'})
         self.assertTemplateUsed(response, 'blogboard/write_blog.html')
+
