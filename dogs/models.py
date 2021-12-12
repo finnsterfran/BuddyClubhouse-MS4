@@ -2,7 +2,7 @@ from django.db import models
 
 
 class Dog(models.Model):
-    
+
     GENDER_TYPE = (
         ('Female', 'female'),
         ('Male', 'male'),
@@ -17,14 +17,13 @@ class Dog(models.Model):
     image = models.ImageField(upload_to='dogs/', null=True, blank=True)
     story = models.TextField(max_length=2000, blank=True)
 
-
     def __str__(self):
-        return self.name
-    
-    class Meta: 
+        return str(self.name)
+
+    class Meta:
         ordering = ['resided_since']
-    
-    @property 
+
+    @property
     def imageURL(self):
         try:
             url = self.image.url
@@ -44,6 +43,6 @@ class Breed(models.Model):
 class Job(models.Model):
 
     title = models.CharField(max_length=200)
-    
+
     def __str__(self):
         return str(self.title)

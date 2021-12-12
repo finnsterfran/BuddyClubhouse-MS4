@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from .models import Event
 
-# Create your views here.
+
 def events(request):
     """ View to render all events """
     all_events = Event.objects.all()

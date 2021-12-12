@@ -24,11 +24,12 @@
                 <div class="card-header">{{event.title}}</div>
                 <div class="card-body">
                     <h2 class="card-title">{{ event.type }}</h2>
-                    <p class="card-text">{{ event.name_of_buddy}}<br>
+                    {% for name in event.buddy_name.all %}
+                    <p class="card-text">{{ bubby_name }}<br>
                         {{event.date_of_event}}<br>
                         {{event.start_time}} till {{event.end_time}}
                     </p>
-
+                    {% endfor %}
                 </div>
             </div>
         </div>
