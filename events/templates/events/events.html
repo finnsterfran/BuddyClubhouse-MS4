@@ -35,7 +35,7 @@
                     </h2>
                     
                     <p class="card-text"><strong>Playmates: </strong>
-                        % for name in event.buddy_name.all %}
+                        {% for name in event.buddy_name.all %}
                         {{ name }}
                         {% endfor %}
                     </p>
