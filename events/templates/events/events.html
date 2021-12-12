@@ -21,27 +21,12 @@
         {% for event in all_events %}
         <div class="col-sm-6 col-md-4 d-flex">
             <div class="card mb-3 rounded-2 flex-fill">
-                <div class="card-header"><i class="fas fa-broadcast-tower"></i> {{event.title}}<br>
-                    <small>{{ event.event_type }}</small>
+                <div class="text-center card-header fw-bold">{{event.title}}<br>
+                    <small class="text-center">{{ event.event_type }}</small>
                 </div>
-                
                 <div class="card-body">
                     <h2 class="event-icon text-center">
-                        {%  if "playdate" %}
-                        <i class="far fa-futbol"></i>
-                        {% elif 'watersport' %}
-                        <i class="fas fa-running"></i>
-                        {% elif 'agilitysport' %}
-                        <i class="fas fa-running"></i>
-                        {% elif 'hike' %}
-                        <i class="fas fa-walking"></i>
-                        {% elif 'swim' %}
-                        <i class="fas fa-swimmer"></i>
-                        {% elif 'grooming' %}
-                        <i class="fas fa-cut"></i>
-                        {% else %}
                         <i class="fas fa-apple-alt "></i>
-                        {% endif %}
                     </h2>
                     <p class="card-text"><strong>Playmates: </strong>
                         {% for name in event.buddy_name.all %}
