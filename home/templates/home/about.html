@@ -15,7 +15,7 @@ Our Story
 {% block content %}
 <div class="container container-sm">
     <div class="row row-box">
-        <div class="col-10 offset-1 py-md-5">
+        <div class="col-sm-12 col-md-10 offset-md-1 py-md-5">
             <div class="clearfix about-block">
                 <img src="{% static 'images/about-img.jpeg' %}" 
                 class="story-img img-fluid col-md-6 float-md-end mb-3 ms-md-3"
@@ -58,11 +58,11 @@ Our Story
             <div class="about-links text-center">
 
                 <p class="fw-bold">We invite you to get involved in the Buddy Program, take action! Click one of the links below </p>
-                <a href="{% url 'contribution' %}" class="btn button about-buttons">Contribute</a>
+                <a href="{% url 'contribution' %}" class="btn button-two about-buttons">Contribute</a>
+                <a href="{% url 'contact_us' %}" class="btn button about-buttons">Contact Us</a>
                 {% if not request.user.is_authenticated %}
                 <a href="{% url 'register' %}" class="btn button-two about-buttons">Register</a>
                 {% endif %}
-                <a href="{% url 'contact_us' %}" class="btn button about-buttons">Contact Us</a>
             </div>
         </div>
     </div>

@@ -183,8 +183,8 @@ ul.footer-item {
 
 /* about page */
 .story-img {
-    height: 20rem;
-    width: 20rem;
+    height: 15rem;
+    width: 16rem;
     border: 1px solid var(--dark);
     border-radius: 0.5rem;
 }
@@ -348,17 +348,18 @@ input.btn.button {
     }
 
     .quote {
-        width: 41%;
+        width: 52%;
     }
 
     .btn {
         width: unset;
     }
+
 }
 
 @media (min-width: 992px) {
     .quote {
-        width: 55%;
+        width: 64%;
     }
 }
 
@@ -377,7 +378,7 @@ input.btn.button {
     }
 
     .quote {
-        width: 62%;
+        width: 69%;
     }
 
     a i.cart-icon {
@@ -391,6 +392,6 @@ input.btn.button {
 
 @media (min-width: 1400px) {
     .quote {
-        width: 67%;
+        width: 71%;
     }
 }
