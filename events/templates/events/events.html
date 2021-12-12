@@ -18,7 +18,21 @@
 {% block content %}
 <div class="container">
     <div class="row row-box">
-        <h2>Events go here</h2>
+        {% for event in all_events %}
+        <div class="col-sm-6 col-md-3">
+            <div class="card mb-3">
+                <div class="card-header">{{event.title}}</div>
+                <div class="card-body">
+                    <h2 class="card-title">{{ event.type }}</h2>
+                    <p class="card-text">{{ event.name_of_buddy}}<br>
+                        {{event.date_of_event}}<br>
+                        {{event.start_time}} till {{event.end_time}}
+                    </p>
+
+                </div>
+            </div>
+        </div>
+        {% endfor %}
     </div>  
 </div>
 {% endblock content %}
