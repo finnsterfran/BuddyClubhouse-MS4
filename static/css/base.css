@@ -337,14 +337,6 @@ input.btn.button {
         width: 22rem;
     }
 
-    .buddy-list {
-        padding: 1rem 5rem;
-    }
-    
-    .date-time-list {
-        padding: 0 5rem;
-    }
-
 }
 
 @media (min-width: 414px) {

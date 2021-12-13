@@ -17,13 +17,13 @@
 
 {% block content %}
 <div class="container container-sm">
-    <div class="row row-box">
-        <div class="card d-flex">
+    <div class="row row-box py-sm-3">
+        <div class="card d-flex px-sm-5 py-3">
         <div class="col-sm-12 py-md-5">
             <div class="clearfix">
                 {% if blogpost.featured_image %}
                 <img src="{{ blogpost.featured_image.url }}" alt="{{ blogpost.title }}"
-                 class="img-fluid col-md-6 float-md-end mb-3 ms-md-3">
+                 class="img-fluid col-md-6 py-4 float-md-end mb-3 ms-md-3">
                  {% endif %}
                  <p><strong class="pe-4">Title:</strong><br> {{ blogpost.title }}</p>
                  <p><strong class="pe-4">Author: </strong><br>{{ blogpost.username }}</p>  
@@ -35,12 +35,12 @@
             <div class="text-center pt-md-4">
                 {% if request.user.is_authenticated %}  
                     {% if blogpost.username.user == request.user %}
-                    <a href="{% url 'account' %}" class="btn button-two">Account</a>
-                    <a href="{% url 'edit_blog' blogpost.id %}" class="btn button">Edit</a>
+                    <a href="{% url 'account' %}" class="btn button-two about-button">Account</a>
+                    <a href="{% url 'edit_blog' blogpost.id %}" class="btn button about-button">Edit</a>
                     {% endif %}
                 {% endif %}
-                <a href="{% url 'blogs' %}" class="btn button-two">Return to Blogs</a>
-                <a href="{% url 'register' %}" class="btn button">Become a Member</a> 
+                <a href="{% url 'blogs' %}" class="btn button-two about-button">Return to Blogs</a>
+                <a href="{% url 'register' %}" class="btn button about-button">Become a Member</a> 
             </div>
         </div>
         </div>
