@@ -22,7 +22,7 @@
 {% block content %}
 <div class="container">
     <div class="row">
-        <div class="col-sm-12 col-md-10 col-lg-8 offset-lg-2">
+        <div class="col-sm-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
             <p class="text-center text-muted">Please fill out the form below to complete your order</p>
             <hr>
             <form action="{% url 'checkout' %}" method="POST" id="payment-form">
@@ -50,7 +50,7 @@
                         {% endif %}
                     </div>
                 </fieldset>
-                <fieldset class="rounded px-3 mb-5">
+                <fieldset class="rounded px-3">
                     <legend class="fieldset-label small px-2 w-auto">Payment</legend>
                     <!-- Stripe Card Element will go here -->
                     <div class="mb-3" id="card-element"></div>
@@ -58,14 +58,14 @@
                     <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
                     <input type="hidden" value="{{ client_secret }}" name="client_secret">
                 </fieldset>
-                <div class="submit-button text-right mt-5 ms-4">
-                    <a href="{% url 'cart' %}" class="btn button rounded-0">
+                <div class="submit-button text-right mx-3">
+                    <a href="{% url 'cart' %}" class="btn button about-buttons rounded-1">
                         <span>
                             <i class="fas fa-chevron-left"></i>
                         </span>
                         <span>Adjust Bag</span>
                     </a> 
-                    <button id="submit-button" class="btn button-two rounded-0">
+                    <button id="submit-button" class="about-buttons btn button-two rounded-1">
                         <span>Complete Order</span>
                         <span>
                             <i class="fas fa-lock"></i>
