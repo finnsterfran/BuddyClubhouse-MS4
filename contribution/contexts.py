@@ -4,6 +4,10 @@ from contribution.models import Donation
 
 
 def cart_contents(request):
+    """
+    This makes the cart contents
+    can be fetched through the entire project
+    """
     cart_items = []
     total = 0
     item_count = 0
@@ -18,7 +22,7 @@ def cart_contents(request):
             'quantity': quantity,
             'product': product,
         })
-    
+
     grand_total = total
 
     context = {

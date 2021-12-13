@@ -18,5 +18,5 @@ class TestCheckoutOrderForm(TestCase):
     def test_alert_prompt_for_incomplete_form(self):
         form = OrderForm({'form': ''})
         self.assertFalse(form.is_valid())
-        self.assertEqual(form.errors['first_name'][0], 'This field is required.')
-
+        self.assertEqual(form.errors['first_name'][0],
+                         'This field is required.')
