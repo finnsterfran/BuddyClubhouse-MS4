@@ -396,7 +396,7 @@ input.btn.button {
 
 @media (min-width: 992px) {
     .quote {
-        width: 54%;
+        width: 63%;
     }
 }
 
@@ -415,7 +415,7 @@ input.btn.button {
     }
 
     .quote {
-        width: 54%;
+        width: 69%;
     }
 
     a i.cart-icon {
@@ -429,6 +429,6 @@ input.btn.button {
 
 @media (min-width: 1400px) {
     .quote {
-        width: 60%;
+        width: 70%;
     }
 }
