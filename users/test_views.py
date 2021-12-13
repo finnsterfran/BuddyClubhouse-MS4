@@ -2,6 +2,7 @@ from django.test import TestCase
 from django.urls import reverse
 from django.contrib.auth import get_user_model
 from users.forms import CustomUserCreationForm
+from . import views
 
 User = get_user_model()
 
@@ -49,6 +50,7 @@ class TestViews(TestCase):
         response = self.client.get('/users/login/')
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'users/login_register.html')
+    
 
     def test_registered_user_login(self):
         self.registration_form.save()
@@ -64,3 +66,8 @@ class TestViews(TestCase):
         response = self.client.get('/users/logout/', follow=True)
         self.assertEqual(response.status_code, 200)
         self.assertRedirects(response, '/users/login/')
+
+    def test_get_profiles(self):
+        response = self.client.get('/users/')
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'users/profiles.html')
