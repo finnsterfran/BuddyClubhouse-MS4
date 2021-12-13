@@ -92,18 +92,6 @@ def profiles(request):
     return render(request, 'users/profiles.html', context)
 
 
-def profile(request, pk):
-    """
-    Display individual user profile
-    """
-    profile = Profile.objects.get(id=pk)
-
-    context = {
-        'profile': profile,
-    }
-    return render(request, 'users/profile.html', context)
-
-
 @login_required(login_url='login')
 def user_account(request):
     """
