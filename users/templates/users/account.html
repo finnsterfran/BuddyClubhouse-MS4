@@ -48,7 +48,6 @@
                     <a href="{% url 'write_blog' %}" class="text-center btn button-two">
                     <i class="fas fa-feather-alt"></i> write a blog</a>
                 </div>
-                <br>
                 {% for blog in profile.blog_set.all %}
                 <div class="col-12 shadow-lg bg-body px-2 rounded-5">
                     <div class="card-body">
@@ -63,7 +62,6 @@
                         </a>
                     </div>
                 </div>
-                <br>
                 {% endfor %} 
                 <div class="card mb-3 flex-fill">
                     <div class="account-header card-header text-center">
