@@ -321,13 +321,13 @@ input.btn.button {
     color: var(--navhover-color);
 }
 
-.buddy-list {
+/* .buddy-list {
     padding: 1rem 3rem;
 }
 
 .date_time-list {
     padding: 0 3rem;
-}
+} */
 
 /* MEDIA QUERIES */
 
