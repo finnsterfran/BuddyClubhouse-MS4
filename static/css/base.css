@@ -341,7 +341,7 @@ input.btn.button {
 
 @media (min-width: 414px) {
     .story-img {
-        height: 23rem;
+        height: 21rem;
         width: 25rem;
     }
 }
@@ -388,11 +388,15 @@ input.btn.button {
         width: unset;
     }
 
+    .story-img {
+        height: 16rem;
+        width: 16rem;
+    }
 }
 
 @media (min-width: 992px) {
     .quote {
-        width: 64%;
+        width: 54%;
     }
 }
 
@@ -411,7 +415,7 @@ input.btn.button {
     }
 
     .quote {
-        width: 69%;
+        width: 54%;
     }
 
     a i.cart-icon {
@@ -425,6 +429,6 @@ input.btn.button {
 
 @media (min-width: 1400px) {
     .quote {
-        width: 71%;
+        width: 60%;
     }
 }
