@@ -35,12 +35,12 @@
             <div class="text-center pt-md-4">
                 {% if request.user.is_authenticated %}  
                     {% if blogpost.username.user == request.user %}
-                    <a href="{% url 'account' %}" class="btn button-two about-button">Account</a>
-                    <a href="{% url 'edit_blog' blogpost.id %}" class="btn button about-button">Edit</a>
+                    <a href="{% url 'account' %}" class="btn button-two about-buttons">Account</a>
+                    <a href="{% url 'edit_blog' blogpost.id %}" class="btn button about-buttons">Edit</a>
                     {% endif %}
                 {% endif %}
-                <a href="{% url 'blogs' %}" class="btn button-two about-button">Return to Blogs</a>
-                <a href="{% url 'register' %}" class="btn button about-button">Become a Member</a> 
+                <a href="{% url 'blogs' %}" class="btn button-two about-buttons">Return to Blogs</a>
+                <a href="{% url 'register' %}" class="btn button about-buttons">Become a Member</a> 
             </div>
         </div>
         </div>
