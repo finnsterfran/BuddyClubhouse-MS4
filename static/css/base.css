@@ -321,6 +321,14 @@ input.btn.button {
     color: var(--navhover-color);
 }
 
+.buddy-list {
+    padding: 1rem 3rem;
+}
+
+.date_time-list {
+    padding: 0 3rem;
+}
+
 /* MEDIA QUERIES */
 
 @media (min-width: 375px) {
@@ -328,6 +336,15 @@ input.btn.button {
         height: 22rem;
         width: 22rem;
     }
+
+    .buddy-list {
+        padding: 1rem 5rem;
+    }
+    
+    .date_time-list {
+        padding: 0 5rem;
+    }
+
 }
 
 @media (min-width: 414px) {
