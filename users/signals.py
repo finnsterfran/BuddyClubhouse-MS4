@@ -1,6 +1,5 @@
 from django.db.models.signals import post_save, post_delete
 from django.contrib.auth.models import User
-from django.template.loader import render_to_string
 from django.conf import settings
 from django.core.mail import send_mail
 from .models import Profile
@@ -17,16 +16,15 @@ def create_profile(sender, instance, created, **kwargs):
             last_name=user.last_name,
         )
 
-        subject = render_to_string(
-            'users/confirmation_emails/registration_success_subject.txt',
-            {'user': user})
-        body = render_to_string(
-            'users/confirmation_emails/registration_success_body.txt',
-            {'user': user, 'contact_email': settings.DEFAULT_FROM_EMAIL})
+        subject = 'Welcome to The Buddy Clubhouse!'
+        message = ('Thank you for joining us in making a difference in the lives of our canine friends.'
+                   'Remember to check out the blogboard!'
+                   'Warmest regards,'
+                   'The Buddy Clubhouse')
 
         send_mail(
             subject,
-            body,
+            message,
             settings.EMAIL_HOST_USER,
             [profile.email],
             fail_silently=False,
