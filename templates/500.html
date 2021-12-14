@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block extra_title %}
+500
+{% endblock%}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="text-center">Error 500</h1>
+        </div>
+    </div>
+</div>
+{% endblock page_header %}
+
+{% block content %}
+<div class="container">
+    <div class="row g-0">
+        <div class="col-sm-12 me-auto py-md-5">
+            <div class="card mb-3">
+                <h2>Oops!</h2> 
+                <h3>This is a bummer, something on our end isn't working quite as it should. Give it a little time and try again later.</h3>
+            </div>
+        </div>
+    </div>  
+</div>
+
+{% endblock %}

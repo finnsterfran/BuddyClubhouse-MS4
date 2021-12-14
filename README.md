@@ -140,7 +140,9 @@ font-family: 'Montserrat Alternates', sans-serif;
 
 # TESTING
 [Testing documentation](TESTING.md)
-## 
+
+# BUGS AND PROBLEMS ENCOUNTERED
+
 
 # FEATURES
 
@@ -150,4 +152,5 @@ font-family: 'Montserrat Alternates', sans-serif;
 ## AWS
 
 # CREDIT AND ACKNOWLEDGEMENT
- 
+### Email Sending via GMAIL
+
