@@ -17,10 +17,10 @@ def create_profile(sender, instance, created, **kwargs):
         )
 
         subject = 'Welcome to The Buddy Clubhouse!'
-        message = ('Thank you for joining us in making a difference in the lives of our canine friends.'
-                   'Remember to check out the blogboard!'
-                   'Warmest regards,'
-                   'The Buddy Clubhouse')
+        message = (' Thank you for joining us in making a difference in the lives of our canine friends.'
+                   ' Remember to check out the blogboard!'
+                   ' Warmest regards,'
+                   ' The Buddy Clubhouse')
 
         send_mail(
             subject,
