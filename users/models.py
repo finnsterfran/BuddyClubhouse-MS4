@@ -10,7 +10,7 @@ class Profile(models.Model):
     first_name = models.CharField(max_length=200)
     last_name = models.CharField(max_length=200)
     username = models.CharField(max_length=200, blank=True, null=True)
-    email = models.EmailField(max_length=200, unique=True)
+    email = models.EmailField(max_length=200)
     address_line_1 = models.CharField(max_length=300)
     address_line_2 = models.CharField(max_length=300, null=True, blank=True)
     postal_code = models.CharField(max_length=20)
