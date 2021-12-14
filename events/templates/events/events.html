@@ -8,8 +8,12 @@
 {% block page_header %}
 <div class="container header-container">
     <div class="row">
-        <div class="col-12">
+        <div class="col-12 text-center">
             <h1 class="text-center">Upcoming Events</h1>
+            <p>Unless specified, all events will be held or have it's initial meet up point at The Buddy Clubhouse.</p>
+            <p>You can find us at:</p>
+            <p>Prefect Street 43</p>
+            <p>454545BD Winschoten</p>
         </div>
     </div>
 </div>
@@ -17,7 +21,7 @@
 
 {% block content %}
 <div class="container">
-    <div class="row row-box">
+    <div class="row row-box py-4">
         {% for event in all_events %}
         <div class="col-sm-12 col-md-6 col-lg-4 d-flex">
             <div class="card mb-3 rounded-2 flex-fill">

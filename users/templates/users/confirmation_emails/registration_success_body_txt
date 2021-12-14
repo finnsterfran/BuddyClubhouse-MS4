@@ -3,7 +3,9 @@ Hi {{ user.first_name}} {{ user.last_name }}!
 First of all, a warmest welcome from all of us at The Buddy Clubhouse.
 🐾 
 Thank you for joining us in making a difference in the lives of our canine friends. 
-Remember to check out the blogboard! 🐾 
+Remember to check out the blogboard for stories from other members and their time with the buddies. 
+Upcoming events can be found on our events page. 
+🐾 
 
 Please feel free to get in touch with us at {{ contact_email }} should you have any questions. 
 
