@@ -1,0 +1,13 @@
+Hi {{ user.first_name}} {{ user.last_name }}!
+
+First of all, a warmest welcome from all of us at The Buddy Clubhouse.
+🐾 
+Thank you for joining us in making a difference in the lives of our canine friends. 
+Remember to check out the blogboard! 🐾 
+
+Please feel free to get in touch with us at {{ contact_email }} should you have any questions. 
+
+
+Warmest regards,
+
+The Buddy Clubhouse
