@@ -6,22 +6,25 @@
 <p>&nbsp;</p>
 
 # THE BUDDY CLUBHOUSE
-### This project features a website for a forever-home for large dogs that have, at some point in their lives, lost their previous homes. To provide the dogs with a balanced life, they are sent on training for particular skills they show an aptitude for. 
+## Purpose
+### This is the fourth and final required project of the Fullstack Software Development Diploma from Code Institute. 
+### This project seeks to showcase the collective knowledge gained throughout the course using:
+    * Django/Python MVC Framework 
+    * Relational Data Modeling
+    * Authentication and Authorisation
+    * CRUD functionality
+    * E-commerce payment implementation 
+    * Version Control
+    * Deployment and cloud hosting
+<p>&nbsp;</p>
 
-### The aim of the website is to:
+## The Project
+### A website of a forever-home for large dogs that have, at some point in their lives, lost their previous homes. To provide the dogs with a balanced life, they are sent on training for particular skills they show an aptitude for.
+### The aim of the website:
 * give people who love large breed dogs, but might not have the space or time to have one as a regular pet, the opportunity to spend quality time with them
 * give the dogs the social interaction with people they need
 * generate some donation from users to help with the upkeep of the dogs
-
-# TABLE OF CONTENT
-1. [USER STORY](#user_story)
-2. [STRATEGY](#strategy)
-
-
-
-
-### User registration is required to be able to post a blog and to access the events calendar.
-
+* give users a blog space to share their encounter with the dogs
 <p>&nbsp;</p>
 
 ### **View this project live:** [The Buddy Clubhouse](https://the-buddy-clubhouse-ms4.herokuapp.com/)
@@ -29,6 +32,14 @@
 
 ### **The Repository can be found here:** [The Buddy Clubhouse Source Code](https://github.com/finnsterfran/BuddyClubhouse-MS4)
 <p>&nbsp;</p>
+
+##### **Disclaimer:** This work is for educational purposes only and used for the obtainment of an academic grade. This is a work of fiction. Unless otherwise indicated, all the names, characters, businesses, places, events and incidents in this book are either the product of the author's imagination or used in a fictitious manner. Any resemblance to actual persons, living or dead, or actual events is purely coincidental.
+<p>&nbsp;</p>
+
+# TABLE OF CONTENT
+1. [USER STORY](#user_story)
+2. [STRATEGY](#strategy)
+
 
 # UX
 ## USER STORY
@@ -39,7 +50,6 @@
     * I want to be able to look at pictures and read a little about the dogs.
     * I want spend time with the dogs. 
     * I want to help, what can I do?
-<p>&nbsp;</p>
 
 ### These goals are accomplished via: 
     * Brief information on the homepage will give an immediate idea of what this website is about.
@@ -80,9 +90,8 @@ font-family: 'Montserrat Alternates', sans-serif;
 ## Data Relationship Model made at [DrawSQL](https://drawsql.app/)
 ![Data_schema](README_images/data_schema.png)
 
-## Wireframes 
-
-## Screenshots
+# WIREFRAMES AND SCREENSHOTS 
+[Wireframes and screenshots](WIREFRAMES.md)
 
 
 # TECHNOLOGIES USED
@@ -130,7 +139,7 @@ font-family: 'Montserrat Alternates', sans-serif;
 
 
 # TESTING
-
+[Testing documentation](TESTING.md)
 ## 
 
 # FEATURES
