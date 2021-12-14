@@ -27,12 +27,13 @@ class CustomUserCreationForm(UserCreationForm):
 
     def clean_email(self):
         email = self.cleaned_data.get('email')
+        username = self.cleaned_data.get('username')
 
-        try:
-            match = User.objects.get(email=email)
-        except User.DoesNotExist:
-            return email
-        raise forms.ValidationError('This email address is already in use.')
+        if not email:
+            raise forms.ValidationError(u'This field is required')
+        
+        if User.objects.filter(email=email).exclude(username=username):
+            raise forms.ValidationError(u'Email address must be unique')
 
     def __init__(self, *args, **kwargs):
         super(CustomUserCreationForm, self).__init__(*args, **kwargs)

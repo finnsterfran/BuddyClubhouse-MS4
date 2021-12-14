@@ -60,7 +60,7 @@ class TestCustomUserCreationForm(TestCase):
         self.assertEqual(other_form.errors['username'],
                          ['A user with that username already exists.'])
 
-
+                         
 class TestProfileForm(TestCase):
 
     def test_profile_made_with_valid_form(self):
@@ -86,3 +86,4 @@ class TestProfileForm(TestCase):
                          ['first_name', 'last_name',
                           'email', 'address_line_1', 'address_line_2',
                           'postal_code', 'profile_image'])
+                        
