@@ -21,6 +21,19 @@ class CustomUserCreationForm(UserCreationForm):
             'last_name': 'Last Name',
         }
 
+    def clean_username(self):
+        username = self.cleaned_data.get('username')
+        return username
+
+    def clean_email(self):
+        email = self.cleaned_data.get('email')
+
+        try:
+            match = User.objects.get(email=email)
+        except User.DoesNotExist:
+            return email
+        raise forms.ValidationError('This email address is already in use.')
+
     def __init__(self, *args, **kwargs):
         super(CustomUserCreationForm, self).__init__(*args, **kwargs)
 
