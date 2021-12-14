@@ -2,8 +2,8 @@ from django import forms
 from django.forms import ModelForm
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-from .widgets import CustomClearableFileInput
 from django.core.exceptions import ValidationError
+from .widgets import CustomClearableFileInput
 from .models import Profile
 
 
@@ -27,13 +27,12 @@ class CustomUserCreationForm(UserCreationForm):
 
     def clean_email(self):
         email = self.cleaned_data.get('email')
-        
+        username = self.cleaned_data.get('username')
 
         if not email:
-            raise forms.ValidationError(u'This field is required')
-        
+            raise forms.ValidationError('This field is required')
         if User.objects.filter(email=email).exclude(username=username):
-            raise forms.ValidationError(u'Email address must be unique')
+            raise forms.ValidationError('Email address must be unique')
 
         return email
 
