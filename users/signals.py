@@ -18,10 +18,10 @@ def create_profile(sender, instance, created, **kwargs):
         )
 
         subject = render_to_string(
-            'user/confirmation_emails/registration_success_subject.txt',
+            'users/confirmation_emails/registration_success_subject.txt',
             {'user': user})
         body = render_to_string(
-            'user/confirmation_emails/registration_sucess_body.txt',
+            'users/confirmation_emails/registration_success_body.txt',
             {'user': user, 'contact_email': settings.DEFAULT_FROM_EMAIL})
 
         send_mail(

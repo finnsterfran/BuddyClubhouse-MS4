@@ -3,6 +3,7 @@ from django.forms import ModelForm
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from .widgets import CustomClearableFileInput
+from django.core.exceptions import ValidationError
 from .models import Profile
 
 
@@ -20,8 +21,8 @@ class CustomUserCreationForm(UserCreationForm):
             'last_name': 'Last Name',
         }
 
-        def __init__(self, *args, **kwargs):
-            super(CustomUserCreationForm, self).__init__(*args, **kwargs)
+    def __init__(self, *args, **kwargs):
+        super(CustomUserCreationForm, self).__init__(*args, **kwargs)
 
 
 class ProfileForm(ModelForm):
