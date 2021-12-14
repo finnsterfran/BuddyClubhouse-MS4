@@ -26,6 +26,10 @@ class TestOrderCheckoutModel(TestCase):
         order.save()
         self.assertEqual(order.order_total, 85.00)
 
+    def test_order_str_method_returns_order_number(self):
+        order = Order.objects.create(order_number='Test order_number')
+        self.assertEqual(str(order), 'Test order_number')
+
 
 class TestOrderLineItemCheckout(TestCase):
     def test_check_order_exists(self):
