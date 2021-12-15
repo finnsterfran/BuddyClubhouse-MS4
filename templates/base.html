@@ -61,7 +61,7 @@
                       <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body">
-                        <form class="d-flex search-form" action="#" method="GET">
+                        <form class="d-flex search-form" action="{% url 'dogs' %}" method="GET">
                           <input class="search-input form-control me-2" name="search_query" type="text" value="{{ search_query }}" placeholder="Search: Buddy's name" aria-label="Search">
                           <button class="btn btn-outline-success" type="submit">Submit Search</button>
                         </form>
@@ -172,13 +172,13 @@
 <!-- JavaScript that loads last -->
     {% block postloadjs %}
 <!-- Script to control how long before alert messages disappear -->
-    <!-- <script>
+    <script>
       setTimeout(function() {
         if ($('.messages').length > 0) {
             $('.messages').remove();
         }
       }, 3000)
-    </script> -->
+    </script>
     {% endblock postloadjs %}
 </body>
 </html>
