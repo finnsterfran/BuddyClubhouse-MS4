@@ -35,9 +35,9 @@
                       <div class="form-row">
                             <div class="col-6">
                                 <div class="w-50">
-                                    <label for="quantity-input">Quantity</label>
+                                    <label for="quantity-input-{{ product.id }}">Quantity</label>
                                     <input type="number" name="quantity" value="1" min="1" max="99"
-                                    data-item_id="{{ product.id }}" class="form-control qty-input">   
+                                    data-item_id="{{ product.id }}" id="quantity-input-{{ product.id }}" class="form-control qty-input">   
                                 </div>
                             </div>
                             <div class="col-12">
