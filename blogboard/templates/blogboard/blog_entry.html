@@ -38,9 +38,10 @@
                     <a href="{% url 'account' %}" class="btn button-two about-buttons">Account</a>
                     <a href="{% url 'edit_blog' blogpost.id %}" class="btn button about-buttons">Edit</a>
                     {% endif %}
+                {% else %}
+                <a href="{% url 'register' %}" class="btn button-two about-buttons">Become a Member</a> 
                 {% endif %}
-                <a href="{% url 'blogs' %}" class="btn button-two about-buttons">Return to Blogs</a>
-                <a href="{% url 'register' %}" class="btn button about-buttons">Become a Member</a> 
+                <a href="{% url 'blogs' %}" class="btn button about-buttons">Return to Blogs</a>
             </div>
         </div>
         </div>
