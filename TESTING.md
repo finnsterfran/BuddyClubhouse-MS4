@@ -105,7 +105,15 @@ Passed my html codes through [W3C Markup Validator](https://validator.w3.org/)
 * account page
     * Error: Attribute }} not allowed on element img at this point.
         * Solve: Remove offending }}
+    * Document checking completed. No errors or warnings to show.
+* events page
+    * Warning: Empty heading.
+    * This element was used to size my 'apple' icon. I left it as it is as this is not an error.
+* members page 
+    * Error: Stray end tag span.
+        * Solve: Remove offending span tag
     
+
 
     
 
