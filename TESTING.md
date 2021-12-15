@@ -89,4 +89,24 @@
 Passed my html codes through [W3C Markup Validator](https://validator.w3.org/) 
 * home page 
     * Document checking completed. No errors or warnings to show.
+* about page
+    * Unclosed element div.
+        * Solve: Add enclosing div element 
+    * Document checking completed. No errors or warnings to show.
+* contribution page
+    * Error: Duplicate ID quantity-input. 
+        * Solve: Not possible because of python for loop generated id 
+* buddies page
+    * Document checking completed. No errors or warnings to show.
+* blogboard
+    * Document checking completed. No errors or warnings to show.
+* blog_entry page
+    * Document checking completed. No errors or warnings to show.
+* account page
+    * Error: Attribute }} not allowed on element img at this point.
+        * Solve: Remove offending }}
+    
+
+    
+
 

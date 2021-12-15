@@ -27,7 +27,7 @@
                 <a href="{% url 'edit_account' %}" class="btn button">
                     <i class="fas fa-user-edit"></i> Edit
                 </a>
-                <img src="{{ profile.profile_image.url }}"}} class="card-img-top img-fluid w-100 h-50" alt="{{ profile.user.username }}">
+                <img src="{{ profile.profile_image.url }}" class="card-img-top img-fluid w-100 h-50" alt="{{ profile.user.username }}">
                 <div class="card-body">
                     <h2 class="card-title fw-bold text-center">{{ profile.user.username }}</h2>
                     <p class="card-text text-center">{{ profile.first_name|title}} {{ profile.last_name }}</p>
