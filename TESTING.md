@@ -82,3 +82,11 @@
 
 # MANUEL TESTING
 ## FORMS 
+
+
+
+# VALIDATORS 
+Passed my html codes through [W3C Markup Validator](https://validator.w3.org/) 
+* home page 
+    * Document checking completed. No errors or warnings to show.
+
