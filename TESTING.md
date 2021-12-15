@@ -86,7 +86,18 @@
 
 
 # VALIDATORS 
-Passed my html codes through [W3C Markup Validator](https://validator.w3.org/) 
+### Passed my html codes through [W3C Markup Validator](https://validator.w3.org/) 
+### In order to get the raw html without jinja templates:
+    * in dev tools click sources
+    * click page
+    * click website url 
+    * click index 
+    * copy codes
+    * paste in validator
+
+![dev tools](README_images/get_html.png)
+<p>&nbsp;</p>
+
 * home page 
     * Document checking completed. No errors or warnings to show.
 * about page
@@ -112,6 +123,10 @@ Passed my html codes through [W3C Markup Validator](https://validator.w3.org/)
 * members page 
     * Error: Stray end tag span.
         * Solve: Remove offending span tag
+* login page 
+    * Warning: Empty heading.
+        * Solve: Remove offending h1 tags
+    * 
     
 
 
