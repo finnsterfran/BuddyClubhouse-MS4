@@ -180,8 +180,7 @@
         * Solve: Remove offending }}
     * Document checking completed. No errors or warnings to show.
 * events page
-    * Warning: Empty heading.
-    * This element was used to size my 'apple' icon. I left it as it is as this is not an error.
+    * Document checking completed. No errors or warnings to show.
 * members page 
     * Error: Stray end tag span.
         * Solve: Remove offending span tag
@@ -219,8 +218,7 @@
 * checkout.views
     * All right
 * contribution.views
-    * E501	50	80	line too long (81 > 79 characters) 
-        * Solve: Did nothing. 
+    * All right 
 * dogs.views
     * All right
 * events.views

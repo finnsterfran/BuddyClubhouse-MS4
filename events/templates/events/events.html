@@ -28,9 +28,9 @@
                     <small class="text-center">{{ event.event_type }}</small>
                 </div>
                 <div class="card-body text-center">
-                    <h2 class="event-icon text-center">
+                    <div class="event-icon text-center">
                         <i class="fas fa-apple-alt "></i>
-                    </h2>
+                    </div>
                     <p class="card-text buddy-list pt-3"><strong>Buddies: </strong>
                         {% for name in event.buddy_name.all %}
                         <br>{{ name }}
