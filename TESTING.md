@@ -86,25 +86,50 @@
 
 # MANUEL TESTING - FUNCTIONALITY
 1.  LOGIN
-    *
+    ![Logged In](README_images/user_logged_in.png)
+<p>&nbsp;</p>
+
 2.  LOGOUT
-    *
+    ![Logged out](README_images/user_logged_out.png)
+<p>&nbsp;</p>
+
 3.  REGISTER
-    *
-4.  WRITE BLOG
-    *
-5.  EDIT BLOG
-    *
+    ![Register Success](README_images/register_success.png)
+<p>&nbsp;</p>
+
+4.  EDIT PROFILE
+    ![Edit Profile](README_images/edit_profile.png)
+<p>&nbsp;</p>
+
+5.  WRITE BLOG
+    ![Write Blog](README_images/blog_entry.png)
+<p>&nbsp;</p>
+
 6.  DELETE BLOG
-    *
-7.  EDIT PROFILE
-    *
+    ![Delete Blog](README_images/delete_blog.png)
+    ![Blog deleted](README_images/blog_deleted.png)
+<p>&nbsp;</p>
+
+7.  EDIT BLOG
+    ![Edit Blog](README_images/blog_updated.png)
+<p>&nbsp;</p>
+
 8.  CHECKOUT
-    *
+    ![Cart View](README_images/cart_view.png)
+    ![Prefill Checkout Details](README_images/autofill_form_checkout.png)
+    ![Checkout Success](README_images/checkout_success.png)
+    ![Order Email Confirmation](README_images/order_email_confirmation.png)
+    ![Account View Order History](README_images/account_view_order_history.png)
+<p>&nbsp;</p>
+
 9.  CONTACT US
-    *
+    ![Contact us form](README_images/contact_us.png)
+    ![Contact us form sent](README_images/contact_us_form_sent.png)
+<p>&nbsp;</p>
+
 10. SEARCH BY DOG NAME
     *
+<p>&nbsp;</p>
 
 # DEFENSIVE TESTING
 ## REGISTRATION FORM
@@ -116,7 +141,9 @@
 ## LOGIN FORM
 1. ATTEMPTING TO LOGIN WITH INCORRECT PASSWORD OR/AND USERNAME:
 
-
+## DELETE BLOG
+1. UNABLE TO DELETE BLOG THAT WAS NOT WRITTEN BY USER
+![Cant Delete Other User's Blog](README_images/cant_delete_when_not_author.png)
 # VALIDATORS 
 ## Passed my html codes through [W3C Markup Validator](https://validator.w3.org/) 
 ### In order to get the raw html without jinja templates:
