@@ -323,6 +323,10 @@ input.btn.button {
     color: var(--logo-color);
 }
 
+.blog-body {
+    height: 18rem;
+}
+
 /* Events */
 .event-icon > i {
     font-size: 4rem;

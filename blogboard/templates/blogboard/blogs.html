@@ -26,12 +26,10 @@
                 {% else%}
                 <img src="{{ MEDIA_URL }}blogs/blog_default.png" class="h-75 blog-img card-img-top img-fluid" alt="">
                 {% endif %}
-                <div class="card-body">
+                <div class="blog-body card-body">
                     <p><strong>{{blog.title}}</strong></p>
                     <p><strong class="me-2">Author:</strong>{{blog.username}}</p>
                     <p><strong class="me-2">Date:</strong>{{blog.date_of_entry}}</p>
-                    
-
                     <div class="card-link"><a href="{% url 'blog_entry' blog.id %}"><i class="blog-link fas fa-blog"></i></a></div>
                 </div>
             </div>
