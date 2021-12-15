@@ -21,7 +21,7 @@ body {
     font-family: 'Montserrat Alternates', sans-serif;
     background-color: var(--light);
     height: 100vh;
-    width: 100wh;
+    width: 100vw;
 }
 
 .button {
@@ -169,7 +169,6 @@ button.navbar-toggler {
 
 .footer-items li i {
     color: var(--icon-color);
-    text-shadow: var(--black);
     font-size: 2rem;
 }
 
