@@ -1,28 +1,31 @@
-# WIREFRAMES
-## DESKTOP 
+# TABLE OF CONTENT
+## 1. [Wireframes](#_wireframes)
+- [Home app](###_home_app)
+- [Blogboard] (###_blogboard_app)
+-
+
+2. [Screenshots](#_screenshots)
+
+# WIREFRAMES 
+
 ### HOME APP
-* DESKTOP
-<p>&nbsp;</p>
-![Homepage](README_images/wireframes/home_desktop-1.png)
+    * DESKTOP
+
+![Desktop View](README_images/wireframes/home_app_desktop-1.png)
 <p>&nbsp;</p>
 
-![Offcanvas Nagivation](README_images/wireframes/nav-offcanvas_desktop-1.png)
-<p>&nbsp;</p>
+    * TABLET
 
-![About Page](README_images/wireframes/about_desktop-1.png)
-<p>&nbsp;</p>
-
-![Contact Us](README_images/wireframes/contact_us_desktop-1.png)
-<p>&nbsp;</p>
-
-* TABLET
 ![Tablet View](README_images/wireframes/home_app_tablet-1.png)
 <p>&nbsp;</p>
 
-* MOBILE
+    * MOBILE
+    
 ![Mobile View](README_images/wireframes/home_app_mobile-1.png)
-
 <hr>
+
+### BLOGBOARD APP
+
 
 
 

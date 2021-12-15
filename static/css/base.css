@@ -315,6 +315,14 @@ input.btn.button {
     letter-spacing: 1px;
 }
 
+i.fas.fa-blog {
+    font-size: 3rem;
+    right: 2rem;
+    bottom: 2rem;
+    position: absolute;
+    color: var(--logo-color);
+}
+
 /* Events */
 .event-icon > i {
     font-size: 4rem;
