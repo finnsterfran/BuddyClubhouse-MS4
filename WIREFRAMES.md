@@ -25,6 +25,20 @@
 <hr>
 
 ### BLOGBOARD APP
+    * DESKTOP
+
+![Desktop View](README_images/wireframes/blogboard_app_browser-1.png)
+<p>&nbsp;</p>
+
+    * TABLET
+
+![Tablet View](README_images/wireframes/blogboard_app_tablet-1.png)
+<p>&nbsp;</p>
+
+    * MOBILE
+
+![Mobile View](README_images/wireframes/blogboard_app_mobile-1.png)
+<p>&nbsp;</p>
 
 
 
