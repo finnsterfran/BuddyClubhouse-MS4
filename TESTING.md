@@ -168,8 +168,7 @@
         * Solve: Add enclosing div element 
     * Document checking completed. No errors or warnings to show.
 * contribution page
-    * Error: Duplicate ID quantity-input. 
-        * Solve: Not possible because of python for loop generated id 
+    * Document checking completed. No errors or warnings to show.
 * buddies page
     * Document checking completed. No errors or warnings to show.
 * blogboard
@@ -198,7 +197,7 @@
 * checkout_success page
     * Document checking completed. No errors or warnings to show.
 
-## Passed my CSS codes through [W3C Markup Validator](https://validator.w3.org/) 
+## Passed my CSS codes through [W3C CSS Validator](https://validator.w3.org/) 
 
 * base.css 
     * Congratulations! No Error Found.
