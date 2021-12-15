@@ -127,8 +127,12 @@
     ![Contact us form sent](README_images/contact_us_form_sent.png)
 <p>&nbsp;</p>
 
-10. SEARCH BY DOG NAME
-    *
+10. PASSWORD RESET
+    ![Request Password Change](README_images/password_reset_request_form.png)
+    ![Request Password Email Sent](README_images/password_reset_request.png)
+    ![email_password_reset_request](README_images/password_change_email_received.png)
+    ![Password Change form](README_images/password_reset_change_password.png)
+    ![Password Changed](README_images/password_reset_password_changed.png)
 <p>&nbsp;</p>
 
 # DEFENSIVE TESTING

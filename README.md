@@ -73,26 +73,25 @@
     * Registered users will be able to contribute blog post about their interaction with the dog/dogs.
     * Registered users will be able to see the history of any orders they have made via their account page.
 
-## STRATEGY
-
-## SCOPE
-## STRUCTURE
-
-## SKELETON
-## SURFACE
+# DESIGN
 ### Colors
+
 ### Typography
-font-family: 'Montez', cursive;
-font-family: 'Montserrat Alternates', sans-serif;
+*   font-family: 'Montez', cursive;
+*   font-family: 'Montserrat Alternates', sans-serif;
+
 ### Icons/Images
+* All icons used in this project are from [FontAwesome](https://fontawesome.com/)
+<p>&nbsp;</p>
 
 # INFORMATION ARCHITECTURE
 ## Data Relationship Model made at [DrawSQL](https://drawsql.app/)
 ![Data_schema](README_images/data_schema.png)
+<p>&nbsp;</p>
 
 # WIREFRAMES AND SCREENSHOTS 
 [Wireframes and screenshots](WIREFRAMES.md)
-
+<p>&nbsp;</p>
 
 # TECHNOLOGIES USED
 ## HTML
@@ -136,13 +135,28 @@ font-family: 'Montserrat Alternates', sans-serif;
 * I used Git for version control.
 * [Heroku](https://heroku.com/): My Postgres Database sits on Heroku and I use Heroku to deploy my website.
 * [AWS](https://aws.amazon.com/): My static and media files are hosted by Amazon's AWS S3.
-
+<p>&nbsp;</p>
 
 # TESTING
 [Testing documentation](TESTING.md)
+<p>&nbsp;</p>
 
 # BUGS AND PROBLEMS ENCOUNTERED
-
+### Problem: There was quite a bit of trouble with email sending via gmail. Even with the correct variables included in Heroku, the smtp authentication returned errors. 
+    * Troubleshooting:
+        * on 11 December 2021, worked with Jo from tutor help to fix the problem. Made one-time pass again, re-entered all variable details. Doubled checked, tutor double checked. 
+        * test registering an account on project website. Confirmation email failed to send.
+        * test make an order on project website. Order confirmation email not received.
+        * double checked signals.py. setting is okay.
+        * two hours later, received email for order confirmation but not for registration of account.
+        * registration still throws an smtp authentication error.
+        * re-entered all variables, made one-time pass.
+        * registration successful, confirmation email received.
+        * on 12 December 2021, tried to make a new user account on project website. Authentication error again.
+        * checked gmail, checked gmail activity log - ** account was disabled ** for some reason.
+        * made new one-time pass, made sure to confirm activity "this was me" in activity log.
+        * per advice by Ed from tutor help, I switched email verification to 'optional'.
+        * email sending fixed.
 
 # FEATURES
 
