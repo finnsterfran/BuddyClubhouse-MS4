@@ -51,7 +51,7 @@ body {
     font-size: 0.8rem;
 }
 
-/* tablet */
+
 @media (min-width: 768px) {
     .index-title {
         font-size: 5.5rem;

@@ -4,6 +4,8 @@ THE BUDDY CLUBHOUSE-MS4 FILE STRUCTURE
         |> migrations
         |⌄ templates
             |⌄ blogboard
+                |⌄ custom_widget_templates
+                    |- custom_clearable_file_input.html
                 |- blog_entry.html
                 |- blogs.html
                 |- delete_blog.html
@@ -14,9 +16,13 @@ THE BUDDY CLUBHOUSE-MS4 FILE STRUCTURE
         |- apps.py
         |- forms.py
         |- models.py
+        |- test_forms.py
+        |- test_models.py
+        |- test_views.py
         |- tests.py
         |- urls.py
         |- views.py
+        |- widgets.py
     |⌄ buddy_program (main-app)
         |> __pysche__
         |- __init__.py
@@ -40,7 +46,9 @@ THE BUDDY CLUBHOUSE-MS4 FILE STRUCTURE
         |- forms.py
         |- models.py
         |- signals.py
-        |- tests.py
+        |- test_forms.py
+        |- test_models.py
+        |- test_views.py
         |- urls.py
         |- views.py
         |- webhook_handler.py
@@ -61,7 +69,8 @@ THE BUDDY CLUBHOUSE-MS4 FILE STRUCTURE
         |- apps.py
         |- contexts.py
         |- models.py
-        |- tests.py
+        |- test_models.py
+        |- test_views.py
         |- urls.py
         |- views.py
     |⌄ dogs
@@ -75,7 +84,8 @@ THE BUDDY CLUBHOUSE-MS4 FILE STRUCTURE
         |- admin.py
         |- apps.py
         |- models.py
-        |- tests.py
+        |- test_models.py
+        |- test_views.py
         |- urls.py
         |- views.py
     |⌄ events
@@ -88,7 +98,8 @@ THE BUDDY CLUBHOUSE-MS4 FILE STRUCTURE
         |- admin.py
         |- apps.py
         |- models.py
-        |- tests.py
+        |- test_models.py
+        |- test_views.py
         |- urls.py
         |- views.py
     |- home (landing-page)
@@ -97,13 +108,16 @@ THE BUDDY CLUBHOUSE-MS4 FILE STRUCTURE
         |⌄ templates
             |⌄ home
                 |- about.html
+                |- contact_us.html
                 |- index.html
         |- __init__.py
         |- admin.py
         |- apps.py
         |- forms.py
         |- models.py
-        |- tests.py
+        |- test_forms.py
+        |- test_models.py
+        |- test_views.py
         |- urls.py
         |- views.py
     |⌄ media (images)
@@ -123,10 +137,14 @@ THE BUDDY CLUBHOUSE-MS4 FILE STRUCTURE
         |> migrations
         |⌄ templates
             |⌄ users
+                |⌄ confirmation_emails
+                    |- registration_success_body.txt
+                    |- registration_success_subject.txt
+                |⌄ custom_widget_templates
+                    |- custom_clearable_file_input.html
                 |- account.html
                 |- login_register.html
                 |- profile_form.html
-                |- profile.html
                 |- profiles.html
         |- __init__.py
         |- admin.py
@@ -134,13 +152,20 @@ THE BUDDY CLUBHOUSE-MS4 FILE STRUCTURE
         |- forms.py
         |- models.py
         |- signals.py
-        |- tests.py
+        |- test_forms.py
+        |- test_models.py
+        |- test_views.py
         |- urls.py
         |- views.py
+        |- widgets.py
     |- .env
     |- .gitignore
+    |- custom_storages.py
     |- db.sqlite3
     |- manage.py
+    |- Procfile
     |- README.md 
     |- requirements.txt
-    |- structure.txt << this file          
+    |- structure.txt << this file  
+    |- TESTING.md
+    |- WIREFRAMES.md        

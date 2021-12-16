@@ -49,7 +49,7 @@ body {
 }
 
 .button-two:hover {
-    background-color: var(--light-pink);
+    background-color: var(--navhover-color);
     color: var(--dark);
 }
 
@@ -220,7 +220,7 @@ blockquote p::after {
 ul.messages {
     text-align: center;
     list-style: none;
-    margin-right: 1.2rem;
+    margin-right: 1.5rem;
     margin: 97px 4px 0 4px;
 }
 
