@@ -19,6 +19,7 @@
     * Blog submission is open to registered users. 
 * I want to keep track of any donations I have made.
     * An order history is available only for customers who are already registered users, as this can be saved to their profile.
+<p>&nbsp;</p>
 
 # Coverage - Django Testing
 ## To generate reports on the automated testing:
@@ -138,16 +139,23 @@
 # DEFENSIVE TESTING
 ## REGISTRATION FORM
 1. ATTEMPTING TO REGISTER A USERNAME THAT ALREADY EXIST:
+    ![Username Already Exist](README_images/username_already_exist.png)
 2. ATTEMPTING TO REGISTER WITH AN EMAIL THAT IS ALREADY REGISTERED TO A USER:
-3. WHEN INPUT FIELD DOESN'T FULFILL REQUIREMENT:
-4. WHEN PASSWORDS DO NOT MATCH
+    ![Email not unique](README_images/email_must_be_unique.png)
+3. WHEN PASSWORDS DO NOT MATCH
+    ![Passwords do not match](README_images/passwords_do_not_match.png)
+<p>&nbsp;</p>
 
 ## LOGIN FORM
 1. ATTEMPTING TO LOGIN WITH INCORRECT PASSWORD OR/AND USERNAME:
+    ![Username or Password incorrect](README_images/incorrect_password_username.png)
+<p>&nbsp;</p>
 
 ## DELETE BLOG
 1. UNABLE TO DELETE BLOG THAT WAS NOT WRITTEN BY USER
 ![Cant Delete Other User's Blog](README_images/cant_delete_when_not_author.png)
+<p>&nbsp;</p>
+
 # VALIDATORS 
 ## Passed my html codes through [W3C Markup Validator](https://validator.w3.org/) 
 ### In order to get the raw html without jinja templates:
@@ -162,68 +170,72 @@
 <p>&nbsp;</p>
 
 * home page 
-    * Document checking completed. No errors or warnings to show.
+    * &check; Document checking completed. No errors or warnings to show.
 * about page
     * Unclosed element div.
         * Solve: Add enclosing div element 
-    * Document checking completed. No errors or warnings to show.
+    * &check; Document checking completed. No errors or warnings to show.
 * contribution page
-    * Document checking completed. No errors or warnings to show.
+    * &check; Document checking completed. No errors or warnings to show.
 * buddies page
-    * Document checking completed. No errors or warnings to show.
+    * &check; Document checking completed. No errors or warnings to show.
 * blogboard
-    * Document checking completed. No errors or warnings to show.
+    * &check; Document checking completed. No errors or warnings to show.
 * blog_entry page
-    * Document checking completed. No errors or warnings to show.
+    * &check; Document checking completed. No errors or warnings to show.
 * account page
     * Error: Attribute }} not allowed on element img at this point.
         * Solve: Remove offending }}
-    * Document checking completed. No errors or warnings to show.
+    * &check; Document checking completed. No errors or warnings to show.
 * events page
-    * Document checking completed. No errors or warnings to show.
+    * &check; Document checking completed. No errors or warnings to show.
 * members page 
     * Error: Stray end tag span.
         * Solve: Remove offending span tag
-    * Document checking completed. No errors or warnings to show.
+    * &check; Document checking completed. No errors or warnings to show.
 * login page 
     * Warning: Empty heading.
         * Solve: Remove offending h1 tags
-    * Document checking completed. No errors or warnings to show.
+    * &check; Document checking completed. No errors or warnings to show.
 * register page 
-    * Document checking completed. No errors or warnings to show.
+    * &check; Document checking completed. No errors or warnings to show.
 * checkout page 
-    * Document checking completed. No errors or warnings to show.
+    * &check; Document checking completed. No errors or warnings to show.
 * checkout_success page
-    * Document checking completed. No errors or warnings to show.
+    * &check; Document checking completed. No errors or warnings to show.
+<p>&nbsp;</p>
 
 ## Passed my CSS codes through [W3C CSS Validator](https://validator.w3.org/) 
-
 * base.css 
-    * Congratulations! No Error Found.
+    * &check; Congratulations! No Error Found.
 * home.css 
-    * Congratulations! No Error Found.
+    * &check; Congratulations! No Error Found.
 * users.css
-    * Congratulations! No Error Found.
+    * &check; Congratulations! No Error Found.
 * checkout.css
-    * Congratulations! No Error Found.
+    * &check; Congratulations! No Error Found.
+<p>&nbsp;</p>
 
 ## Passed my JavaScript codes through [JSHINT](https://jshint.com/)
 * stripe_element.js 
     * 27	'template literal syntax' is only available in ES6 (use 'esversion: 6').
     * 81	'template literal syntax' is only available in ES6 (use 'esversion: 6').    
+<p>&nbsp;</p>
 
 ## Passed my Python codes through [PEP8ONLINE](http://pep8online.com/)
 * blogboard.views 
-    * All right
+    * &check; All right
 * checkout.views
-    * All right
+    * &check; All right
 * contribution.views
-    * All right 
+    * &check; All right 
 * dogs.views
-    * All right
+    * &check; All right
 * events.views
-    * All right
+    * &check; All right
 * home.views 
-    * All right
+    * &check; All right
 * users.views
-    * All right
+    * &check; All right
+
+![lighthouse check](README_images/lighthouse_check_homepage.png)
