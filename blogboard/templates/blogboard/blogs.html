@@ -30,7 +30,7 @@
                     <p><strong>{{blog.title}}</strong></p>
                     <p><strong class="me-2">Author:</strong>{{blog.username}}</p>
                     <p><strong class="me-2">Date:</strong>{{blog.date_of_entry}}</p>
-                    {% if request.user.is_authenticated %}
+                    {% if request.user.is_authenticated %}  
                     <div class="card-link"><a href="{% url 'blog_entry' blog.id %}"><i class="blog-link fas fa-blog"></i></a></div>
                     {% else %}
                     <p><strong class="me-2">You have to be logged in to read this blog</strong></p>
