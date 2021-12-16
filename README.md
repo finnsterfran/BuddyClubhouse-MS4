@@ -6,27 +6,27 @@
 
 # THE BUDDY CLUBHOUSE
 ## Purpose
-### This is the fourth and final required project of the Fullstack Software Development Diploma from Code Institute. 
+### This is the fourth and final **required** project of the Fullstack Software Development Diploma from Code Institute. 
 ### This project seeks to showcase the collective knowledge gained throughout the course using:
 * Django/Python MVC Framework 
 * Relational Data Modeling
-* Authentication and Authorisation
+* Authentication and Authorization
 * CRUD functionality
 * E-commerce payment implementation 
 * Version Control
 * Deployment and cloud hosting
 
 ## The Project
-### A website of a forever-home for large dogs that have, at some point in their lives, lost their previous homes. To provide the dogs with a balanced life, they are sent on training for particular skills they show an aptitude for.
+### A website of a forever-home for large dogs that have, at some point in their lives, lost their previous homes. To provide the dogs with a balanced life, they are sent on training for particular skills they show an aptitude for. 
 ### The aim of the website:
-* give people who love large breed dogs, but might not have the space or time to have one as a regular pet, the opportunity to spend quality time with them
-* give the dogs the social interaction with people they need
-* generate some donation from users to help with the upkeep of the dogs
-* give users a blog space to share their encounter with the dogs
+* To give people who love large breed dogs, but might not have the space or time to have one as a regular pet, the opportunity to spend quality time with them
+* To give the dogs the social interaction with people they need
+* To generate some donation from users to help with the upkeep of the dogs
+* To give users a blog space to share their encounter with the dogs
 <p>&nbsp;</p>
 
 ### **View this project live:** [The Buddy Clubhouse](https://the-buddy-clubhouse-ms4.herokuapp.com/)
-#### Stripe functionality is set up to be in a test mode. Please do not enter your personal card number when checking out an order. Please use as follows:
+#### When using this website, please note that the Stripe functionality is set up to be in a test mode. Do not enter your personal card number when checking out an order. Please use these test numbers instead:
     - card number: 4242 4242 4242 4242 
     - date: 04 24
     - CVV: 424
@@ -37,16 +37,18 @@
 <p>&nbsp;</p>
 
 # TABLE OF CONTENT
-1. [USER STORY](#user_story)
-2. [DESIGN](#design)
-3. [INFORMATION ARCHITECTURE](#information_architecture)
-4. [WIREFRAMES AND SCREENSHOOTS](!WIREFRAMES.md)
-5. [TECHNOLOGIES USED](#technologies_used)
-6. [TESTING](TESTING.md)
-7. [BUGS AND PROBLEMS](#bugs_and_problems)
-8. [FEATURES](#features)
-9. [DEPLOYMENT](#deployment)
-10. [CREDIT AND ACKNOWLEDGEMENT](#credit_and_acknowledgement)
+1. [USER STORY](#user-story)
+2. [STRUCTURE](#structure)
+3. [DESIGN](#design)
+4. [INFORMATION ARCHITECTURE](#information-architecture)
+5. [WIREFRAMES AND SCREENSHOOTS](WIREFRAMES.md)
+6. [TECHNOLOGIES USED](#technologies-used)
+7. [TESTING](TESTING.md)
+8. [BUGS AND PROBLEMS](#bugs-and-problems)
+9. [FEATURES](#features)
+10. [FUTURE FEATURES](#features-I-would-like-to-implement)
+11. [DEPLOYMENT](#deployment)
+12. [CREDIT AND ACKNOWLEDGEMENT](#credit-and-acknowledgement)
 <hr>
 <p>&nbsp;</p>
 
@@ -101,7 +103,7 @@
 
 ## Icons/Images
 #### All icons used in this project are from [FontAwesome](https://fontawesome.com/)
-#### All dog images, with the exception of Daisy and Wookiepants, were from various sources on the internet.
+#### All dog images, with the exception of Daisy and Wookiepants(my dogs), were from various sources on the internet.
 #### Default-blog and default-profile images were sourced from the internet.
 <p>&nbsp;</p>
 
@@ -204,6 +206,7 @@ Note: some packages not listed here came preinstalled when using Code Institute 
         * cut and paste the requirements.txt into a cleaner to remove unwanted packages and returned the trimmed version back to my project's requiremenst.txt file.
         * this did not solve the problem. freezing requirements.txt upon installing a new package will again add 125 packages to the file.
         * opened a new workspace, this seemed to have fixed the issue.
+<p>&nbsp;</p>
 
 # FEATURES
 ### Navigation
@@ -241,7 +244,7 @@ Note: some packages not listed here came preinstalled when using Code Institute 
 * Complete order by filling in all fields in the form and click 'Complete Order'.
 ### Blogboard
 * A page with all the blogs written by registered members of the website.
-* Individual 
+* Individual blogs can only be read by registered users. 
 ### The Buddies 
 * Page with all the dogs in the sanctuary.
 * Clicking on dog icon will lead the user to individual dog page.
@@ -249,14 +252,26 @@ Note: some packages not listed here came preinstalled when using Code Institute 
 * Registration form to create a new user account.
 * Successful registration will bring the user directly to their account page to update their profile.
 ### Events 
-* Only accessible to 
+* Only accessible to registered users.
+### Account
+* Profile page of registered users, only accessible by said user. 
+* Blog post written and order history can be seen here.
+<p>&nbsp;</p>
 
-
+# FEATURES I WOULD LIKE TO IMPLEMENT
+### Email Verification
+* I used a custom register form here, so email verification is not in place. This is a feature I would like to include.
+### Event Booking
+* I would like to implement an event calendar and a possibility to book a playdate or a time slot, as a user, for an event.
+### Sending Messages
+* I would like to set up a message sender so registered users can message each other.
+<p>&nbsp;</p>
 
 # DEPLOYMENT
 [Deployment](DEPLOYMENT.md)
-
+<p>&nbsp;</p>
 
 # CREDIT AND ACKNOWLEDGEMENT
-### Email Sending via GMAIL
-
+### I learned how to make the signals for profile update and the custom register form by following a course by Dennis Ivy on Udemy.
+### I would like to thank my mentor Guido Cecilio Garcia Bernal for his support, guidance and confidence in my abilities.
+### I would also like to thank the tutor support from Code Institute.
