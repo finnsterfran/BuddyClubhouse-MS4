@@ -225,7 +225,31 @@ Note: some packages not listed here came preinstalled when using Code Institute 
 ### Homepage 
 * Short summary and a button that links to more information
 ### Our Story 
-* 
+* Story and mission message
+* Buttons that lead to Contribute, Contact Us and Register pages
+### Donation
+* A contribution page where users can select from 6 donation packages to purchase/donate.
+* Cart button leads to cart page.
+* If cart is empty, button 'Keep Shoppng' will bring the user back to Donation page.
+* If cart is not empty, second button 'Secure Checkout' will bring user to checkout page.
+### Checkout
+* A checkout form with credit card input. 
+* User will be able to go back to adjust cart items by clicking 'Adjust bag'.
+* User can choose to login or create an account.
+* Logged in user can choose to have this order saved to profile.
+* If user is logged in, information that was stored in user profile will be used to prefill the form.
+* Complete order by filling in all fields in the form and click 'Complete Order'.
+### Blogboard
+* A page with all the blogs written by registered members of the website.
+* Individual 
+### The Buddies 
+* Page with all the dogs in the sanctuary.
+* Clicking on dog icon will lead the user to individual dog page.
+### Register 
+* Registration form to create a new user account.
+* Successful registration will bring the user directly to their account page to update their profile.
+### Events 
+* Only accessible to 
 
 
 
