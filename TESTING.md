@@ -1,24 +1,24 @@
 # Test User Story
-    * I want to have a rough idea what this website is about from just glancing at information on the landing page.
-        * Summary of homepage informs what the site is about. Except on mobile view where summary is hidden.
-    * I want easy navigation through the website.
-        * Offcanvas navigation opens to the right of the webpage. Appropriate branch links are placed on each webpage. 
-    * I want to be able to get further information about this website and its purpose.
-        * Story and Mission fulfills this.
-    * I want to be able to look at pictures and read a little about the dogs.
-        * The buddies page holds information about all the dogs. Individual page opens to show a short background read about the dog.
-    * I want spend time with the dogs. 
-        * Event are open to members, user should register as a member in order to spend time with the dogs.
-    * I want to help, what can I do?
-        * Contribution page shows donation options that users can choose from to help.
-    * I want to spend time with the dogs, when can I? What can I do with the dogs?
-        * Events are open to members - playdates, hikes, help with grooming, etc.
-    * The profile photo is terrible, and I made a typo in my name in the registration form, how can I change this?
-        * Registered users can edit their profile through their account page.
-    * I want to be able to blog about my day with the dog I had a playdate with.
-        * Blog submission is open to registered users. 
-    * I want to keep track of any donations I have made.
-        * An order history is available only for customers who are already registered users, as this can be saved to their profile.
+* I want to have a rough idea what this website is about from just glancing at information on the landing page.
+    * Summary of homepage informs what the site is about. Except on mobile view where summary is hidden.
+* I want easy navigation through the website.
+    * Offcanvas navigation opens to the right of the webpage. Appropriate branch links are placed on each webpage. 
+* I want to be able to get further information about this website and its purpose.
+    * Story and Mission fulfills this.
+* I want to be able to look at pictures and read a little about the dogs.
+    * The buddies page holds information about all the dogs. Individual page opens to show a short background read about the dog.
+* I want spend time with the dogs. 
+    * Event are open to members, user should register as a member in order to spend time with the dogs.
+* I want to help, what can I do?
+    * Contribution page shows donation options that users can choose from to help.
+* I want to spend time with the dogs, when can I? What can I do with the dogs?
+    * Events are open to members - playdates, hikes, help with grooming, etc.
+* The profile photo is terrible, and I made a typo in my name in the registration form, how can I change this?
+    * Registered users can edit their profile through their account page.
+* I want to be able to blog about my day with the dog I had a playdate with.
+    * Blog submission is open to registered users. 
+* I want to keep track of any donations I have made.
+    * An order history is available only for customers who are already registered users, as this can be saved to their profile.
 
 # Coverage - Django Testing
 ## To generate reports on the automated testing:
