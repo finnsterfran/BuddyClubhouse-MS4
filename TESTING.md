@@ -237,5 +237,3 @@
     * &check; All right
 * users.views
     * &check; All right
-
-![lighthouse check](README_images/lighthouse_check_homepage.png)

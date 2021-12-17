@@ -1,48 +1,43 @@
-# TABLE OF CONTENT
-## 1. [Wireframes](#_wireframes)
-- [Home app](###_home_app)
-- [Blogboard] (###_blogboard_app)
--
-
-2. [Screenshots](#_screenshots)
-
 # WIREFRAMES 
-
-### HOME APP
-    * DESKTOP
 
 ![Desktop View](README_images/wireframes/home_app_desktop-1.png)
 <p>&nbsp;</p>
 
-    * TABLET
-
 ![Tablet View](README_images/wireframes/home_app_tablet-1.png)
 <p>&nbsp;</p>
-
-    * MOBILE
     
 ![Mobile View](README_images/wireframes/home_app_mobile-1.png)
 <hr>
 
-### BLOGBOARD APP
-    * DESKTOP
-
 ![Desktop View](README_images/wireframes/blogboard_app_browser-1.png)
 <p>&nbsp;</p>
-
-    * TABLET
 
 ![Tablet View](README_images/wireframes/blogboard_app_tablet-1.png)
 <p>&nbsp;</p>
 
-    * MOBILE
-
 ![Mobile View](README_images/wireframes/blogboard_app_mobile-1.png)
 <p>&nbsp;</p>
 
+![Desktop View](README_images/wireframes/contribution_app_desktop-1.png)
+<p>&nbsp;</p>
 
+![Tablet View](README_images/wireframes/contribution_app_tablet-1.png)
+<p>&nbsp;</p>
 
+![Mobile View](README_images/wireframes/contribution_app_mobile-1.png)
+<p>&nbsp;</p>
 
+![Desktop View](README_images/wireframes/dogs_app_desktop-1.png)
+<p>&nbsp;</p>
+
+![Tablet View](README_images/wireframes/dogs_app_tablet-1.png)
+<p>&nbsp;</p>
+
+![Mobile View](README_images/wireframes/dogs_app_mobile-1.png)
+<p>&nbsp;</p>
+
+![Tablet View](README_images/wireframes/users_app_tablet-1.png)
+<p>&nbsp;</p>
 
 # Screenshots
 ### Registered and logged in user 
