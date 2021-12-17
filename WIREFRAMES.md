@@ -46,7 +46,7 @@ Landing Page Navigator
 
 ### Anonymous User
 Landing Page Navigator 
-![anonymous_user](README_images/screenshots/offcanvas_not_loggedin.png)
+![anonymous_user](README_images/screenshots/offcanvas_anonymous.png)
 
 ### About
 ![about](README_images/screenshots/screenshot_about.png)

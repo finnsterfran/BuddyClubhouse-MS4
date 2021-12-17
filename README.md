@@ -66,7 +66,6 @@
 * Collapsible navigation block to the right side of the page provides navigation to every page that is available to non-registered users.
 * User will be directed to further information (story and mission) via a button on the landing page. 
 * An image and information of the individual dogs will be viewable on their profile page.
-* Information about visitations (activities). 
 * User can make a monetary contribution towards the upkeep of the dogs.
 * User will be informed that registration is required for certain parts of the website.
 
@@ -77,8 +76,7 @@
 * I want to keep track of any donations I have made.
 
 ### These goals are accomplished via: 
-* Registered users will get access to the events page which will show what activities will be happening. 
-* Registered users will be able partake in activities that are open to users. 
+* Registered users will get access to the events page which will show what activities will be happening.  
 * Registered users will be able to edit their profiles via their account page.
 * Registered users will be able to contribute blog post about their interaction with the dog/dogs.
 * Registered users will be able to see the history of any orders they have made via their account page.
