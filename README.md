@@ -25,7 +25,6 @@
 * To give users a blog space to share their encounter with the dogs
 <p>&nbsp;</p>
 
-### **View this project live:** [The Buddy Clubhouse](https://the-buddy-clubhouse-ms4.herokuapp.com/)
 #### When using this website, please note that the Stripe functionality is set up to be in a test mode. Do not enter your personal card number when checking out an order. Please use these test numbers instead:
     - card number: 4242 4242 4242 4242 
     - date: 04 24
